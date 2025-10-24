@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 
 const Navber = () => {
     return (
@@ -21,7 +23,9 @@ const Navber = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link href={'/'} className="">
+                    <Image src='/LinkerLogo.png' alt="LINKER" width={150} height={30} className="mr-2" />
+                </Link> 
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
