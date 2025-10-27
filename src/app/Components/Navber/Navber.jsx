@@ -2,18 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaBell, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import { FaBell, FaEnvelope, FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import ToggleSerchbar from "./ToggleSerchbar";
 
 
 const Navber = () => {
-    const [query, setQuery] = useState("");
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navLinks = ["Home", "Explore", "Posts", "About"];
-    const results = ["Naim Web Dev", "Dashboard", "Settings", "Messages"].filter((item) =>
-        item.toLowerCase().includes(query.toLowerCase())
-    );
+
     // const navLinks = <>
     //     <li><Link href='/' ><FaHome className="w-10 h-8" /></Link></li>
     //     <li><Link href='/reels'><MdOutlineOndemandVideo className="w-10 h-8" /></Link></li>
@@ -25,10 +23,10 @@ const Navber = () => {
                 <div className="px-4 py-3 flex justify-between items-center">
                     {/* Logo + Serchbar */}
                     <div className="flex items-center gap-2">
-                        <Image src='/Logo.png' alt="Linker" className="w-10 h-10 object-contain" width={70} height={30} />
+                        <Image src='/Logo.png' alt="Linker" className=" object-contain" width={40} height={30} />
                         <span className="text-xl font-bold text-cyan-400">LINKER</span>
 
-                        <div className="flex items-center bg-gray-800 rounded-full px-3 py-2 ml-3">
+                        <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-3 py-2 ml-3">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5 text-gray-400"
@@ -44,6 +42,7 @@ const Navber = () => {
                                 className="bg-transparent outline-none text-sm px-2 w-40 focus:w-44 transition-all duration-300"
                             />
                         </div>
+                        <ToggleSerchbar />
                     </div>
                 </div>
             </nav>
