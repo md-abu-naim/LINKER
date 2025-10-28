@@ -1,18 +1,12 @@
-'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineOndemandVideo } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FaBell, FaEnvelope, FaBars, FaTimes, FaHome, FaUserFriends } from "react-icons/fa";
+import { FaBell, FaHome, FaUserFriends } from "react-icons/fa";
 import ToggleSerchbar from "./ToggleSerchbar";
-import { useState } from "react";
 
 
 const Navber = () => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const navLink = ["Home", "Explore", "Posts", "About"];
 
     const navLinks = <>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/' ><FaHome className="text-3xl" /></Link></li>
@@ -25,24 +19,24 @@ const Navber = () => {
                 <div className="px-4 py-3 flex justify-between items-center">
                     {/*Left: Logo + Serchbar */}
                     <div className="flex items-center gap-2 relative">
-                        <Image src='/Logo.png' alt="Linker" className=" object-contain" width={40} height={30} />
+                        <Image src='/Logo.png' alt="Linker" width={40} height={30} />
                         <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                         <ToggleSerchbar />
                     </div>
 
                     {/*Center: Navlinks */}
-                    <ul className="flex items-center justify-center font-medium space-x-3">
+                    <ul className="flex items-center justify-center font-medium space-x-5 lg:mr-24">
                         {navLinks}
                     </ul>
 
                     {/* Right: Message, Notification, Avater Dropdwon */}
-                    <div className="flex items-center gap-5">
+                    <div className="flex items-center justify-between gap-5">
                         <Link href='/notifications' title="Cart Items" className="relative">
-                            <button className="text-2xl hover:text-cyan-400 transition-colors"><FaBell /></button>
+                            <button className="text-3xl hover:text-cyan-400 transition-colors"><FaBell /></button>
                             <span className="absolute -top-2 -right-2 bg-cyan-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">9+</span>
                         </Link>
-                        <Link href='/message' title="Cart Items" className="relative">
-                            <button className="text-2xl hover:text-cyan-400 transition-colors"><LuMessageCircleHeart /></button>
+                        <Link href='/message' title="Cart Items" className="relative z-10">
+                            <button className="text-3xl hover:text-cyan-400 transition-colors"><LuMessageCircleHeart /></button>
                             <span className="absolute -top-2 -right-2 bg-cyan-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">9+</span>
                         </Link>
                         <div className="dropdown">
