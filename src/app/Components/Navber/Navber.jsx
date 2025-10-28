@@ -1,22 +1,23 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import { FaBell, FaEnvelope, FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { MdOutlineOndemandVideo } from "react-icons/md";
+import { FaBell, FaEnvelope, FaBars, FaTimes, FaHome, FaUserFriends } from "react-icons/fa";
 import ToggleSerchbar from "./ToggleSerchbar";
+import { useState } from "react";
 
 
 const Navber = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const navLinks = ["Home", "Explore", "Posts", "About"];
+    const navLink = ["Home", "Explore", "Posts", "About"];
 
-    // const navLinks = <>
-    //     <li><Link href='/' ><FaHome className="w-10 h-8" /></Link></li>
-    //     <li><Link href='/reels'><MdOutlineOndemandVideo className="w-10 h-8" /></Link></li>
-    //     <li><Link href='/friends'><FaUserFriends className="w-10 h-8" /></Link></li>
-    // </>
+    const navLinks = <>
+        <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/' ><FaHome className="w-10 h-8" /></Link></li>
+        <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/explore'><MdOutlineOndemandVideo className="w-10 h-8" /></Link></li>
+        <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/friends'><FaUserFriends className="w-10 h-8" /></Link></li>
+    </>
     return (
         <div>
            <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky z-50">
@@ -24,9 +25,14 @@ const Navber = () => {
                     {/* Logo + Serchbar */}
                     <div className="flex items-center gap-2 relative">
                         <Image src='/Logo.png' alt="Linker" className=" object-contain" width={40} height={30} />
-                        <span className="text-xl font-bold text-cyan-400">LINKER</span>
+                        <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                         <ToggleSerchbar />
                     </div>
+
+                    {/* Navlinks in center */}
+                    <ul className="flex items-center justify-center font-medium space-x-3">
+                        {navLinks}
+                    </ul>
                 </div>
             </nav>
             <nav className="w-full bg-gray-900 text-gray-200 border-b border-gray-800 shadow-md sticky top-0 z-50">
@@ -58,7 +64,7 @@ const Navber = () => {
 
                     {/* CENTER: Nav Links (hidden on mobile) */}
                     <ul className="hidden md:flex space-x-8 font-medium">
-                        {navLinks.map((link) => (
+                        {navLink.map((link) => (
                             <li
                                 key={link}
                                 className="hover:text-cyan-400 transition cursor-pointer"

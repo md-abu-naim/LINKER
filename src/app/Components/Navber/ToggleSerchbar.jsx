@@ -6,6 +6,7 @@ const ToggleSerchbar = () => {
     const [active, setActive] = useState(false);
     return (
         <div className="">
+            {/* Large Device Search Bar */}
             <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-3 py-2 ml-3">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
