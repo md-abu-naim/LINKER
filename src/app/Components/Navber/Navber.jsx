@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineOndemandVideo } from "react-icons/md";
+import { MdOutlineExplore } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
 import { FaBell, FaHome, FaUserFriends } from "react-icons/fa";
 import ToggleSerchbar from "./ToggleSerchbar";
@@ -10,7 +10,7 @@ const Navber = () => {
 
     const navLinks = <>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/' ><FaHome className="text-xl md:text-3xl" /></Link></li>
-        <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/explore'><MdOutlineOndemandVideo className="text-xl md:text-3xl" /></Link></li>
+        <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/explore'><MdOutlineExplore className="text-xl md:text-3xl" /></Link></li>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/friends'><FaUserFriends className="text-xl md:text-3xl" /></Link></li>
     </>
     return (
@@ -25,7 +25,7 @@ const Navber = () => {
                     </div>
 
                     {/*Center: Navlinks */}
-                    <ul className="flex items-center font-medium gap-4 sm:gap-6 lg:mr-24">
+                    <ul className="hidden md:flex items-center font-medium gap-4 sm:gap-6 lg:mr-24">
                         {navLinks}
                     </ul>
 
