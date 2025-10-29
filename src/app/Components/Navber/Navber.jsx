@@ -72,11 +72,11 @@ const Navber = () => {
                         {/* Avater Dropdown */}
                         <div className="dropdown">
                             <button title="Account" tabIndex={0} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-cyan-400">
-                                <Image src="" alt="User" width={24} height={20} className="w-24 h-6" />
+                                <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="w-24 h-6" />
                             </button>
                             <div tabIndex="-1" className="dropdown-content z-50 mt-2 bg-gray-900 rounded-md shadow-lg w-2xs py-2 border right-0 border-cyan-700">
                                 <Link href="/profile" className="flex items-center gap-2 p-3 mx-3 mb-3 border border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
-                                    <Image src="" alt="User" width={24} height={20} className="inline-block w-9 h-9 border border-cyan-400 rounded-full " />
+                                    <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-9 h-9 border border-cyan-400 rounded-full " />
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-sm">Mohammad Abu Naim</span>
                                         <span className="text-gray-400 text-xs">View Profile</span>
