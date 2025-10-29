@@ -39,7 +39,7 @@ const Navber = () => {
                         {/* Notification Dropdown */}
                         <div className="dropdown">
                             <button tabIndex={0} title="Notifications" className="relative bg-gray-800 p-1 px-1.5 rounded-full">
-                                <button className="text-xl md:text-2xl hover:text-cyan-400 transition-colors"><FaBell /></button>
+                                <span className="text-xl md:text-2xl hover:text-cyan-400 transition-colors"><FaBell /></span>
                                 <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white font-semibold rounded-full w-5 h-4 text-[11px] flex items-center justify-center">9+</span>
                             </button>
 
