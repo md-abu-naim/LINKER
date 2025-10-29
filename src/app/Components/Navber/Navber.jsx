@@ -13,12 +13,12 @@ const Navber = () => {
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/' ><FaHome className="text-xl md:text-3xl" /></Link></li>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/explore'><MdOutlineExplore className="text-xl md:text-3xl" /></Link></li>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/friends'><FaUserFriends className="text-xl md:text-3xl" /></Link></li>
-        
+
     </>
     return (
         <div>
             <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky z-50">
-                <div className="flex justify-between items-center px-3 sm:px-4">
+                <div className="flex justify-between items-center pt-1 px-3 sm:px-4">
 
                     {/*Left: Logo + Searchbar */}
                     <div className="flex items-center gap-2">
@@ -31,10 +31,10 @@ const Navber = () => {
 
                     {/*Center: Navlinks */}
                     <div >
-                    
-                            {/* {navLinks} */}
-                            <NavLinks />
-                        
+
+                        {/* {navLinks} */}
+                        <NavLinks />
+
                         <div className="md:hidden p-2">
                             <Searchbar />
                         </div>

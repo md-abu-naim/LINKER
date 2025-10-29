@@ -1,38 +1,33 @@
+'use client';
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { MdOutlineExplore } from "react-icons/md";
-import NavLinks from "./NavLinks";
 
 const MobileNavber = () => {
+    const pathname = usePathname()
+
+    const navLinks = [
+        { href: '/', icon: <FaHome className="text-2xl" />, title: 'Home' },
+        { href: '/friends', icon: <FaUserFriends className="text-2xl" />, title: 'Friends' },
+        { href: '/explore', icon: <MdOutlineExplore className="text-2xl" />, title: 'Explore' },
+        { href: '/profile', icon: <FaUser className="text-2xl" />, title: 'Profile' },
+    ]
+
     return (
         <div>
             <nav className="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 shadow-lg z-50 md:hidden">
-                <ul className="flex justify-around items-center py-2">
-                    {/* <li>
-                        <Link href={'/'} className="flex flex-col items-center hover:text-cyan-400 transition-colors">
-                            <FaHome className="text-2xl" />
-                            <span>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/frirends'} className="flex flex-col items-center hover:text-cyan-400 transition-colors">
-                            <FaUserFriends className="text-2xl" />
-                            <span>Friends</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/explore'} className="flex flex-col items-center hover:text-cyan-400 transition-colors">
-                            <MdOutlineExplore className="text-2xl" />
-                            <span>Explore</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/profile'} className="flex flex-col items-center hover:text-cyan-400 transition-colors">
-                            <FaUser className="text-2xl" />
-                            <span>Profile</span>
-                        </Link>
-                    </li> */}
-                    <NavLinks />
+                <ul className="flex justify-around items-center">
+                    {
+                        navLinks?.map(link => (
+                            <li key={link.href} className={`${pathname === link.href && 'border-t-2 border-cyan-600'} py-2 px-3 hover:text-cyan-400 transition-colors`}>
+                                <Link href={link.href} className="flex flex-col items-center">
+                                    {link.icon}
+                                    <span>{link.title}</span>
+                                </Link>
+                            </li>
+                        ))
+                    }
                 </ul>
             </nav>
         </div>
