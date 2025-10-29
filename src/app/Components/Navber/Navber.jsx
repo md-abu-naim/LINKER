@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineExplore } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FaBell, FaHome, FaUserFriends } from "react-icons/fa";
-import ToggleSerchbar from "./ToggleSerchbar";
+import { FaBell, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
+import Searchbar from "./Searchbar";
 
 
 const Navber = () => {
@@ -12,6 +12,7 @@ const Navber = () => {
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/' ><FaHome className="text-xl md:text-3xl" /></Link></li>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/explore'><MdOutlineExplore className="text-xl md:text-3xl" /></Link></li>
         <li className="hover:text-cyan-400 transition cursor-pointer"><Link href='/friends'><FaUserFriends className="text-xl md:text-3xl" /></Link></li>
+        
     </>
     return (
         <div>
@@ -23,7 +24,7 @@ const Navber = () => {
                         <Image src='/Logo.png' alt="Linker" width={38} height={28} className="w-9 h-auto" />
                         <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                         <div className="hidden md:block">
-                            <ToggleSerchbar />
+                            <Searchbar />
                         </div>
                     </div>
 
@@ -33,7 +34,7 @@ const Navber = () => {
                             {navLinks}
                         </ul>
                         <div className="md:hidden p-2">
-                            <ToggleSerchbar />
+                            <Searchbar />
                         </div>
                     </div>
 
@@ -49,11 +50,6 @@ const Navber = () => {
                         </Link>
                         <div className="dropdown">
                             <button tabIndex={0} className="w-7 h- sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-cyan-400">
-                                {/* <img
-                                    src="https://i.pravatar.cc/150?img=12"
-                                    alt="User"
-                                    className="w-full h-full object-cover"
-                                /> */}
                                 <Image src="" alt="User" width={24} height={20} className="w-24 h-6" />
                             </button>
                             <div tabIndex="-1" className="dropdown-content z-50 mt-2 bg-cyan-950 rounded-md shadow-lg w-40 py-2 border right-0 border-cyan-700">

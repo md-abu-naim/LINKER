@@ -1,6 +1,5 @@
 
-
-const ToggleSerchbar = () => {
+const Searchbar = () => {
     return (
         <div className="flex items-center bg-gray-800 rounded-full px-3 py-2 flex-1 max-w-xs sm:max-w-sm md:max-w-md">
             <svg
@@ -21,4 +20,4 @@ const ToggleSerchbar = () => {
     );
 };
 
-export default ToggleSerchbar;
+export default Searchbar;
