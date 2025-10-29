@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { MdOutlineExplore } from "react-icons/md";
+import NavLinks from "./NavLinks";
 
 const MobileNavber = () => {
     return (
         <div>
             <nav className="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 shadow-lg z-50 md:hidden">
                 <ul className="flex justify-around items-center py-2">
-                    <li>
+                    {/* <li>
                         <Link href={'/'} className="flex flex-col items-center hover:text-cyan-400 transition-colors">
                             <FaHome className="text-2xl" />
                             <span>Home</span>
@@ -30,7 +31,8 @@ const MobileNavber = () => {
                             <FaUser className="text-2xl" />
                             <span>Profile</span>
                         </Link>
-                    </li>
+                    </li> */}
+                    <NavLinks />
                 </ul>
             </nav>
         </div>

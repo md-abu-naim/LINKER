@@ -4,6 +4,7 @@ import { MdOutlineExplore } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
 import { FaBell, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import Searchbar from "./Searchbar";
+import NavLinks from "./NavLinks";
 
 
 const Navber = () => {
@@ -17,7 +18,7 @@ const Navber = () => {
     return (
         <div>
             <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky z-50">
-                <div className="flex justify-between items-center px-3 sm:px-4 py-2">
+                <div className="flex justify-between items-center px-3 sm:px-4">
 
                     {/*Left: Logo + Searchbar */}
                     <div className="flex items-center gap-2">
@@ -30,9 +31,10 @@ const Navber = () => {
 
                     {/*Center: Navlinks */}
                     <div >
-                        <ul className="hidden md:flex items-center font-medium gap-4 sm:gap-6 lg:mr-24">
-                            {navLinks}
-                        </ul>
+                    
+                            {/* {navLinks} */}
+                            <NavLinks />
+                        
                         <div className="md:hidden p-2">
                             <Searchbar />
                         </div>
