@@ -1,10 +1,10 @@
 import React from 'react';
-import LeftAside from './Components/HomePage/LeftAside';
+import LeftAside from './Components/HomePage/LeftAside ';
 
 const Home = () => {
   return (
     <div className='grid grid-cols-12 gap-6 p-4 min-h-screen'>
-      <aside className='col-span-3 hidden lg:block'>
+      <aside className='col-span-3 hidden lg:block overflow-y-auto h-screen scrollbar-auto'>
         <LeftAside />
       </aside>
       <main className='col-span-12 lg:col-span-6 p-4 border'>
