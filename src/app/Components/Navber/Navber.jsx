@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaBookmark } from "react-icons/fa";
 import Searchbar from "./Searchbar";
 import NavLinks from "./NavLinks";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdFeedback, MdHelpOutline, MdLogout } from "react-icons/md";
+import { IoMdTimer } from "react-icons/io";
 
 const Navber = () => {
     return (
@@ -82,9 +83,17 @@ const Navber = () => {
                                         <span className="text-gray-400 text-xs">View Profile</span>
                                     </div>
                                 </Link>
-                                <Link href="/settings" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
-                                    <span className="text-xl">Settings & Privacy</span>
+                                <Link href="/saved" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><FaBookmark /></span>
+                                    <span className="text-xl">Saved Favorites</span>
+                                </Link>
+                                <Link href="/saved" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><FaBookmark /></span>
+                                    <span className="text-xl">Saved Favorites</span>
+                                </Link>
+                                <Link href="/memories" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoMdTimer /></span>
+                                    <span className="text-xl">Memories</span>
                                 </Link>
                                 <Link href="/help&support" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
                                     <span className="text-xl bg-gray-800 p-2 rounded-full"><MdHelpOutline /></span>

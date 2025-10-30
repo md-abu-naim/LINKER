@@ -39,7 +39,7 @@ const LeftAside = () => {
                     <span className="text-xl">Message</span>
                 </Link>
                 <Link href="/memories" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoMdTimer /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-[#3897E9]"><IoMdTimer /></span>
                     <span className="text-xl">Memories</span>
                 </Link>
                 <Link href="/settings" className="flex items-center gap-2 p-2 hover:bg-gray-700">
