@@ -87,13 +87,13 @@ const Navber = () => {
                                     <span className="text-xl bg-gray-800 p-2 rounded-full"><FaBookmark /></span>
                                     <span className="text-xl">Saved Favorites</span>
                                 </Link>
-                                <Link href="/saved" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><FaBookmark /></span>
-                                    <span className="text-xl">Saved Favorites</span>
-                                </Link>
                                 <Link href="/memories" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
                                     <span className="text-xl bg-gray-800 p-2 rounded-full"><IoMdTimer /></span>
                                     <span className="text-xl">Memories</span>
+                                </Link>
+                                <Link href="/settings" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
+                                    <span className="text-xl">Settings & Privacy</span>
                                 </Link>
                                 <Link href="/help&support" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
                                     <span className="text-xl bg-gray-800 p-2 rounded-full"><MdHelpOutline /></span>

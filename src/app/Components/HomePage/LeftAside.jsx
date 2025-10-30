@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaBookmark, FaUserFriends } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdTimer } from "react-icons/io";
-import { MdNotListedLocation, MdOutlineExplore } from "react-icons/md";
+import { MdFeedback, MdHelpOutline, MdNotListedLocation, MdOutlineExplore } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
 
 const LeftAside = () => {
@@ -35,7 +35,7 @@ const LeftAside = () => {
                     <span className="text-xl">Saved Favorites</span>
                 </Link>
                 <Link href="/message" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-blue-600"><LuMessageCircleHeart /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full"><LuMessageCircleHeart /></span>
                     <span className="text-xl">Message</span>
                 </Link>
                 <Link href="/memories" className="flex items-center gap-2 p-2 hover:bg-gray-700">
@@ -43,15 +43,15 @@ const LeftAside = () => {
                     <span className="text-xl">Memories</span>
                 </Link>
                 <Link href="/settings" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-white"><IoSettingsOutline /></span>
                     <span className="text-xl">Settings & Privacy</span>
                 </Link>
                 <Link href="/help&support" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full"><MdHelpOutline /></span>
                     <span className="text-xl">Help & Support</span>
                 </Link>
                 <Link href="/feedback" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-white"><MdFeedback /></span>
                     <span className="text-xl">Give Feedback</span>
                 </Link>
             </div>
