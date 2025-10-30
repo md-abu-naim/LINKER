@@ -3,7 +3,7 @@ import Main from './Components/HomePage/Main';
 
 const Home = () => {
   return (
-    <div className='grid grid-cols-12 gap-6 p-4'>
+    <div className='grid grid-cols-12 gap-6 md:p-4 px-2'>
 
       {/* Left Sidebar */}
       <aside className='col-span-3 hidden lg:block h-screen overflow-y-auto scroll-smooth'>
@@ -11,7 +11,7 @@ const Home = () => {
       </aside>
 
       {/* Main Content */}
-      <main className='col-span-12 lg:col-span-6 px-10'>
+      <main className='col-span-12 lg:col-span-6 md:px-10'>
         <Main />
       </main>
 
