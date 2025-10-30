@@ -23,35 +23,35 @@ const LeftAside = () => {
             </Link>
             <div className="rounded-md shadow-lg py-2 mt-5">
                 <Link href="/friends" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><FaUserFriends /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-blue-500"><FaUserFriends /></span>
                     <span className="text-xl">Friends</span>
                 </Link>
                 <Link href="/explore" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><MdOutlineExplore /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-red-500"><MdOutlineExplore /></span>
                     <span className="text-xl">Explore Videos</span>
                 </Link>
                 <Link href="/saved" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><FaBookmark /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-[#AB68E9]"><FaBookmark /></span>
                     <span className="text-xl">Saved Favorites</span>
                 </Link>
                 <Link href="/message" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><LuMessageCircleHeart /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-blue-600"><LuMessageCircleHeart /></span>
                     <span className="text-xl">Message</span>
                 </Link>
                 <Link href="/memories" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoMdTimer /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoMdTimer /></span>
                     <span className="text-xl">Memories</span>
                 </Link>
                 <Link href="/settings" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
                     <span className="text-xl">Settings & Privacy</span>
                 </Link>
                 <Link href="/help&support" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
                     <span className="text-xl">Help & Support</span>
                 </Link>
                 <Link href="/feedback" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
+                    <span className="text-xl bg-gray-800 p-2 rounded-full text-cyan-400"><IoSettingsOutline /></span>
                     <span className="text-xl">Give Feedback</span>
                 </Link>
             </div>

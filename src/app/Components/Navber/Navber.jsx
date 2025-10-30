@@ -46,7 +46,7 @@ const Navber = () => {
                             <div tabIndex="-1" className="dropdown-content z-50 mt-2 bg-gray-900 rounded-md shadow-lg w-lg py-2 border right-0 border-cyan-700">
                                 <h2 className="text-2xl mx-4 font-semibold">Notifications</h2>
 
-                                <Link href="/settings" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
                                     <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-14 h-14 border border-cyan-400 rounded-full " />
                                     <div className="flex flex-col">
                                         <span className="text-xl">Mohammad abu Naim <span className="text-sm">and 3 others reacted to your photo: {'jfds'}</span></span>
