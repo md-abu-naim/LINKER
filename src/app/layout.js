@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import 'simplebar-react/dist/simplebar.min.css';
 import Navber from "./Components/Navber/Navber";
 import MobileNavber from "./Components/Navber/MobileNavber";
 

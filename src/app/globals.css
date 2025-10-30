@@ -1,2 +1,28 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Scrollbar only shows on hover or scroll */
+.scrollbar-auto {
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.scrollbar-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(107, 114, 128, 0.6); /* gray-500 */
+  border-radius: 9999px;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.3s;
+}
+
+.scrollbar-auto:hover::-webkit-scrollbar-thumb,
+.scrollbar-auto:active::-webkit-scrollbar-thumb {
+  opacity: 1; /* show on hover or scroll */
+}
+
+.scrollbar-auto::-webkit-scrollbar-track {
+  background: transparent;
+}

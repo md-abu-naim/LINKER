@@ -2,11 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdNotListedLocation } from "react-icons/md";
-import "./HomePage.css";
 
 const LeftAside = () => {
     return (
-        <div>
+        <>
             <Link href={'/profile'} title="Go to Profile" className="shadow-lg rounded-xl border border-gray-700 block">
                 <Image src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" alt="Cover" width={300} height={250} className="w-full h-28 bg-cover rounded-t-2xl" />
                 <div className="-mt-16 flex flex-col items-center p-3 pb-5">
@@ -20,7 +19,7 @@ const LeftAside = () => {
                 </div>
             </Link>
             <div className="rounded-md shadow-lg py-2 mt-5">
-                <Link href="/settings" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                <Link href="/settings" className="flex items-center gap-2  py-2 hover:bg-gray-700">
                     <span className="text-xl bg-gray-800 p-2 rounded-full"><IoSettingsOutline /></span>
                     <span className="text-xl">Settings & Privacy</span>
                 </Link>
@@ -61,7 +60,7 @@ const LeftAside = () => {
                     <span className="text-xl">Log Out</span>
                 </button>
             </div>
-        </div>
+        </>
     );
 };
 
