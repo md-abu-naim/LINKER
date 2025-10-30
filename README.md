@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LINKER - Social Media Mini Platform
 
-## Getting Started
+![Linker](https://linkerbd.vercel.app/)
 
-First, run the development server:
+**LINKER** is a modern, fully responsive social media mini-platform built with **Next.js**, **Tailwind CSS**. The platform is designed to provide a smooth, fast, and intuitive user experience similar to popular platforms like Facebook and LinkedIn. It includes a clean UI, responsive layouts, and key social media features.
+
+---
+
+## 🚀 Features
+
+### General
+- Fully **responsive design** for mobile, tablet, and desktop.
+- Built with **Next.js** for fast server-side rendering and SEO optimization.
+- Clean and modern UI using **Tailwind CSS** and **DaisyUI**.
+- Sticky top navbar and optional bottom navbar for mobile devices.
+- Fully modular and reusable React components.
+
+### Navigation
+- **Left Section:** Logo, site name, and search bar.
+- **Center Section:** Main navigation links with active state.
+- **Right Section:** Notifications, Messages, and User Avatar dropdown.
+
+### Social Media Features
+- Dynamic **News Feed** layout with posts.
+- Sidebar for additional content such as friends, trending posts, or widgets.
+- Posts support **like/react functionality**.
+- User profile cards with images, names, and descriptions.
+- Responsive **3-column layout** on desktop, single-column on mobile.
+
+### UI Enhancements
+- **Smooth scrolling** for sidebars.
+- Custom **scrollbars** that show on hover or while scrolling.
+- Dropdown menus for profile actions (Profile, Settings, Logout).
+- Search bar expands smoothly on focus.
+
+### Components
+- Navbar
+- Sidebar (Left & Right)
+- News Feed / Main Content
+- Profile Card
+- Post Card
+- Search Bar
+- User Avatar Dropdown
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js, React 19, Tailwind CSS, DaisyUI
+- **Icons:** react-icons
+- **Deployment:** Vercel
+- **Optional:** Firebase Authentication, JWT, MongoDB, Stripe (if extended)
+
+---
+
+## ⚡ Deployment
+
+The project can be easily deployed on **Vercel**:
+
+1. Push your project to GitHub.
+2. Go to [Vercel](https://vercel.com/) and import the repository.
+3. Configure build settings (Framework: Next.js, Build Command: `npm run build`, Output Directory: `.next`).
+4. Deploy and share your live site URL.
+
+---
+
+## 🔧 Usage
+
+1. Clone the repository:
 
 ```bash
+git clone https://github.com/md-abu-naim/LINKER.git
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
+Open http://localhost:3000 to view your project.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
