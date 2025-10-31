@@ -10,7 +10,6 @@ const Main = () => {
 
     return (
         <div>
-
             {/* Post Box */}
             <div className="shadow-lg p-1 md:pt-3 md:p-5 rounded-lg md:space-y-4">
                 <div className="flex items-center gap-2">
