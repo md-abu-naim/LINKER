@@ -1,8 +1,8 @@
-'use client'
+"use client";
+
 import { FaPhotoVideo } from "react-icons/fa";
 
-const ImageInput = () => {
-
+const MediaInput = () => {
     return (
         <button onClick={() => document.getElementById('fileInput').click()} className="flex items-center gap-2">
             <span className="text-2xl text-green-500"><FaPhotoVideo /></span>
@@ -12,4 +12,5 @@ const ImageInput = () => {
     );
 };
 
-export default ImageInput;
+export default MediaInput;
+

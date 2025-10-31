@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import {  FaVideo } from "react-icons/fa";
-import ImageInput from "./ImageInput";
+import { FaVideo } from "react-icons/fa";
+import MediaInput from "./MediaInput";
 
 const Main = () => {
 
     return (
         <div>
+
+            {/* Post Box */}
             <div className="shadow-lg p-1 md:pt-3 md:p-5 rounded-lg md:space-y-4">
                 <div className="flex items-center gap-2">
                     <Link href="/profile"><Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-12 md:h-11 h-10 border border-cyan-400 rounded-full" /></Link>
@@ -19,11 +21,26 @@ const Main = () => {
                         <span className="text-2xl text-red-500"><FaVideo /></span>
                         <span className="text-2xl">Live Video</span>
                     </button>
-                    <ImageInput />
+                    <MediaInput />
                     <button className="flex items-center gap-2">
                         <span className="text-2xl text-yellow-400"><BsEmojiSunglasses /></span>
                         <span className="text-2xl">Feelings</span>
                     </button>
+                </div>
+
+                {/* The button to open modal */}
+                <label htmlFor="my_modal_6" className="btn">open modal</label>
+
+                {/* Put this part before </body> tag */}
+                <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+                <div className="modal" role="dialog">
+                    <div className="modal-box">
+                        <h3 className="text-lg font-bold">Hello!</h3>
+                        <p className="py-4">This modal works with a hidden checkbox!</p>
+                        <div className="modal-action">
+                            <label htmlFor="my_modal_6" className="btn">Close!</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
