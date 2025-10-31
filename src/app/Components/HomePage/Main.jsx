@@ -43,7 +43,7 @@ const Main = () => {
                             <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-11 h-11 border border-cyan-400 rounded-full " />
                             <div className="flex flex-col">
                                 <span className="font-semibold text-md">Mohammad Abu Naim</span>
-                                
+
                                 <select defaultValue="Pick a font" className="select select-ghost bg-gray-700">
                                     <option>
                                         <span><MdPublic /></span>
