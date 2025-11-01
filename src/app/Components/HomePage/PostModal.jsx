@@ -77,24 +77,7 @@ const PostModal = () => {
                 </div>
             </div>
 
-            {/* 
-
-                    <div className="flex items-center gap-3 mt-5">
-                        
-                        <div className="flex flex-col">
-                            <span className="font-semibold text-lg">Mohammad Abu Naim</span>
-                            <select
-                                name="visibility"
-                                defaultValue="public"
-                                className="select select-sm w-32 bg-gray-800/80 border border-gray-700 outline-none focus:ring-0 text-sm rounded-md text-gray-200"
-                            >
-                                <option value="public">🌍 Public</option>
-                                <option value="friends">👥 Friends</option>
-                                <option value="private">🔒 Only Me</option>
-                            </select>
-                        </div>
-                    </div>
-
+            {/*
                     <div className="relative mt-4">
                         <textarea
                             value={text}
