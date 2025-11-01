@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaVideo } from "react-icons/fa";
-import MediaInput from "./MediaInput";
 import PostModal from "./PostModal";
+import { MediaInput } from "./MediaInput";
 
 const Main = () => {
 
@@ -17,12 +17,12 @@ const Main = () => {
                 </div>
                 <hr className="text-gray-700 hidden md:block" />
                 <div className="hidden md:flex items-center justify-around">
-                    <button className="flex items-center gap-2">
+                    <button className="flex items-center gap-2 hover:bg-gray-700 p-1 px-2 rounded-md">
                         <span className="text-2xl text-red-500"><FaVideo /></span>
                         <span className="text-2xl">Live Video</span>
                     </button>
                     <MediaInput />
-                    <button className="flex items-center gap-2">
+                    <button className="flex items-center gap-2 hover:bg-gray-700 p-1 px-2 rounded-md">
                         <span className="text-2xl text-yellow-400"><BsEmojiSunglasses /></span>
                         <span className="text-2xl">Feelings</span>
                     </button>
