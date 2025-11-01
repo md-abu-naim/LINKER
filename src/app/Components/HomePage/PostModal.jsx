@@ -23,7 +23,7 @@ const PostModal = () => {
         <div className="modal" role="dialog">
             <div onClick={handleWrapperClick} className="flex items-center justify-center backdrop:blur-md bg-black/40" >
                 <div className="modal-box relative max-w-lg w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white border border-cyan-400/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
-                    
+
                     {/* Header */}
                     <div className="flex items-center justify-center border-b border-gray-700 pb-3">
                         <h2 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Create a New Post</h2>
@@ -44,25 +44,27 @@ const PostModal = () => {
                     </div>
 
                     {/* Textarea */}
-                    <textarea value={text}
-                        className=" w-full p-4 text-xl focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?"
-                        rows={7} onChange={e => setText(e.target.value)}
-                    ></textarea>
-                    <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-20 right-6 text-2xl rounded-full">🙂</button>
-                    {
-                        show && <div className="emoji-container absolute bottom-28 right-0 z-20">
-                            <EmojiPicker
-                                onEmojiClick={(emojiData) => setText((t) => t + emojiData.emoji)}
-                                theme="dark"
-                                lazyLoadEmojis
-                                searchDisabled={true}
-                                skinTonesDisabled={true}
-                                previewConfig={{ showPreview: false }}
-                                width={300}
-                                height={350}
-                            />
-                        </div>
-                    }
+                    <div className="relative mt-4">
+                        <textarea value={text}
+                            className="w-full p-4 text-lg bg-gray-700/70 focus:outline-none focus:border-cyan-400 resize-none rounded-2xl border border-gray-700 transition-all duration-200 placeholder-gray-400 shadow-inner" placeholder="Whats on your mind? Mohammad Abu?"
+                            rows={6} onChange={e => setText(e.target.value)}
+                        ></textarea>
+                        <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-20 right-6 text-2xl rounded-full">🙂</button>
+                        {
+                            show && <div className="emoji-container absolute bottom-28 right-0 z-20">
+                                <EmojiPicker
+                                    onEmojiClick={(emojiData) => setText((t) => t + emojiData.emoji)}
+                                    theme="dark"
+                                    lazyLoadEmojis
+                                    searchDisabled={true}
+                                    skinTonesDisabled={true}
+                                    previewConfig={{ showPreview: false }}
+                                    width={300}
+                                    height={350}
+                                />
+                            </div>
+                        }
+                    </div>
 
                     {/* Activities */}
                     <div className="flex items-center justify-between border border-gray-700 p-2 rounded-lg">
@@ -76,16 +78,8 @@ const PostModal = () => {
                     </div>
                 </div>
             </div>
-
             {/*
                     <div className="relative mt-4">
-                        <textarea
-                            value={text}
-                            onChange={(e) => setText(e.target.value)}
-                            className="w-full bg-gray-900/70 text-lg p-4 rounded-2xl resize-none border border-gray-700 focus:outline-none focus:border-cyan-400 transition-all duration-200 placeholder-gray-400 shadow-inner"
-                            placeholder="What's on your mind, Mohammad Abu?"
-                            rows={6}
-                        ></textarea>
 
                         <button
                             onClick={() => setShow(!show)}
