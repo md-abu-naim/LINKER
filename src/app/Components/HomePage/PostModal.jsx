@@ -49,18 +49,21 @@ const PostModal = () => {
                             className="w-full p-4 text-lg bg-gray-700/70 focus:outline-none focus:border-cyan-400 resize-none rounded-2xl border border-gray-700 transition-all duration-200 placeholder-gray-400 shadow-inner" placeholder="Whats on your mind? Mohammad Abu?"
                             rows={6} onChange={e => setText(e.target.value)}
                         ></textarea>
-                        <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-20 right-6 text-2xl rounded-full">🙂</button>
+                        <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-4 right-4 text-3xl rounded-full transition-transform duration-200 hover:scale-125 hover:rotate-6">
+                            <span className="animate-bounce">🙂</span>
+                        </button>
+
                         {
-                            show && <div className="emoji-container absolute bottom-28 right-0 z-20">
+                            show && <div className="emoji-container absolute bottom-16 right-0 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
                                 <EmojiPicker
                                     onEmojiClick={(emojiData) => setText((t) => t + emojiData.emoji)}
                                     theme="dark"
                                     lazyLoadEmojis
-                                    searchDisabled={true}
-                                    skinTonesDisabled={true}
+                                    searchDisabled
+                                    skinTonesDisabled
                                     previewConfig={{ showPreview: false }}
-                                    width={300}
-                                    height={350}
+                                    width={320}
+                                    height={360}
                                 />
                             </div>
                         }
@@ -81,13 +84,6 @@ const PostModal = () => {
             {/*
                     <div className="relative mt-4">
 
-                        <button
-                            onClick={() => setShow(!show)}
-                            title="Emoji"
-                            className="emoji-btn absolute bottom-4 right-4 text-3xl rounded-full transition-transform duration-200 hover:scale-125 hover:rotate-6"
-                        >
-                            <span className="animate-bounce">🙂</span>
-                        </button>
 
                         {show && (
                             <div className="emoji-container absolute bottom-16 right-0 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
