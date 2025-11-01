@@ -79,17 +79,15 @@ const PostModal = () => {
                             <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-blue-500 transition-transform hover:scale-110"><FaUserTag /></button>
                         </div>
                     </div>
-                </div>
-            </div>
-            {/*
 
+                    {/* Post Button */}
                     <div className="mt-6">
-                        <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
+                        <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
                             Share Post 🚀
                         </button>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };
