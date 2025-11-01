@@ -3,8 +3,7 @@ import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaVideo } from "react-icons/fa";
 import MediaInput from "./MediaInput";
-import { RxCross1 } from "react-icons/rx";
-import { MdPublic } from "react-icons/md";
+import PostModal from "./PostModal";
 
 const Main = () => {
 
@@ -31,37 +30,7 @@ const Main = () => {
 
                 {/* Post Box Modal */}
                 <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-                <div className="modal" role="dialog">
-                    <div className="modal-box relative">
-                        <div className="flex items-center justify-center pb-4">
-                            <h2 className="text-2xl font-semibold">Create a New Post</h2>
-                            <label htmlFor="my_modal_6" className="absolute right-6 bg-gray-700 hover:bg-gray-800 rounded-full p-2 text-xl"><RxCross1 /></label>
-                        </div>
-                        <hr className="text-gray-700" />
-
-                        {/* Profile */}
-                        <div className="flex items-center gap-2 mt-3">
-                            <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-11 h-11 border border-cyan-400 rounded-full " />
-                            <div className="flex flex-col">
-                                <span className="font-semibold text-md">Mohammad Abu Naim</span>
-
-                                <select name="visibility" defaultValue="public" className="select w-28 h-4 bg-gray-700 border-none outline-none">
-                                    <option value="public">🌍 Public</option>
-                                    <option value="friends">👥 Friends</option>
-                                    <option value="private">🔒 Only Me</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* Textarea */}
-                        <textarea
-                            className="w-full p-4 text-lg focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?"
-                            rows={7}
-                        />
-
-                        <h1>hlejfdsa</h1>
-                    </div>
-                </div>
+                <PostModal />
             </div>
         </div>
     );

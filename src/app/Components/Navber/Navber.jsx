@@ -108,7 +108,6 @@ const Navber = () => {
                                     <span className="text-xl">Log Out</span>
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
