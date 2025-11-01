@@ -10,9 +10,9 @@ const PostModal = () => {
 
     const handleWrapperClick = (e) => {
         const emojiBtn = e.target.closest('.emoji-btn')
-        const emojiContainer =e.target.closest('.emoji-container')
+        const emojiContainer = e.target.closest('.emoji-container')
 
-        if(emojiBtn || emojiContainer) return
+        if (emojiBtn || emojiContainer) return
         setShow(false)
     }
 
@@ -46,7 +46,6 @@ const PostModal = () => {
                         rows={7} onChange={e => setText(e.target.value)}
                     ></textarea>
                     <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-6 right-6 text-2xl rounded-full">🙂</button>
-
                     {
                         show && <div className="emoji-container absolute bottom-10 right-0 z-20">
                             <EmojiPicker
