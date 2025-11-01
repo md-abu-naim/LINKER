@@ -30,7 +30,7 @@ const Main = () => {
                 </div>
 
                 {/* Post Box Modal */}
-                <input type="checkbox" id="my_modal_6" className="modal-toggle h-full" />
+                <input type="checkbox" id="my_modal_6" className="modal-toggle" />
                 <div className="modal" role="dialog">
                     <div className="modal-box relative">
                         <div className="flex items-center justify-center pb-4">
@@ -55,9 +55,11 @@ const Main = () => {
 
                         {/* Textarea */}
                         <textarea
-                            className="w-full  p-4 text-lg focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?"
-                            rows={5}
+                            className="w-full p-4 text-lg focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?"
+                            rows={7}
                         />
+
+                        <h1>hlejfdsa</h1>
                     </div>
                 </div>
             </div>
