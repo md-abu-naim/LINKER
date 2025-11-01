@@ -14,7 +14,7 @@ export const MediaInput = () => {
 
 export const InputMedia = () => {
     return (
-        <button onClick={() => document.getElementById('fileInput').click()} className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md">
+        <button onClick={() => document.getElementById('fileInput').click()} className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md transition-transform hover:scale-110">
             <span className="text-green-500"><FaPhotoVideo /></span>
             <input id="fileInput" type="file" className="hidden" />
         </button>

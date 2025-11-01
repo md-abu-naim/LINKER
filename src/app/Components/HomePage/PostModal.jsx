@@ -70,54 +70,18 @@ const PostModal = () => {
                     </div>
 
                     {/* Activities */}
-                    <div className="flex items-center justify-between border border-gray-700 p-2 rounded-lg">
-                        <h2 className="text-2xl font-semibold">Add to your post</h2>
+                    <div className="flex items-center justify-between border border-gray-700 bg-gray-800/40 backdrop-blur-md p-3 mt-6 rounded-2xl">
+                        <h2 className="text-lg font-semibold mb-2 text-gray-300">Add to your post</h2>
                         <div className="flex items-center justify-around">
                             <InputMedia />
-                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-yellow-400"><BsEmojiSunglasses /></button>
-                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-red-500"><FaVideo /></button>
-                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-blue-500"><FaUserTag /></button>
+                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-yellow-400 transition-transform hover:scale-110"><BsEmojiSunglasses /></button>
+                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-red-500 transition-transform hover:scale-110"><FaVideo /></button>
+                            <button className="text-2xl hover:bg-gray-700 p-1 px-2 rounded-md text-blue-500 transition-transform hover:scale-110"><FaUserTag /></button>
                         </div>
                     </div>
                 </div>
             </div>
             {/*
-                    <div className="relative mt-4">
-
-
-                        {show && (
-                            <div className="emoji-container absolute bottom-16 right-0 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
-                                <EmojiPicker
-                                    onEmojiClick={(emojiData) =>
-                                        setText((t) => t + emojiData.emoji)
-                                    }
-                                    theme="dark"
-                                    lazyLoadEmojis
-                                    searchDisabled
-                                    skinTonesDisabled
-                                    previewConfig={{ showPreview: false }}
-                                    width={320}
-                                    height={360}
-                                />
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="mt-6 border border-gray-700 rounded-2xl p-3 bg-gray-800/40 backdrop-blur-md">
-                        <h3 className="text-lg font-semibold mb-2 text-gray-300">Add to your post</h3>
-                        <div className="flex items-center justify-around">
-                            <InputMedia />
-                            <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-yellow-400 transition-transform hover:scale-110">
-                                <BsEmojiSunglasses />
-                            </button>
-                            <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-red-500 transition-transform hover:scale-110">
-                                <FaVideo />
-                            </button>
-                            <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-blue-500 transition-transform hover:scale-110">
-                                <FaUserTag />
-                            </button>
-                        </div>
-                    </div>
 
                     <div className="mt-6">
                         <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
