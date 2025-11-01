@@ -54,10 +54,8 @@ const Main = () => {
                         </div>
 
                         {/* Textarea */}
-                        {/* <textarea className="w-full focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?" rows={5}></textarea> */}
                         <textarea
-                            className="w-full  p-4 text-lg focus:outline-none resize-none rounded"
-                            placeholder="Whats on your mind? Mohammad Abu?"
+                            className="w-full  p-4 text-lg focus:outline-none resize-none rounded" placeholder="Whats on your mind? Mohammad Abu?"
                             rows={5}
                         />
                     </div>
