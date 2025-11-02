@@ -11,7 +11,7 @@ const Main = () => {
 
     return (
         <div>
-            <div className="rounded-3xl p-4 md:p-6 bg-gray-900/60 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500">
+            <div className="rounded-3xl p-4 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
                     <Link href='/profile'>

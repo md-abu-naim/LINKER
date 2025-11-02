@@ -7,6 +7,17 @@ import { MdFeedback, MdHelpOutline, MdNotListedLocation, MdOutlineExplore } from
 import { LuMessageCircleHeart } from "react-icons/lu";
 
 const LeftAside = () => {
+
+    const navLinks = [
+        { href: "/friends", icon: <FaUserFriends />, color: "text-blue-400", label: "Friends" },
+        { href: "/explore", icon: <MdOutlineExplore />, color: "text-red-400", label: "Explore Videos" },
+        { href: "/saved", icon: <FaBookmark />, color: "text-purple-400", label: "Saved Favorites" },
+        { href: "/message", icon: <LuMessageCircleHeart />, color: "text-pink-400", label: "Messages" },
+        { href: "/memories", icon: <IoMdTimer />, color: "text-cyan-400", label: "Memories" },
+        { href: "/settings", icon: <IoSettingsOutline />, color: "text-gray-300", label: "Settings" },
+        { href: "/help&support", icon: <MdHelpOutline />, color: "text-yellow-400", label: "Help & Support" },
+        { href: "/feedback", icon: <MdFeedback />, color: "text-green-400", label: "Give Feedback" },
+    ]
     return (
         <>
             {/* <Link href={'/profile'} title="Go to Profile" className="shadow-lg rounded-xl border border-gray-700 block">
@@ -62,7 +73,7 @@ const LeftAside = () => {
 
                     {/* Cover */}
                     <div className="relative h-24 w-full rounded-xl overflow-hidden">
-                        <Image className="w-full h-full object-cover bg-cover brightness-[0.85] group-hover:brightness-100 transition-all duration-300" src={'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg'} alt="Cover Image" width={700} height={120}/>
+                        <Image className="w-full h-full object-cover bg-cover brightness-[0.85] group-hover:brightness-100 transition-all duration-300" src={'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg'} alt="Cover Image" width={700} height={120} />
                     </div>
 
                     {/* Profile pic */}
@@ -82,17 +93,26 @@ const LeftAside = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* SIdebar */}
+                <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)]">
+                    <h4 className="text-gray-400 text-sm font-semibold px-3 mb-3 uppercase tracking-wider">Quick Access</h4>
+                    <div className="flex flex-col space-y-0.5">
+                        {
+                            navLinks.map(link => (
+                                <Link key={link.href} href={link.href} className="group flex items-center gap-3 p-2.5 rounded-xl bg-gray-800/40 hover:bg-gray-700/60 hover:shadow-[0_0_18px_rgba(0,255,200,0.08)] transition-all duration-300">
+                                    <span className={`${link.color} text-lg bg-gray-900 p-2 rounded-lg group-hover:scale-110 transition-transform`}>{link.icon}</span>
+                                    <span className="text-gray-200 text-md font-medium group-hover:text-cyan-400 transition-colors">{link.label}</span>
+                                </Link>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
 
             <div className="space-y-6">
-
-
                 {/* Sidebar Menu */}
-                <div className="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)]">
-                    <h4 className="text-gray-400 text-[13px] font-semibold px-3 mb-3 uppercase tracking-wider">
-                        Quick Access
-                    </h4>
-
+                <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)]">
                     <div className="flex flex-col space-y-1.5">
                         {[
                             { href: "/friends", icon: <FaUserFriends />, color: "text-blue-400", label: "Friends" },
