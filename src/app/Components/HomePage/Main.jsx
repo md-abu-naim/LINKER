@@ -107,6 +107,186 @@ const Main = () => {
                         <CommentBox />
                     </div> */}
             </div>
+            <div className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                {/* Header */}
+                <div className="flex items-center justify-between gap-3 p-4 border-b border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                        <div className="flex flex-col">
+                            <span className="font-semibold text-lg">Mohammad Abu Naim</span>
+                            <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+                        </div>
+                    </div>
+                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Post Content */}
+                <div className="p-4">
+                    <p className="text-gray-300 text-base leading-relaxed">
+                        Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
+                    </p>
+
+                    <PostImages />
+                </div>
+
+                {/* ENgagement Bar */}
+                <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaThumbsUp />
+                            <span>Like</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaComment />
+                            <span>Comment</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaShare />
+                            <span>Share</span>
+                        </button>
+                    </div>
+                    <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
+                </div>
+
+                {/* Comment Box */}
+                {/* <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
+                        <Link href={'/profile'}>
+                            <Image className="w-10 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
+                        </Link>
+                        <input className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500" type="text" placeholder="Write a comment.." />
+                        <CommentBox />
+                    </div> */}
+            </div>
+            <div className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                {/* Header */}
+                <div className="flex items-center justify-between gap-3 p-4 border-b border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                        <div className="flex flex-col">
+                            <span className="font-semibold text-lg">Mohammad Abu Naim</span>
+                            <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+                        </div>
+                    </div>
+                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Post Content */}
+                <div className="p-4">
+                    <p className="text-gray-300 text-base leading-relaxed">
+                        Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
+                    </p>
+
+                    <PostImages />
+                </div>
+
+                {/* ENgagement Bar */}
+                <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaThumbsUp />
+                            <span>Like</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaComment />
+                            <span>Comment</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaShare />
+                            <span>Share</span>
+                        </button>
+                    </div>
+                    <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
+                </div>
+
+                {/* Comment Box */}
+                {/* <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
+                        <Link href={'/profile'}>
+                            <Image className="w-10 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
+                        </Link>
+                        <input className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500" type="text" placeholder="Write a comment.." />
+                        <CommentBox />
+                    </div> */}
+            </div>
+            <div className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                {/* Header */}
+                <div className="flex items-center justify-between gap-3 p-4 border-b border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                        <div className="flex flex-col">
+                            <span className="font-semibold text-lg">Mohammad Abu Naim</span>
+                            <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+                        </div>
+                    </div>
+                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Post Content */}
+                <div className="p-4">
+                    <p className="text-gray-300 text-base leading-relaxed">
+                        Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
+                    </p>
+
+                    <PostImages />
+                </div>
+
+                {/* ENgagement Bar */}
+                <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
+                    <div className="flex items-center gap-3">
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaThumbsUp />
+                            <span>Like</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaComment />
+                            <span>Comment</span>
+                        </button>
+                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                            <FaShare />
+                            <span>Share</span>
+                        </button>
+                    </div>
+                    <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
+                </div>
+
+                {/* Comment Box */}
+                {/* <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
+                        <Link href={'/profile'}>
+                            <Image className="w-10 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
+                        </Link>
+                        <input className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500" type="text" placeholder="Write a comment.." />
+                        <CommentBox />
+                    </div> */}
+            </div>
 
 
 
