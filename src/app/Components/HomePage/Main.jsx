@@ -57,7 +57,6 @@ const Main = () => {
                             <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                         </div>
                     </div>
-
                     <button className="p-2 rounded-full hover:bg-gray-700 transition">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
