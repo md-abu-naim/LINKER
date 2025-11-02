@@ -98,42 +98,14 @@ const Main = () => {
                         </div>
                         <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
                     </div>
-                </div>
-            </div>
-            <div className="max-w-xl mx-auto rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,255,200,0.2)]">
-                {/* Engagement Bar */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
-                    <div className="flex items-center gap-3">
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400 transition-colors">
-                            <FaThumbsUp /> <span>Like</span>
-                        </button>
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors">
-                            <FaComment /> <span>Comment</span>
-                        </button>
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-green-400 transition-colors">
-                            <FaShare /> <span>Share</span>
-                        </button>
-                    </div>
-                    <span className="text-gray-500 text-sm">24 Likes · 3 Comments</span>
-                </div>
 
-                {/* Comment Box */}
-                <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
-                    <Image
-                        src="https://i.postimg.cc/65X8XRRf/Face-Care.png"
-                        alt="User"
-                        width={40}
-                        height={40}
-                        className="w-10 h-10 rounded-full border border-gray-600 object-cover"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Write a comment..."
-                        className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500"
-                    />
-                    <button className="text-cyan-400 hover:text-cyan-500 text-xl">
-                        <BsEmojiSunglasses />
-                    </button>
+                    {/* Comment Box */}
+                    <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
+                        <Link href={'/profile'}>
+                            <Image className="w-10 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
+                        </Link>
+                        <input className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500" type="text" placeholder="Write a comment.." />
+                    </div>
                 </div>
             </div>
 
