@@ -12,7 +12,7 @@ const Main = () => {
 
     return (
         <div>
-            <div className="rounded-3xl p-4 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+            <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
                     <Link href='/profile'>
@@ -49,11 +49,11 @@ const Main = () => {
             {/* Post Layout */}
             <div className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                 {/* Header */}
-                <div className="flex items-center justify-between gap-3 p-4 border-b border-gray-700">
+                <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                     <div className="flex items-center gap-3">
                         <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
                         <div className="flex flex-col">
-                            <span className="font-semibold text-lg">Mohammad Abu Naim</span>
+                            <span className="font-semibold text-sm md:text-lg">Mohammad Abu Naim</span>
                             <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                         </div>
                     </div>
@@ -80,23 +80,21 @@ const Main = () => {
                 </div>
 
                 {/* ENgagement Bar */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
-                    <div className="flex items-center gap-3">
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
-                            <FaThumbsUp />
-                            <span>Like</span>
-                        </button>
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
-                            <FaComment />
-                            <span>Comment</span>
-                        </button>
-                        <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
-                            <FaShare />
-                            <span>Share</span>
-                        </button>
-                    </div>
-                    <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
+                <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-t border-gray-700">
+                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                        <FaThumbsUp />
+                        <span>20</span>
+                    </button>
+                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                        <FaComment />
+                        <span>24</span>
+                    </button>
+                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                        <FaShare />
+                        <span>8</span>
+                    </button>
                 </div>
+
 
                 {/* Comment Box */}
                 {/* <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700">
