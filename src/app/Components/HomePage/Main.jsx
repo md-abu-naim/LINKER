@@ -69,88 +69,38 @@ const Main = () => {
                         </svg>
                     </button>
                 </div>
-            </div>
-            <div className="max-w-xl mx-auto rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,255,200,0.2)]">
-                {/* Header */}
-                <div className="flex items-center justify-between gap-3 p-4 border-b border-gray-700">
-                    {/* Left: User Info */}
-                    <div className="flex items-center gap-3">
-                        <Image
-                            src="https://i.postimg.cc/65X8XRRf/Face-Care.png"
-                            alt="User"
-                            width={50}
-                            height={50}
-                            className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover"
-                        />
-                        <div className="flex flex-col">
-                            <span className="text-white font-semibold text-lg">Mohammad Abu Naim</span>
-                            <span className="text-gray-400 text-sm">2 hours ago · 🌍 Public</span>
-                        </div>
-                    </div>
-
-                    {/* Right: Simple Button */}
-                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                        </svg>
-                    </button>
-                </div>
-
 
                 {/* Post Content */}
-                <div className="p-4">
-                    <p className="text-gray-300 text-base leading-relaxed">
-                        Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
-                    </p>
+                <div className="roundend-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,255,200,0.2)]">
+                    <div className="p-4">
+                        <p className="text-gray-300 text-base leading-relaxed">
+                            Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
+                        </p>
 
-                    {/* images */}
-                    {/* <div className="mt-3 grid gap-2">
-                        {images.length === 1 && (
-                            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-                                <Image
-                                    src={images[0]}
-                                    alt="Post Image"
-                                    width={700}
-                                    height={400}
-                                    className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                            </div>
-                        )}
+                        <PostImages />
+                    </div>
 
-                        {images.length > 1 && (
-                            <div
-                                className={`grid gap-2 ${images.length === 2 ? "grid-cols-2" : "grid-cols-2 md:grid-cols-2"
-                                    }`}
-                            >
-                                {images.slice(0, 4).map((img, i) => (
-                                    <div key={i} className="relative rounded-xl overflow-hidden shadow-md group">
-                                        <Image
-                                            src={img}
-                                            alt={`Post Image ${i + 1}`}
-                                            width={700}
-                                            height={400}
-                                            className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
-                                        />
-                                        {i === 3 && images.length > 4 && (
-                                            <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-2xl font-bold">
-                                                +{images.length - 4}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div> */}
-                    <PostImages />
-
+                    {/* ENgagement Bar */}
+                    <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
+                        <div className="flex items-center gap-3">
+                            <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                                <FaThumbsUp />
+                                <span>Like</span>
+                            </button>
+                            <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                                <FaComment />
+                                <span>Comment</span>
+                            </button>
+                            <button className="flex items-center gap-1 text-gray-400 hover:text-cyan-400">
+                                <FaShare />
+                                <span>Share</span>
+                            </button>
+                        </div>
+                        <span className="text-gray-500 text-sm">24 Likes · 3 Comments · 3 Shares</span>
+                    </div>
                 </div>
-
+            </div>
+            <div className="max-w-xl mx-auto rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,255,200,0.2)]">
                 {/* Engagement Bar */}
                 <div className="flex items-center justify-between px-4 py-3 border-t border-gray-700">
                     <div className="flex items-center gap-3">
