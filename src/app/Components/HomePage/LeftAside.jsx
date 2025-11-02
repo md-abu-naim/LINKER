@@ -20,53 +20,6 @@ const LeftAside = () => {
     ]
     return (
         <>
-            {/* <Link href={'/profile'} title="Go to Profile" className="shadow-lg rounded-xl border border-gray-700 block">
-                <Image src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" alt="Cover" width={300} height={250} className="w-full h-28 bg-cover rounded-t-2xl" />
-                <div className="-mt-16 flex flex-col items-center p-3 pb-5">
-                    <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="" width={100} height={100} className="h-28 w-28 rounded-full border-3 border-cyan-400 object-cover" />
-                    <h3 className="text-2xl font-bold">Mohammad Abu Naim</h3>
-                    <p className="text-gray-400 text-center text-xm">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
-                    <address className="flex items-center gap-2 text-gray-500">
-                        <span><MdNotListedLocation /></span>
-                        <small>Noakhali, Chittagang, Bangladesh</small>
-                    </address>
-                </div>
-            </Link>
-            <div className="rounded-md shadow-lg py-2 mt-5">
-                <Link href="/friends" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-blue-500"><FaUserFriends /></span>
-                    <span className="text-xl">Friends</span>
-                </Link>
-                <Link href="/explore" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-red-500"><MdOutlineExplore /></span>
-                    <span className="text-xl">Explore Videos</span>
-                </Link>
-                <Link href="/saved" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-[#AB68E9]"><FaBookmark /></span>
-                    <span className="text-xl">Saved Favorites</span>
-                </Link>
-                <Link href="/message" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><LuMessageCircleHeart /></span>
-                    <span className="text-xl">Message</span>
-                </Link>
-                <Link href="/memories" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-[#3897E9]"><IoMdTimer /></span>
-                    <span className="text-xl">Memories</span>
-                </Link>
-                <Link href="/settings" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-white"><IoSettingsOutline /></span>
-                    <span className="text-xl">Settings & Privacy</span>
-                </Link>
-                <Link href="/help&support" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full"><MdHelpOutline /></span>
-                    <span className="text-xl">Help & Support</span>
-                </Link>
-                <Link href="/feedback" className="flex items-center gap-2 p-2 hover:bg-gray-700">
-                    <span className="text-xl bg-gray-800 p-2 rounded-full text-white"><MdFeedback /></span>
-                    <span className="text-xl">Give Feedback</span>
-                </Link>
-            </div> */}
-
             <div className="space-y-6">
                 {/* Profile Card */}
                 <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 rounded-2xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.5)] border border-gray-800 overflow-hidden group transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] hover:-translate-y-1">
@@ -109,41 +62,6 @@ const LeftAside = () => {
                     </div>
                 </div>
             </div>
-
-            <div className="space-y-6">
-                {/* Sidebar Menu */}
-                <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)]">
-                    <div className="flex flex-col space-y-1.5">
-                        {[
-                            { href: "/friends", icon: <FaUserFriends />, color: "text-blue-400", label: "Friends" },
-                            { href: "/explore", icon: <MdOutlineExplore />, color: "text-red-400", label: "Explore Videos" },
-                            { href: "/saved", icon: <FaBookmark />, color: "text-purple-400", label: "Saved Favorites" },
-                            { href: "/message", icon: <LuMessageCircleHeart />, color: "text-pink-400", label: "Messages" },
-                            { href: "/memories", icon: <IoMdTimer />, color: "text-cyan-400", label: "Memories" },
-                            { href: "/settings", icon: <IoSettingsOutline />, color: "text-gray-300", label: "Settings" },
-                            { href: "/help&support", icon: <MdHelpOutline />, color: "text-yellow-400", label: "Help & Support" },
-                            { href: "/feedback", icon: <MdFeedback />, color: "text-green-400", label: "Give Feedback" },
-                        ].map((item, i) => (
-                            <Link
-                                key={i}
-                                href={item.href}
-                                className="group flex items-center gap-3 p-2.5 rounded-xl bg-gray-800/40 hover:bg-gray-700/60 hover:shadow-[0_0_18px_rgba(0,255,200,0.08)] transition-all duration-300"
-                            >
-                                <span
-                                    className={`text-lg ${item.color} bg-gray-900 p-2 rounded-lg group-hover:scale-110 transition-transform`}
-                                >
-                                    {item.icon}
-                                </span>
-                                <span className="text-gray-200 text-[15px] font-medium group-hover:text-cyan-400 transition-colors">
-                                    {item.label}
-                                </span>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-
         </>
     );
 };
