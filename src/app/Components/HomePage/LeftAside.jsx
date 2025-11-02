@@ -20,7 +20,7 @@ const LeftAside = () => {
     ]
     return (
         <>
-            <div className="space-y-6">
+            <div className="space-y-4">
                 {/* Profile Card */}
                 <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 rounded-2xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.5)] border border-gray-800 overflow-hidden group transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] hover:-translate-y-1">
                     <div className="relative h-24 w-full rounded-xl overflow-hidden">
@@ -41,7 +41,7 @@ const LeftAside = () => {
                 </div>
 
                 {/* Sidebar */}
-                <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)]">
+                <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <h4 className="text-gray-400 text-sm font-semibold px-3 mb-3 uppercase tracking-wider">Quick Access</h4>
                     <div className="flex flex-col space-y-0.5">
                         {

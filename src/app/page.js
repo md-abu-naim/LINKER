@@ -11,7 +11,7 @@ const Home = () => {
       </aside>
 
       {/* Main Content */}
-      <main className='col-span-12 lg:col-span-6 md:px-10'>
+      <main className='col-span-12 lg:col-span-6 md:px-10 h-screen overflow-y-auto scroll-smooth scrollable'>
         <Main />
       </main>
 
