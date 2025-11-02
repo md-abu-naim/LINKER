@@ -2,6 +2,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaRegThumbsUp, FaComment, FaShare } from "react-icons/fa";
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import { Pagination } from 'swiper/modules';
+
 
 const PostImage = () => {
     const [current, setCurrent] = useState(0);
@@ -66,9 +71,29 @@ const PostImage = () => {
                 )}
             </div>
 
+            {/* <Swiper
+                slidesPerView={'auto'}
+                spaceBetween={30}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                <SwiperSlide>Slide 1</SwiperSlide>
+                <SwiperSlide>Slide 2</SwiperSlide>
+                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide>Slide 4</SwiperSlide>
+                <SwiperSlide>Slide 5</SwiperSlide>
+                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>Slide 7</SwiperSlide>
+                <SwiperSlide>Slide 8</SwiperSlide>
+                <SwiperSlide>Slide 9</SwiperSlide>
+            </Swiper> */}
+
             {/* Fullscreen modal / lightbox */}
             {open && (
-                <div className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center">
+                <div className="fixed inset-0 z-50 mt-11 bg-black/90 flex justify-center items-center">
                     <button onClick={() => setOpen(false)} className="absolute top-5 right-5 text-white text-3xl font-bold z-50">&times;</button>
 
                     <div className="flex w-full h-full max-w-6xl max-h-[90vh] bg-gray-900 rounded-xl overflow-hidden">
