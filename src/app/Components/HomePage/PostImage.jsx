@@ -11,9 +11,11 @@ const PostImage = () => {
         'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
         'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
         'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
-        // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
+        'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
         // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
     ]
+
+    const imageCount = images?.length - 4
 
     if (images?.length === 1) {
         return (
@@ -39,13 +41,18 @@ const PostImage = () => {
     }
     return (
         <div>
-            {/* <div className={images?.length === 0 ? 'w-ful h-full' : 'grid grid-cols-2 gap-2'}>
+            <div className='w-full mt-2 grid grid-cols-2 gap-2'>
                 {
-                    images.map(img => (
-                        <Image key={img} src={img} width={600} height={700} alt='Images' />
+                    images.slice(0,4).map(img => (
+                        <div key={img} className='relative'>
+                            <Image key={img} className='rounded-xl bg-cover' src={img} width={600} height={700} alt='Images' />
+                            <div className='absolute inset-0 bg-black/'>
+                                <span>{imageCount}</span>
+                            </div>
+                        </div>
                     ))
                 }
-            </div> */}
+            </div>
             {/* <Swiper
                 slidesPerView={'auto'}
                 spaceBetween={30}
@@ -68,14 +75,6 @@ const PostImage = () => {
 };
 
 export default PostImage;
-
-
-// 'use client';
-// import Image from "next/image";
-
-// const PostImages = ( )=> {
-//    
-
 //   return (
 //     <div className="w-full mt-2 grid grid-cols-2 gap-2">
 //       {images.slice(0, 4).map((img, index) => (
