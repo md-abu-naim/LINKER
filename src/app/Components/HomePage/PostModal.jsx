@@ -20,8 +20,8 @@ const PostModal = () => {
     }
 
     return (
-        <div onClick={handleWrapperClick} role="dialog" className="modal mt-11 flex items-center justify-center backdrop-blur-md bg-black/40" >
-            <div className="modal-box relative max-w-lg w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white border border-cyan-500/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
+        <div onClick={handleWrapperClick} role="dialog" className="modal mt-7 flex items-center justify-center backdrop-blur-md bg-black/40" >
+            <div className="modal-box relative max-w-lg w-full bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl text-white border border-cyan-500/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
 
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-gray-700 pb-3">
