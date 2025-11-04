@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
+import { RxCross1 } from 'react-icons/rx';
 
 const PostImage = () => {
 
@@ -19,7 +20,7 @@ const PostImage = () => {
 
     if (images?.length === 1) {
         return (
-            <div className='mt-2'>
+            <div onClick={() => document.getElementById('my_modal_4').showModal()} className='mt-2'>
                 <Image className='w-full h-auto rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
             </div>
         )
@@ -27,7 +28,7 @@ const PostImage = () => {
 
     if (images?.length === 3) {
         return (
-            <div className='w-full mt-2 space-y-2'>
+            <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 space-y-2'>
                 <Image className='w-full h-64 rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
                 <div className='grid grid-cols-2 gap-2'>
                     {
@@ -41,7 +42,7 @@ const PostImage = () => {
     }
     return (
         <div>
-            <div className='w-full mt-2 grid grid-cols-2 gap-2'>
+            <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 grid grid-cols-2 gap-2'>
                 {
                     images.slice(0, 4).map((img, index) => (
                         <div key={index} className='relative'>
@@ -74,6 +75,20 @@ const PostImage = () => {
                     ))
                 }
             </Swiper>  */}
+
+            {/* You can open the modal using document.getElementById('ID').showModal() method */}
+            <dialog id="my_modal_4" className="modal relative">
+                <div className="modal-box w-11/12 max-w-7xl h-full">
+                    <h3 className="font-bold text-lg">Hello!</h3>
+                    <p className="py-4">Click the button below to close</p>
+                    <div className="modal-action absolute top-0 right-2">
+                        <form method="dialog">
+                            {/* if there is a button, it will close the modal */}
+                            <button className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </div>
     );
 };
