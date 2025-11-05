@@ -82,30 +82,64 @@ const PostImage = () => {
                                 }
                             </Swiper>
                         </div>
-                        <div className='md:w-1/3 w-full flex flex-col bg-gray-950 border-l border-gray-800'>
-                            <div className="flex items-center p-4 gap-3">
-                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
-                                <div className="flex flex-col">
-                                    <span className="font-semibold text-sm md:text-lg">Mohammad Abu Naim</span>
-                                    <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+
+                        <div className='md:w-1/3 w-full flex flex-col bg-gray-950 border-l border-gray-800 max-h-[90vh] overflow-y-auto my-4'>
+                            <div className='p-4 space-y-1'>
+                                <div className="flex items-center gap-3 p-">
+                                    <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                                    <div className="flex flex-col">
+                                        <span className="font-semibold text-sm md:text-lg">Mohammad Abu Naim</span>
+                                        <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+                                    </div>
                                 </div>
+
+                                <p className='text-gray-200'>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
                             </div>
-                            <div className='p-4 text-gray-200'>
-                                <p>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
-                            </div>
+
                             <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-y border-gray-700">
                                 <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                     <FaThumbsUp />
                                     <span>20</span>
                                 </button>
-                                <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                                <a href='#comment' className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                     <FaComment />
                                     <span>24</span>
-                                </button>
+                                </a>
                                 <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                     <FaShare />
                                     <span>8</span>
                                 </button>
+                            </div>
+
+                            <div className='mt-3 px-2'>
+                                <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
+                                    <div className='flex items-center justify-between'>
+                                        <div className="flex items-center gap-2">
+                                            <Image className="w-10 h-10 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                                            <div className="flex flex-col">
+                                                <span className="font-semibold text-sm">Mohammad Abu Naim</span>
+                                                <small className="text-gray-400">24 hours ago </small>
+                                            </div>
+                                        </div>
+                                        <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-6 w-6 text-white"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div className=' text-gray-200'>
+                                        <p>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
+                                    </div>
+                                </div>
+                                <div className='mt-1'>
+                                    <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,113 +147,6 @@ const PostImage = () => {
                     <div className="modal-action absolute top-2 right-2">
                         <form method="dialog">
                             <button className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
-
-            <dialog id="my_modal_4" className="modal">
-                <div className="modal-box w-11/12 max-w-6xl p-0 bg-gray-900 text-white  relative overflow-hidden rounded-xl">
-
-                    {/* Main Layout */}
-                    <div className="flex flex-col md:flex-row h-[90vh]">
-
-                        {/* LEFT — Image Slider */}
-                        <div className="md:w-2/3 w-full bg-black flex items-center justify-center">
-                            <Swiper
-                                slidesPerView={1}
-                                spaceBetween={10}
-                                pagination={{ clickable: true }}
-                                modules={[Pagination]}
-                                className="w-full h-full"
-                            >
-                                {images.map((img, i) => (
-                                    <SwiperSlide key={i}>
-                                        <Image
-                                            src={img}
-                                            width={800}
-                                            height={800}
-                                            alt={`Post image ${i}`}
-                                            className="w-full h-full object-contain bg-black"
-                                        />
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-
-                        {/* RIGHT — Post Details */}
-                        <div className="md:w-1/3 w-full flex flex-col bg-gray-950 border-l border-gray-800">
-
-                            {/* Header */}
-                            <div className="flex items-center gap-3 p-4 border-b border-gray-800">
-                                <Image
-                                    className="w-10 h-10 rounded-full border-2 border-cyan-500 object-cover"
-                                    src="https://i.postimg.cc/65X8XRRf/Face-Care.png"
-                                    width={50}
-                                    height={50}
-                                    alt="User"
-                                />
-                                <div>
-                                    <h2 className="font-semibold text-base">Mohammad Abu Naim</h2>
-                                    <p className="text-gray-400 text-sm">24 hours ago · 🌍 Public</p>
-                                </div>
-                            </div>
-
-                            {/* Caption */}
-                            <div className="p-4 text-gray-200 text-sm border-b border-gray-800">
-                                <p>
-                                    Just finished building this amazing project! 🚀 <br />
-                                    What do you guys think about the design?
-                                </p>
-                            </div>
-
-                            {/* Comment Input */}
-                            <div className="p-4 flex items-center gap-2 border-b border-gray-800">
-                                <Image
-                                    className="w-9 h-9 rounded-full border border-gray-700 object-cover"
-                                    src="https://i.postimg.cc/65X8XRRf/Face-Care.png"
-                                    width={40}
-                                    height={40}
-                                    alt="User"
-                                />
-                                <div className="flex items-center w-full bg-gray-800 rounded-full px-3 py-2 text-gray-300">
-                                    <input
-                                        type="text"
-                                        placeholder="Write a comment..."
-                                        className="w-full bg-transparent outline-none text-sm placeholder-gray-400"
-                                    />
-                                    <FaRegSmile className="text-gray-400 text-xl cursor-pointer" />
-                                </div>
-                            </div>
-
-                            {/* Comments Section */}
-                            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scroll">
-                                {[1, 2, 3].map((c) => (
-                                    <div key={c} className="flex items-start gap-3">
-                                        <Image
-                                            className="w-9 h-9 rounded-full border border-gray-700"
-                                            src="https://i.postimg.cc/7YvT6W1W/Hair-Care.png"
-                                            width={40}
-                                            height={40}
-                                            alt="User"
-                                        />
-                                        <div className="bg-gray-800 rounded-2xl px-3 py-2">
-                                            <p className="font-medium text-sm">John Doe</p>
-                                            <p className="text-gray-300 text-sm">Wow! This looks really good 🔥</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {/* Close Button */}
-                    <div className="absolute top-2 right-2 z-50">
-                        <form method="dialog">
-                            <button className="bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-lg">
-                                <RxCross1 />
-                            </button>
                         </form>
                     </div>
                 </div>
