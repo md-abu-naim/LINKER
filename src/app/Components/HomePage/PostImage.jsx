@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { RxCross1 } from 'react-icons/rx';
 import { FaComment, FaRegSmile, FaShare, FaThumbsUp } from 'react-icons/fa';
@@ -72,6 +72,7 @@ const PostImage = () => {
                             <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
+                                Navigation={true}
                                 pagination={{
                                     clickable: true,
                                 }}
