@@ -6,6 +6,8 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { RxCross1 } from 'react-icons/rx';
 import { FaComment, FaRegSmile, FaShare, FaThumbsUp } from 'react-icons/fa';
+import Link from 'next/link';
+import CommentBox from './CommentBox';
 
 const PostImage = () => {
 
@@ -140,6 +142,13 @@ const PostImage = () => {
                                 <div className='mt-1'>
                                     <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
                                 </div>
+                            </div>
+                            <div className="fixed bottom-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 z-50">
+                                <Link href={'/profile'}>
+                                    <Image className="w-10 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
+                                </Link>
+                                <input className="flex-1 rounded-full bg-gray-800/70 text-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-500" type="text" placeholder="Write a comment.." />
+                                <CommentBox />
                             </div>
                         </div>
                     </div>
