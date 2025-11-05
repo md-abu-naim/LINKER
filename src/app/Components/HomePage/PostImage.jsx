@@ -66,6 +66,8 @@ const PostImage = () => {
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-6xl p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl relative overflow-hidden rounded-xl">
                     <div className='flex flex-col md:flex-row h-[90vh]'>
+
+                        {/* Left Side: image slider */}
                         <div className='md:w-2/3 w-full bg-black flex items-center justify-center'>
                             <Swiper
                                 slidesPerView={1}
@@ -86,6 +88,7 @@ const PostImage = () => {
                             </Swiper>
                         </div>
 
+                        {/* Right Side */}
                         <div className='md:w-1/3 w-full flex flex-col bg-gray-950 border-l border-gray-800 max-h-[90vh] overflow-y-auto my-4'>
                             <div className='p-4 space-y-1'>
                                 <div className="flex items-center gap-3 p-">
