@@ -114,7 +114,7 @@ const PostImage = () => {
                                 </button>
                             </div>
 
-                            <div className='mt-3 px-2'>
+                            <div className='my-3 px-2'>
                                 <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
                                     <div className='flex items-center justify-between'>
                                         <div className="flex items-center gap-2">
@@ -145,7 +145,7 @@ const PostImage = () => {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-700 z-50">
+                            <div className="sticky inset-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50">
                                 <Link href={'/profile'}>
                                     <Image className="w-12 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
                                 </Link>
