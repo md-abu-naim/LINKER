@@ -15,38 +15,39 @@ const PostImage = () => {
 
     const images = [
         'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
-        'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
-        'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
-        'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
-        'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
+        // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
+        // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
+        // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
+        // 'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg',
     ]
 
     const imageCount = images?.length - 4
 
-    if (images?.length === 1) {
-        return (
-            <div onClick={() => document.getElementById('my_modal_4').showModal()} className='mt-2'>
-                <Image className='w-full h-auto rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
-            </div>
-        )
-    }
-
-    if (images?.length === 3) {
-        return (
-            <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 space-y-2'>
-                <Image className='w-full h-64 rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
-                <div className='grid grid-cols-2 gap-2'>
-                    {
-                        images.slice(1, 3).map(img => (
-                            <Image key={img} className='rounded-xl bg-cover' src={img} width={600} height={700} alt='Images' />
-                        ))
-                    }
+    const Imagelayout = () => {
+        if (images?.length === 1) {
+            return (
+                <div onClick={() => document.getElementById('my_modal_4').showModal()} className='mt-2'>
+                    <Image className='w-full h-auto rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
                 </div>
-            </div>
-        )
-    }
-    return (
-        <div>
+            )
+        }
+
+        if (images?.length === 3) {
+            return (
+                <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 space-y-2'>
+                    <Image className='w-full h-64 rounded-xl bg-cover' src={images[0]} width={600} height={700} alt='Images' />
+                    <div className='grid grid-cols-2 gap-2'>
+                        {
+                            images.slice(1, 3).map(img => (
+                                <Image key={img} className='rounded-xl bg-cover' src={img} width={600} height={700} alt='Images' />
+                            ))
+                        }
+                    </div>
+                </div>
+            )
+        }
+
+        return (
             <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 grid grid-cols-2 gap-2'>
                 {
                     images.slice(0, 4).map((img, index) => (
@@ -63,10 +64,15 @@ const PostImage = () => {
                     ))
                 }
             </div>
+        )
+    }
 
+    return (
+        <div>
+            {Imagelayout()}
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-6xl p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl relative overflow-hidden rounded-xl">
-                    <div className='flex flex-col md:flex-row h-[90vh]'>
+                    <div className='flex flex-col md:flex-row h-[90vh] overflow-y-auto'>
 
                         {/* Left Side: image slider */}
                         <div className='md:w-2/3 w-full bg-black flex items-center justify-center'>
@@ -90,7 +96,7 @@ const PostImage = () => {
                         </div>
 
                         {/* Right Side */}
-                        <div className='md:w-1/3 w-full flex flex-col bg-gray-950 border-l border-gray-800 max-h-[90vh] overflow-y-auto my-4'>
+                        <div className='md:w-1/3 w-full hidden md:flex flex-col bg-gray-950 border-l border-gray-800 max-h-[90vh] overflow-hidden hover:overflow-y-auto my-4'>
                             <div className='p-4 space-y-1'>
                                 <div className="flex items-center gap-3 p-">
                                     <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
@@ -178,4 +184,4 @@ const PostImage = () => {
     );
 };
 
-export default PostImage;
+export default PostImage
