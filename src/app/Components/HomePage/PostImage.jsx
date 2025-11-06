@@ -2,7 +2,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import Image from 'next/image';
 import { RxCross1 } from 'react-icons/rx';
 import { FaComment, FaRegSmile, FaShare, FaThumbsUp } from 'react-icons/fa';
@@ -70,13 +71,12 @@ const PostImage = () => {
                         {/* Left Side: image slider */}
                         <div className='md:w-2/3 w-full bg-black flex items-center justify-center'>
                             <Swiper
-                                slidesPerView={1}
-                                spaceBetween={10}
-                                Navigation={true}
-                                pagination={{
-                                    clickable: true,
-                                }}
-                                modules={[Pagination]}
+                                cssMode={true}
+                                navigation={true}
+                                pagination={true}
+                                mousewheel={true}
+                                keyboard={true}
+                                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                                 className="mySwiper w-full h-full"
                             >
                                 {
