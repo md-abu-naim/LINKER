@@ -9,11 +9,9 @@ import { RxCross1 } from 'react-icons/rx';
 import { FaComment, FaShare, FaThumbsUp } from 'react-icons/fa';
 import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
-import { useState } from 'react';
 import Emojipicker from './Emojipicker';
 
 const PostImage = () => {
-    const [img, setImg] = useState()
     const images = [
         'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
         'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
@@ -41,7 +39,7 @@ const PostImage = () => {
                     <div className='grid grid-cols-2 gap-1'>
                         {
                             images.slice(1, 3).map(img => (
-                                <Image key={img} onClick={() => setImg(images[0])} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt='Images' />
+                                <Image key={img} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt='Images' />
                             ))
                         }
                     </div>
@@ -130,6 +128,7 @@ const PostImage = () => {
                                 </button>
                             </div>
 
+                            {/* CommentBox */}
                             <div className='my-3 px-2'>
                                 <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
                                     <div className='flex items-center justify-between'>
@@ -161,6 +160,7 @@ const PostImage = () => {
                                 </div>
                             </div>
 
+                            {/* Comment Input Field */}
                             <div className="sticky inset-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50">
                                 <Link href={'/profile'}>
                                     <Image className="w-12 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
@@ -178,12 +178,15 @@ const PostImage = () => {
                         </div>
                     </div>
 
+                    {/* Close Modal */}
                     <div className="modal-action absolute top-2 right-2">
                         <form method="dialog">
                             <button className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
                         </form>
                     </div>
                 </div>
+
+                {/* Small Device Modal */}
                 <div className='modal-box md:hidden w-full bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl'>
                     <div className="">
                         <Swiper
@@ -203,6 +206,7 @@ const PostImage = () => {
                             }
                         </Swiper>
 
+                        {/* Close Modal */}
                         <div className="modal-action absolute top-0 right-0 z-50">
                             <form method="dialog">
                                 <button className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
