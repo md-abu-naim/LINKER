@@ -110,9 +110,11 @@ const PostImage = () => {
                                     </div>
                                 </div>
 
+                                {/* Caption */}
                                 <p className='text-gray-200'>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
                             </div>
 
+                            {/* Engagement */}
                             <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-y border-gray-700">
                                 <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                     <FaThumbsUp />

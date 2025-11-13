@@ -76,7 +76,7 @@ const Main = () => {
                     <PostImages />
                 </div>
 
-                {/* ENgagement Bar */}
+                {/* Engagement Bar */}
                 <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-t border-gray-700">
                     <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                         <FaThumbsUp />
