@@ -13,7 +13,7 @@ import { useState } from 'react';
 import Emojipicker from './Emojipicker';
 
 const PostImage = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [img, setImg] = useState()
     const images = [
         'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
         'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
@@ -29,7 +29,7 @@ const PostImage = () => {
         if (images?.length === 1) {
             return (
                 <div onClick={() => document.getElementById('my_modal_4').showModal()} className='mt-2'>
-                    <Image className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
+                    <Image onClick={() => setImg(images[0])} className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
                 </div>
             )
         }
@@ -37,11 +37,11 @@ const PostImage = () => {
         if (images?.length === 3) {
             return (
                 <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 space-y-1 cursor-pointer'>
-                    <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
+                    <Image onClick={() => setImg(images[0])} className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
                     <div className='grid grid-cols-2 gap-1'>
                         {
                             images.slice(1, 3).map(img => (
-                                <Image key={img} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt='Images' />
+                                <Image key={img} onClick={() => setImg(images[0])} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt='Images' />
                             ))
                         }
                     </div>
@@ -54,7 +54,7 @@ const PostImage = () => {
                 {
                     images.slice(0, 4).map((img, index) => (
                         <div key={index} className='relative cursor-pointer'>
-                            <Image className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt={`Post Image ${index + 1}`} />
+                            <Image onClick={() => setImg(img)} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt={`Post Image ${index + 1}`} />
                             {
                                 index === 3 && imageCount > 0 && (
                                     <div className='absolute inset-0 bg-black/60 flex items-center justify-center rounded-sm'>
@@ -183,14 +183,23 @@ const PostImage = () => {
                     </div>
                 </div>
                 <div className='modal-box md:hidden w-full bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl'>
-                    <div className="border">
-                        <div>
-                            <img
-                                src="https://i.postimg.cc/65X8XRRf/Face-Care.png"
-                                alt="Full Size"
-                                className="w-full h-full rounded-lg object-contain"
-                            />
-                        </div>
+                    <div className="">
+                        <Swiper
+                            cssMode={true}
+                            navigation={true}
+                            pagination={true}
+                            mousewheel={true}
+                            keyboard={true}
+                            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                            className="mySwiper w-full h-full">
+                            {
+                                images.map((img, i) => (
+                                    <SwiperSlide key={i}>
+                                        <Image className='w-full h-dvh object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
 
                         <div className="modal-action absolute top-0 right-0 z-50">
                             <form method="dialog">
