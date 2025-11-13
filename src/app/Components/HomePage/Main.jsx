@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import { FaComment, FaEllipsisH, FaRegCommentDots, FaRegHeart, FaRegImage, FaRegImages, FaRegShareSquare, FaShare, FaShareAlt, FaThumbsUp, FaVideo } from "react-icons/fa";
+import { FaComment,  FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import PostModal from "./PostModal";
 import { MediaInput } from "./MediaInput";
 import PostImages from "./PostImage";
@@ -44,7 +44,7 @@ const Main = () => {
 
 
             {/* Post Layout */}
-            <div className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+            <div className="rounded-3xl mt-3 mb-11 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                 {/* Header */}
                 <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                     <div className="flex items-center gap-3">

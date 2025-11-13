@@ -2,7 +2,7 @@
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
 
-const CommentBox = () => {
+const Emojipicker = () => {
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
@@ -37,4 +37,4 @@ const CommentBox = () => {
     );
 };
 
-export default CommentBox;
+export default Emojipicker;
