@@ -16,8 +16,10 @@ const Navber = () => {
 
                     {/*Left: Logo + Searchbar */}
                     <div className="flex items-center gap-2">
-                        <Image src='/Logo.png' alt="Linker" width={38} height={28} className="w-9 h-auto" />
-                        <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
+                        <Link href={'/'} className="flex items-center gap-2">
+                            <Image src='/Logo.png' alt="Linker" width={38} height={28} className="w-9 h-auto" />
+                            <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
+                        </Link>
                         <div className="hidden md:block">
                             <Searchbar />
                         </div>

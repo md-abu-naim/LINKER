@@ -27,7 +27,7 @@ const PostImage = () => {
         if (images?.length === 1) {
             return (
                 <div onClick={() => document.getElementById('my_modal_4').showModal()} className='mt-2'>
-                    <Image onClick={() => setImg(images[0])} className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
+                    <Image className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
                 </div>
             )
         }
@@ -35,7 +35,7 @@ const PostImage = () => {
         if (images?.length === 3) {
             return (
                 <div onClick={() => document.getElementById('my_modal_4').showModal()} className='w-full mt-2 space-y-1 cursor-pointer'>
-                    <Image onClick={() => setImg(images[0])} className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
+                    <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
                     <div className='grid grid-cols-2 gap-1'>
                         {
                             images.slice(1, 3).map(img => (

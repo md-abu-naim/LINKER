@@ -22,23 +22,25 @@ const LeftAside = () => {
         <>
             <div className="space-y-4">
                 {/* Profile Card */}
-                <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 rounded-2xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.5)] border border-gray-800 overflow-hidden group transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] hover:-translate-y-1">
-                    <div className="relative h-24 w-full rounded-xl overflow-hidden">
-                        <Image className="w-full h-full object-cover bg-cover brightness-[0.85] group-hover:brightness-100 transition-all duration-300" src={'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg'} alt="Cover Image" width={700} height={120} />
-                    </div>
-                    <div className="relative -mt-10 flex flex-col items-center z-10">
-                        <div className="relative">
-                            <Image className="w-24 h-24 rounded-full border-4 border-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.4)] object-cover bg-gray-900" src={'https://i.postimg.cc/65X8XRRf/Face-Care.png'} alt="Profile Image" width={110} height={110} />
-                            <div className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-gray-900"></div>
+                <Link href={'/profile'}>
+                    <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 rounded-2xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.5)] border border-gray-800 overflow-hidden group transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] hover:-translate-y-1">
+                        <div className="relative h-24 w-full rounded-xl overflow-hidden">
+                            <Image className="w-full h-full object-cover bg-cover brightness-[0.85] group-hover:brightness-100 transition-all duration-300" src={'https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg'} alt="Cover Image" width={700} height={120} />
                         </div>
-                        <h3 className="text-xl font-semibold text-white mt-2 tracking-wide">Mohammad Abu Naim</h3>
-                        <p className="text-gray-400 text-[13px] text-center leading-relaxed mt-1 px-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
-                        <div className="flex items-center justify-center gap-2 mt-2 text-gray-400 text-sm">
-                            <MdNotListedLocation className="text-cyan-400 text-base" />
-                            <span>Noakhali, Bangladesh</span>
+                        <div className="relative -mt-10 flex flex-col items-center z-10">
+                            <div className="relative">
+                                <Image className="w-24 h-24 rounded-full border-4 border-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.4)] object-cover bg-gray-900" src={'https://i.postimg.cc/65X8XRRf/Face-Care.png'} alt="Profile Image" width={110} height={110} />
+                                <div className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-gray-900"></div>
+                            </div>
+                            <h3 className="text-xl font-semibold text-white mt-2 tracking-wide">Mohammad Abu Naim</h3>
+                            <p className="text-gray-400 text-[13px] text-center leading-relaxed mt-1 px-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
+                            <div className="flex items-center justify-center gap-2 mt-2 text-gray-400 text-sm">
+                                <MdNotListedLocation className="text-cyan-400 text-base" />
+                                <span>Noakhali, Bangladesh</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
 
                 {/* Sidebar */}
                 <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
