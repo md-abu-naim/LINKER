@@ -11,12 +11,14 @@ import PostImage from "../Components/HomePage/PostImage";
 
 const Profile = () => {
     const images = [
-        'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
-        'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
-        'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp',
-        'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg',
-        'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp',
+        { name: 'Abu Naim', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
+        { name: 'Jasim Uddin', img: 'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg' },
+        { name: 'Rofiqul Islam', img: 'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp' },
+        { name: 'Salma Sweety', img: 'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg' },
+        { name: 'Shakhawat Miyaji', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
+        { name: 'Mohammad Abu Naim', img: 'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp' },
     ]
+
     return (
         <div>
             <div className="">
@@ -188,17 +190,36 @@ const Profile = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <div className="flex items-center justify-between mt-2">
+                            <div className="mt-4">
+                                <div className="flex items-center justify-between">
                                     <h3 className="text-2xl font-bold">Photos</h3>
-                                    <button className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                                    <Link href={`/profile/photos`} className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
                                         <span className="text-md">See All Photos</span>
-                                    </button>
+                                    </Link>
                                 </div>
-                                <div className="grid grid-cols-3 gap-0.5 rounded-xl mt-2">
+                                <div className="grid grid-cols-3 gap-0.5 mt-2">
                                     {
-                                        images.map((img, i) => (
-                                            <Image key={i} className="w-32 h-32 object-cover rounded-md" src={img} alt="Photos" width={400} height={400} />
+                                        images?.map((img, i) => (
+                                            <Image key={i} className="w-32 h-32 object-cover rounded-md" src={img.img} alt="Photos" width={400} height={400} />
+                                        ))
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="mt-6">
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-2xl font-bold">Followers</h3>
+                                    <Link href={`/profile/friends`} className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                                        <span className="text-md">See All Followers</span>
+                                    </Link>
+                                </div>
+                                <div className="grid grid-cols-3 gap-3 mt-2">
+                                    {
+                                        images.map((frined, i) => (
+                                            <div key={i}>
+                                                <Image className="w-32 h-32 object-cover rounded-md" src={frined.img} alt="Photos" width={400} height={400} />
+                                                <h3 className="text-sm font-semibold mt-0.5">{frined.name}</h3>
+                                            </div>
                                         ))
                                     }
                                 </div>
