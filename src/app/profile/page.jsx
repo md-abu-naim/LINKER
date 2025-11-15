@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FaUserFriends } from "react-icons/fa";
+import { LuMessageCircleHeart } from "react-icons/lu";
 
 const Profile = () => {
     const posts = [
@@ -44,6 +46,20 @@ const Profile = () => {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
                         </svg>
+                    </button>
+                </div>
+                <div className="flex items-center justify-around mt-10 bg-gray-900">
+                    <button className="flex flex-col items-center hover:bg-gray-800 p-5">
+                        <span className="text-2xl"><LuMessageCircleHeart /></span>
+                        <span className="text-md">Message</span>
+                    </button>
+                    <button className="flex items-center gap-0.5 text-lg bg-gray-800 hover:bg-gray-900 p-2 rounded-md hover:text-cyan-400 transition">
+                        <span><FaUserFriends /></span>
+                        <span>Message</span>
+                    </button>
+                    <button className="flex items-center gap-0.5 text-lg bg-gray-800 hover:bg-gray-900 p-2 rounded-md hover:text-cyan-400 transition">
+                        <span><FaUserFriends /></span>
+                        <span>Message</span>
                     </button>
                 </div>
             </div>
