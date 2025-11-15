@@ -47,7 +47,7 @@ const MobileNavber = () => {
 
   const navLinks = [
     { href: "/", icon: <FaHome className="text-2xl" />, title: "Home" },
-    { href: "/friends", icon: <FaUserFriends className="text-2xl" />, title: "Friends" },
+    { href: "/friends", icon: <FaUserFriends className="text-2xl" />, title: "Followers" },
     { href: "/explore", icon: <MdOutlineExplore className="text-2xl" />, title: "Explore" },
     { href: "/profile", icon: <FaUser className="text-2xl" />, title: "Profile" },
   ];

@@ -86,24 +86,24 @@ const Profile = () => {
                     </div>
 
                     {/* Stats */}
-                    {/* <div className="flex items-center justify-around mt-5 mx-auto max-w-5xl px-4 bg-gray-900 py-5 rounded-xl">
-                        <Link href={'/message'} className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
+                    <div className="flex items-center justify-around flex-row mt-5 mx-auto md:max-w-5xl md:px-4 bg-gray-900 py-5 rounded-xl">
+                        <Link href={'/message'} className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-4 md:px-8 py-2 md:py-4 shadow hover:border border-gray-700 cursor-pointer transition">
                             <LuMessageCircleHeart className="text-3xl text-cyan-300" />
                             <span className="mt-1 text-sm">Message</span>
                         </Link>
-                        <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
-                            <span className="text-3xl text-cyan-300 font-semibold">1,800</span>
+                        <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-4 md:px-8 py-2 md:py-4 shadow hover:border border-gray-700 cursor-pointer transition">
+                            <span className="text-2xl md:text-3xl text-cyan-300 font-semibold">1,800</span>
                             <span className="mt-1 text-sm">Followers</span>
                         </div>
 
-                        <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
-                            <span className="text-3xl text-cyan-300 font-semibold">122</span>
+                        <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-4 md:px-8 py-2 md:py-4 shadow hover:border border-gray-700 cursor-pointer transition">
+                            <span className="text-2xl md:text-3xl text-cyan-300 font-semibold">122</span>
                             <span className="mt-1 text-sm">Total Posts</span>
                         </div>
-                    </div> */}
+                    </div>
 
                     {/* Tabs */}
-                    {/* <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap p-4 max-w-5xl mx-auto">
+                    <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap p-4 max-w-5xl mx-auto">
                         <a rel="noopener noreferrer" href="#" className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b border-cyan-400">
                             <FiHome className="text-2xl" />
                             <span>Posts</span>
@@ -140,7 +140,7 @@ const Profile = () => {
                             <FiCalendar className="text-2xl" />
                             <span>Events</span>
                         </a>
-                    </div> */}
+                    </div>
                 </div>
 
             </div>
