@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FiBookmark, FiCalendar, FiHome, FiImage, FiUser, FiUsers } from "react-icons/fi";
+import { FiBookmark, FiCalendar, FiEdit2, FiHome, FiImage, FiLink, FiShare2, FiSlash, FiUser, FiUserPlus, FiUsers, FiUserX } from "react-icons/fi";
 import { IoMdTimer } from "react-icons/io";
+import Link from "next/link";
 
 const Profile = () => {
     const posts = [
@@ -43,29 +43,55 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
-                            <button className="flex items-center bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2">
+                            <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                                <span><FiUserPlus /></span>
                                 <span className="text-md">Follow</span>
                             </button>
-                            <button className="bg-cyan-800 hover:bg-gray-900 hover:text-cyan-300 rounded-md p-2">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                                </svg>
-                            </button>
+
+                            <div className="dropdown dropdown-center">
+                                {/* <div tabIndex={0} role="button" className="btn m-1">Click  ⬇️</div> */}
+                                <button tabIndex={0} className="bg-cyan-800 hover:bg-gray-900 hover:text-cyan-300 rounded-md p-2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                    </svg>
+                                </button>
+                                <ul tabIndex="-1" className="dropdown-content menu mt-0.5 bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700">
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiEdit2 /></span>
+                                        <span className="">Edit Profile</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                        <span className="">Unfollow</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                        <span className="">Block</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiShare2 /></span>
+                                        <span className="">Share</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiLink /></span>
+                                        <span className=""> Copy Profile ID</span>
+                                    </div>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     {/* Stats */}
                     <div className="flex items-center justify-around mt-5 mx-auto max-w-5xl px-4 bg-gray-900 py-5 rounded-xl">
-                        <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
+                        <Link href={'/message'} className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
                             <LuMessageCircleHeart className="text-3xl text-cyan-300" />
                             <span className="mt-1 text-sm">Message</span>
-                        </div>
+                        </Link>
                         <div className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
                             <span className="text-3xl text-cyan-300 font-semibold">1,800</span>
                             <span className="mt-1 text-sm">Followers</span>
