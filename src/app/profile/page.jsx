@@ -27,8 +27,8 @@ const Profile = () => {
                     </div>
 
                     {/* Profile & Name */}
-                    {/* <div className="flex items-center md:flex-col justify-between w-5xl mx-auto">
-                        <div className="relative -mt-8 px-6 flex items-center md:flex-col gap-4">
+                    <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
+                        <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row gap-4">
                             <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg ">
                                 <Image
                                     src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
@@ -37,12 +37,12 @@ const Profile = () => {
                                     width={200} height={200}
                                 />
                             </div>
-                            <div>
-                                <h2 className="text-3xl font-semibold">Mohammmad Abu Naim</h2>
-                                <span className="text-2xl font-medium">(Naim)</span>
+                            <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 mt-5">
+                                <h2 className="text-4xl font-semibold text-center">Mohammmad Abu Naim <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
+                                <span className="text-2xl font-medium hidden md:block">(Naim)</span>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 mt-2">
                             <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
                                 <span><FiUserPlus /></span>
                                 <span className="text-md">Follow</span>
@@ -83,7 +83,7 @@ const Profile = () => {
                                 </ul>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
                     {/* Stats */}
                     {/* <div className="flex items-center justify-around mt-5 mx-auto max-w-5xl px-4 bg-gray-900 py-5 rounded-xl">
