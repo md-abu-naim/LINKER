@@ -161,7 +161,7 @@ const Profile = () => {
                             <p className="text-gray-300">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
                             <hr className="text-cyan-800" />
 
-                            {/* <div className="mt-2 space-y-3">
+                            <div className="mt-2 space-y-3">
                                 <div className="flex items-center gap-2">
                                     <FaBriefcase className="text-xl text-cyan-400" />
                                     <span><span className="text-cyan-400">Work at</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
@@ -202,7 +202,7 @@ const Profile = () => {
                                         ))
                                     }
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
 
