@@ -17,6 +17,9 @@ const Profile = () => {
         { name: 'Salma Sweety', img: 'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg' },
         { name: 'Shakhawat Miyaji', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
         { name: 'Mohammad Abu Naim', img: 'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp' },
+        { name: 'Salma Sweety', img: 'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg' },
+        { name: 'Shakhawat Miyaji', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
+        { name: 'Mohammad Abu Naim', img: 'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp' },
     ]
 
     return (
@@ -197,10 +200,10 @@ const Profile = () => {
                                         <span className="text-md">See All Photos</span>
                                     </Link>
                                 </div>
-                                <div className="grid grid-cols-3 gap-0.5 mt-2">
+                                <div className="grid grid-cols-3 gap-0.5 mt-2 border border-cyan-950 shadow-2xs rounded-md">
                                     {
-                                        images?.map((img, i) => (
-                                            <Image key={i} className="w-32 h-32 object-cover rounded-md" src={img.img} alt="Photos" width={400} height={400} />
+                                        images?.slice(0, 6).map((img, i) => (
+                                            <Image key={i} className="w-32 md:w-60 lg:w-32 h-24 md:h-52 lg:h-32 object-cover rounded-md" src={img.img} alt="Photos" width={400} height={400} />
                                         ))
                                     }
                                 </div>
@@ -213,12 +216,12 @@ const Profile = () => {
                                         <span className="text-md">See All Followers</span>
                                     </Link>
                                 </div>
-                                <div className="grid grid-cols-3 gap-3 mt-2">
+                                <div className="grid grid-cols-3 gap-1 md:gap-3 mt-2 border-x border-t border-cyan-950 shadow-2xs rounded-md">
                                     {
-                                        images.map((frined, i) => (
-                                            <div key={i}>
-                                                <Image className="w-32 h-32 object-cover rounded-md" src={frined.img} alt="Photos" width={400} height={400} />
-                                                <h3 className="text-sm font-semibold mt-0.5">{frined.name}</h3>
+                                        images?.slice(0, 6).map((frined, i) => (
+                                            <div key={i} className="">
+                                                <Image className="w-32 md:w-56 lg:w-32 h-24 md:h-52 lg:h-32 object-cover rounded-md" src={frined.img} alt="Photos" width={400} height={400} />
+                                                <h3 className="text-sm md:text-lg lg:text-sm font-semibold mt-0.5">{frined.name}</h3>
                                             </div>
                                         ))
                                     }
