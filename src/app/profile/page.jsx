@@ -21,14 +21,14 @@ const Profile = () => {
                         <Image
                             src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
                             alt="Cover"
-                            className="bg-cover rounded-b-md w-5xl h-[400px] shadow-2xl shadow-gray-700"
+                            className="object-cover rounded-b-md w-5xl max-h-40 md:max-h-80 lg:max-h-96 shadow-2xl shadow-gray-700"
                             width={800} height={400}
                         />
                     </div>
 
                     {/* Profile & Name */}
-                    <div className="flex items-center justify-between w-5xl mx-auto">
-                        <div className="relative -mt-8 px-6 flex items-center gap-4">
+                    {/* <div className="flex items-center md:flex-col justify-between w-5xl mx-auto">
+                        <div className="relative -mt-8 px-6 flex items-center md:flex-col gap-4">
                             <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg ">
                                 <Image
                                     src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
@@ -49,7 +49,6 @@ const Profile = () => {
                             </button>
 
                             <div className="dropdown dropdown-center">
-                                {/* <div tabIndex={0} role="button" className="btn m-1">Click  ⬇️</div> */}
                                 <button tabIndex={0} className="bg-cyan-800 hover:bg-gray-900 hover:text-cyan-300 rounded-md p-2">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -84,10 +83,10 @@ const Profile = () => {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Stats */}
-                    <div className="flex items-center justify-around mt-5 mx-auto max-w-5xl px-4 bg-gray-900 py-5 rounded-xl">
+                    {/* <div className="flex items-center justify-around mt-5 mx-auto max-w-5xl px-4 bg-gray-900 py-5 rounded-xl">
                         <Link href={'/message'} className="flex flex-col items-center bg-gray-800/50 hover:bg-gray-800 rounded-xl px-8 py-4 shadow hover:border border-gray-700 cursor-pointer transition">
                             <LuMessageCircleHeart className="text-3xl text-cyan-300" />
                             <span className="mt-1 text-sm">Message</span>
@@ -101,10 +100,10 @@ const Profile = () => {
                             <span className="text-3xl text-cyan-300 font-semibold">122</span>
                             <span className="mt-1 text-sm">Total Posts</span>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Tabs */}
-                    <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap p-4 max-w-5xl mx-auto">
+                    {/* <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap p-4 max-w-5xl mx-auto">
                         <a rel="noopener noreferrer" href="#" className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b border-cyan-400">
                             <FiHome className="text-2xl" />
                             <span>Posts</span>
@@ -141,7 +140,7 @@ const Profile = () => {
                             <FiCalendar className="text-2xl" />
                             <span>Events</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
