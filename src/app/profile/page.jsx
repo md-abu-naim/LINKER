@@ -19,19 +19,38 @@ const Profile = () => {
                         width={800} height={400}
                     />
                 </div>
+                <div className="flex items-center justify-between w-5xl mx-auto">
+                    <div className="relative -mt-8 px-6 flex items-center gap-4">
+                        <div className="w-36 h-32 rounded-full ">
+                            <Image
+                                src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                                alt="Profile"
+                                className="object-cover rounded-full border-3 border-cyan-400"
+                                width={200} height={200}
+                            />
+                        </div>
+                        <div>
+                            <h2 className="text-3xl font-semibold">Mohammmad Abu Naim</h2>
+                            <span className="text-2xl font-medium">(Naim)</span>
+                        </div>
+                    </div>
+                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <div className="min-h-screen bg-gray-100 flex justify-center px-4 py-8">
                 <div className="w-full max-w-3xl bg-white shadow-lg rounded-2xl overflow-hidden">
-                    {/* Cover Photo */}
-                    <div className="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 relative">
-                        <Image
-                            src="https://i.postimg.cc/zGJ6C2CF/cover.jpg"
-                            alt="Cover"
-                            fill
-                            className="object-cover opacity-70"
-                        />
-                    </div>
+
 
                     {/* Profile Header */}
                     <div className="relative px-6 -mt-16 flex flex-col items-center">
