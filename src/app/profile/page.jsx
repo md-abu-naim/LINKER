@@ -1,15 +1,22 @@
 import Image from "next/image";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FiBookmark, FiCalendar, FiEdit2, FiHome, FiImage, FiLink, FiShare2, FiSlash, FiUser, FiUserPlus, FiUsers, FiUserX } from "react-icons/fi";
+import { FiBookmark, FiCalendar, FiEdit2, FiHome, FiImage, FiLink, FiMapPin, FiShare2, FiSlash, FiUser, FiUserPlus, FiUsers, FiUserX } from "react-icons/fi";
 import { IoMdTimer } from "react-icons/io";
 import Link from "next/link";
-import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
+import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Components/HomePage/MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import PostModal from "../Components/HomePage/PostModal";
 import PostImage from "../Components/HomePage/PostImage";
 
 const Profile = () => {
+    const images = [
+        'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
+        'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
+        'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp',
+        'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg',
+        'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp',
+    ]
     return (
         <div>
             <div className="">
@@ -27,7 +34,7 @@ const Profile = () => {
 
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
-                        <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row gap-4">
+                        <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row lg:gap-4">
                             <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg ">
                                 <Image
                                     src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
@@ -36,7 +43,7 @@ const Profile = () => {
                                     width={200} height={200}
                                 />
                             </div>
-                            <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 mt-5">
+                            <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 lg:mt-5">
                                 <h2 className="text-4xl font-semibold text-center">Mohammmad Abu Naim <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
                                 <span className="text-2xl font-medium hidden md:block">(Naim)</span>
                             </div>
@@ -45,6 +52,10 @@ const Profile = () => {
                             <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
                                 <span><FiUserPlus /></span>
                                 <span className="text-md">Follow</span>
+                            </button>
+                            <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                                <span><FiEdit2 /></span>
+                                <span className="text-md">Edit Profile</span>
                             </button>
 
                             <div className="dropdown dropdown-center">
@@ -113,7 +124,6 @@ const Profile = () => {
                         </a>
                         <a rel="noopener noreferrer" href="#" className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border border-b-0 rounded-t-lg border-cyan-400">
                             <FiUsers className="text-2xl" />
-
                             <span>Followers</span>
                         </a>
                         <a rel="noopener noreferrer" href="#" className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b border-cyan-400">
@@ -143,12 +153,61 @@ const Profile = () => {
                 </div>
 
                 {/* Aside & Posts */}
-                <div className="grid grid-cols-12 gap-6 max-w-5xl mx-auto mt-2 px-5 lg:px-0">
+                <div className="grid grid-cols-12 gap-6 max-w-5xl mx-auto mt-2 px-2 md:px-4 lg:px-0">
 
-                    <div className="col-span-12 lg:col-span-5 border">aside</div>
+                    <div className="col-span-12 lg:col-span-5">
+                        <div className="rounded-3xl p-3 md:px-4 space-y-2 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+                            <h3 className="text-2xl font-bold">Introduce</h3>
+                            <p className="text-gray-300">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
+                            <hr className="text-cyan-800" />
+
+                            {/* <div className="mt-2 space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <FaBriefcase className="text-xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">Work at</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <FaGraduationCap className="text-2xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">Went to</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <FaGraduationCap className="text-2xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">Studied at</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <FiHome className="text-2xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">Lives in</span> {'Khajuria, Senbag, Noakhali'}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <FiMapPin className="text-2xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">From to</span> {'Khajuria, Senbag, Noakhali'}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <FiUsers className="text-2xl text-cyan-400" />
+                                    <span><span className="text-cyan-400">Followed by</span> {'10000 People'}</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className="flex items-center justify-between mt-2">
+                                    <h3 className="text-2xl font-bold">Photos</h3>
+                                    <button className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                                        <span className="text-md">See All Photos</span>
+                                    </button>
+                                </div>
+                                <div className="grid grid-cols-3 gap-0.5 rounded-xl mt-2">
+                                    {
+                                        images.map((img, i) => (
+                                            <Image key={i} className="w-32 h-32 object-cover rounded-md" src={img} alt="Photos" width={400} height={400} />
+                                        ))
+                                    }
+                                </div>
+                            </div> */}
+                        </div>
+                    </div>
 
                     <div className="col-span-12 lg:col-span-7">
-                        <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+                        <div className="rounded-3xl p-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                             {/* Header */}
                             <div className="flex items-center gap-3 mb-3 md:mb-4">
                                 <Link href='/profile'>
