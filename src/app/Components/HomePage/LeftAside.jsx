@@ -9,14 +9,14 @@ import { LuMessageCircleHeart } from "react-icons/lu";
 const LeftAside = () => {
 
     const navLinks = [
-        { href: "/friends", icon: <FaUserFriends />, color: "text-blue-400", label: "Friends" },
-        { href: "/explore", icon: <MdOutlineExplore />, color: "text-red-400", label: "Explore Videos" },
-        { href: "/saved", icon: <FaBookmark />, color: "text-purple-400", label: "Saved Favorites" },
-        { href: "/message", icon: <LuMessageCircleHeart />, color: "text-pink-400", label: "Messages" },
-        { href: "/memories", icon: <IoMdTimer />, color: "text-cyan-400", label: "Memories" },
-        { href: "/settings", icon: <IoSettingsOutline />, color: "text-gray-300", label: "Settings" },
-        { href: "/help&support", icon: <MdHelpOutline />, color: "text-yellow-400", label: "Help & Support" },
-        { href: "/feedback", icon: <MdFeedback />, color: "text-green-400", label: "Give Feedback" },
+        { href: "/friends", icon: <FaUserFriends />, label: "Friends" },
+        { href: "/explore", icon: <MdOutlineExplore />, label: "Explore Videos" },
+        { href: "/saved", icon: <FaBookmark />, label: "Saved Favorites" },
+        { href: "/message", icon: <LuMessageCircleHeart />, label: "Messages" },
+        { href: "/memories", icon: <IoMdTimer />, label: "Memories" },
+        { href: "/settings", icon: <IoSettingsOutline />, label: "Settings" },
+        { href: "/help&support", icon: <MdHelpOutline />, label: "Help & Support" },
+        { href: "/feedback", icon: <MdFeedback />, label: "Give Feedback" },
     ]
     return (
         <>
@@ -49,7 +49,7 @@ const LeftAside = () => {
                         {
                             navLinks.map(link => (
                                 <Link key={link.href} href={link.href} className="group flex items-center gap-3 p-2.5 rounded-xl bg-gray-800/40 hover:bg-gray-700/60 hover:shadow-[0_0_18px_rgba(0,255,200,0.08)] transition-all duration-300">
-                                    <span className={`${link.color} text-lg bg-gray-900 p-2 rounded-lg group-hover:scale-110 transition-transform`}>{link.icon}</span>
+                                    <span className={`text-lg text-cyan-400 bg-gray-900 p-2 rounded-lg group-hover:scale-110 transition-transform`}>{link.icon}</span>
                                     <span className="text-gray-200 text-md font-medium group-hover:text-cyan-400 transition-colors">{link.label}</span>
                                 </Link>
                             ))

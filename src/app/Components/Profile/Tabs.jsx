@@ -6,9 +6,12 @@ import { IoMdTimer } from "react-icons/io";
 
 const Tabs = () => {
     const pathname = usePathname()
-    console.log(pathname);
 
-    const isActive = (route) => pathname === route
+    const isActive = (route) => {
+        if(route === '/profile') return pathname === '/profile'
+       return pathname === route || pathname.startsWith(route + '_') || pathname.startsWith(route + '/');
+    }
+
     return (
         <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap p-4 max-w-5xl mx-auto">
             <Link rel="noopener noreferrer" href="/profile" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile') ? 'border border-b-0 text-cyan-400 font-medium' : 'border-b'} border-cyan-400 rounded-t-lg`}>
