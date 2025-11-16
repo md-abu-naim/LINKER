@@ -35,7 +35,7 @@ export default async function AboutDynamic({ params }) {
       </div>
 
       {/* Content Area */}
-      <div className='col-span-12 lg:col-span-7 mt-2'>
+      <div className='col-span-12 lg:col-span-7 lg:mt-2'>
         {content}
       </div>
     </div>
