@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
 import Emojipicker from './Emojipicker';
 
-const PostImage = () => {
+const PostModal = () => {
     const images = [
         'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
         'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
@@ -219,4 +219,4 @@ const PostImage = () => {
     );
 };
 
-export default PostImage
+export default PostModal;

@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import { FaComment,  FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
-import PostModal from "./PostModal";
-import { MediaInput } from "./MediaInput";
-import PostImages from "./PostImage";
+import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
+import { MediaInput } from "../Shared/MediaInput";
+import PostModal from "../Shared/PostModal";
+import PostBox from "../Shared/PostBox";
+
 
 const Main = () => {
     return (
         <div>
+            {/* Post Box */}
             <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
@@ -73,7 +75,7 @@ const Main = () => {
                         Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
                     </p>
 
-                    <PostImages />
+                    <PostModal />
                 </div>
 
                 {/* Engagement Bar */}
@@ -93,8 +95,9 @@ const Main = () => {
                 </div>
             </div>
 
+            {/* Post Box Modal */}
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-            <PostModal />
+            <PostBox />
         </div>
     );
 };

@@ -7,7 +7,7 @@ import { InputMedia } from "./MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaUserTag, FaVideo } from "react-icons/fa";
 
-const PostModal = () => {
+const PostBox = () => {
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
@@ -90,4 +90,4 @@ const PostModal = () => {
     );
 };
 
-export default PostModal;
+export default PostBox;
