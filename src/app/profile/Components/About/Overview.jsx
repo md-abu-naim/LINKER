@@ -1,4 +1,4 @@
-import { FaBriefcase, FaGraduationCap, FaPhoneAlt, FaUser } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaPhoneAlt } from "react-icons/fa";
 import { FiHome, FiMapPin, FiUser, FiUsers } from "react-icons/fi";
 import { LuShield } from "react-icons/lu";
 import { MdMarkEmailUnread } from "react-icons/md";
