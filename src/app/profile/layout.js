@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import { FiEdit2, FiLink, FiShare2, FiSlash, FiUserPlus,FiUserX } from "react-icons/fi";
+import { FiEdit2, FiLink, FiShare2, FiSlash, FiUserPlus, FiUserX } from "react-icons/fi";
 import Link from "next/link";
-import Tabs from "../Components/Profile/Tabs";
+import Tabs from "./Components/Tabs";
 
 const ProfileLayout = ({ children }) => {
     return (
