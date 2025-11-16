@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FiHome, FiMapPin, FiUsers } from "react-icons/fi";
+import { FiEdit2, FiHome, FiLink, FiMapPin, FiSlash, FiUsers, FiUserX } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Components/Shared/MediaInput";
@@ -8,7 +8,7 @@ import PostModal from "../Components/Shared/PostModal";
 import PostBox from "../Components/Shared/PostBox";
 
 
-const Profile = () => {
+const ProfilePost = () => {
     const images = [
         { name: 'Abu Naim', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
         { name: 'Jasim Uddin', img: 'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg' },
@@ -138,7 +138,7 @@ const Profile = () => {
                                 <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                             </div>
                         </div>
-                        <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                        {/* <button className="p-2 rounded-full hover:bg-gray-700 transition">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6 text-white"
@@ -148,7 +148,38 @@ const Profile = () => {
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
                             </svg>
-                        </button>
+                        </button> */}
+                        <div className="dropdown dropdown-center">
+                            <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                </svg>
+                            </button>
+                            <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiEdit2 /></span>
+                                    <span className="">Edit Post</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                    <span className="">Unfollow</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                    <span className="">Block User</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiLink /></span>
+                                    <span className=""> Copy Link</span>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
 
                     {/* Post Content */}
@@ -184,5 +215,5 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default ProfilePost;
 

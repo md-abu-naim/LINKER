@@ -3,8 +3,8 @@ import { LuMessageCircleHeart } from "react-icons/lu";
 import { FiEdit2, FiLink, FiShare2, FiSlash, FiUserPlus,FiUserX } from "react-icons/fi";
 import Link from "next/link";
 import Tabs from "../Components/Profile/Tabs";
-const ProfileLayout = ({ children }) => {
 
+const ProfileLayout = ({ children }) => {
     return (
         <div>
             <div className="">
@@ -41,10 +41,10 @@ const ProfileLayout = ({ children }) => {
                                 <span><FiUserPlus /></span>
                                 <span className="text-md">Follow</span>
                             </button>
-                            <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                            <Link href={'/profile/about'} className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
                                 <span><FiEdit2 /></span>
                                 <span className="text-md">Edit Profile</span>
-                            </button>
+                            </Link>
 
                             <div className="dropdown dropdown-center">
                                 <button tabIndex={0} className="bg-cyan-800 hover:bg-gray-900 hover:text-cyan-300 rounded-md p-2">
