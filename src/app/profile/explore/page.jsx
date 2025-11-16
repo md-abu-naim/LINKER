@@ -2,7 +2,7 @@
 const Explore = () => {
     return (
         <div>
-            Explores
+            Explores page
         </div>
     );
 };
