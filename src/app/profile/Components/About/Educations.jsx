@@ -9,7 +9,6 @@ const Educations = () => {
                 {/* Works */}
                 <WorkForm />
                 
-
                 <div className="flex gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <span><FaBriefcase className="text-3xl text-cyan-400" /></span>
                     <div className="flex flex-col">

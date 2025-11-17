@@ -63,16 +63,16 @@ const WorkForm = () => {
                     </select>
                     <span>to</span>
                     {
-                      present ? <span className="text-md font-medium">Present</span>: 
-                      <select defaultValue='Year' name="toYear" className="bg-gray-900 border border-gray-700 text-gray-200 p-2.5 rounded-lg outline-none focus:border-cyan-400 font-semibold shadow-[inset_0_0_12px_rgba(0,0,0,0.5)]">
-                            <option disabled>Year</option>
-                            {
-                                Array.from({ length: 27 }, (_, i) => 2026 - i).map(year => (
-                                    <option key={year} value={year}>{year}</option>
-                                ))
-                            }
-                        </select>
-                        
+                        present ? <span className="text-md font-medium">Present</span> :
+                            <select defaultValue='Year' name="toYear" className="bg-gray-900 border border-gray-700 text-gray-200 p-2.5 rounded-lg outline-none focus:border-cyan-400 font-semibold shadow-[inset_0_0_12px_rgba(0,0,0,0.5)]">
+                                <option disabled>Year</option>
+                                {
+                                    Array.from({ length: 27 }, (_, i) => 2026 - i).map(year => (
+                                        <option key={year} value={year}>{year}</option>
+                                    ))
+                                }
+                            </select>
+
                     }
                 </div>
                 <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 ">
