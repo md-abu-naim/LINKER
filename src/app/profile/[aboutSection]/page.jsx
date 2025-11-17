@@ -1,3 +1,4 @@
+import Educations from "../Components/About/Educations";
 import Overview from "../Components/About/Overview";
 import Sidebar from "../Components/About/Sidebar";
 
@@ -14,14 +15,14 @@ export default async function AboutDynamic({ params }) {
     case "about_customize_profile":
       content = <h2>Customize Profile</h2>;
       break;
+    case "about_work_and_education":
+      content = <Educations />;
+      break;
     case "about_lives_and_locations":
       content = <h2>Lives & Locations</h2>;
       break;
     case "about_information":
       content = <h2>Basic Info</h2>;
-      break;
-    case "about_work_and_education":
-      content = <h2>Work & Education</h2>;
       break;
     default:
       content = <h2>Page Not Found</h2>;
