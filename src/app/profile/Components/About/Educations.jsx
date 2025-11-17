@@ -10,11 +10,14 @@ const Educations = () => {
                 <WorkForm />
                 
 
-                <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
-                    <FaBriefcase className="text-3xl text-cyan-400" />
+                <div className="flex gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
+                    <span><FaBriefcase className="text-3xl text-cyan-400" /></span>
                     <div className="flex flex-col">
                         <span className="font-medium">Full Stack Developer <span className="font-normal"> at</span> {'SM Technology'}</span>
-                        <small className="text-gray-300 text-sm">2025 to present</small>
+                        <small className="text-gray-300 text-sm">2025 to present · Dhaka Bangladesh</small>
+                        <p className="text-sm text-gray-400">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus nemo molestiae officiis corrupti. Minima libero blanditiis id quam quod iusto facilis saepe praesentium? Odit ea non accusantium. Nam, fuga. Id, sed. Quam, magnam eos est praesentium cupiditate blanditiis, ipsum debitis saepe quas harum numquam repudiandae, animi ipsam rerum enim nesciunt.
+                        </p>
                     </div>
                 </div>
 
