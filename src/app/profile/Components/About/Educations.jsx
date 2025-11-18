@@ -1,6 +1,8 @@
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import WorkForm from "./WorkForm";
+import StudiedForm from "./UnivercityForm";
+import AddSchoolForm from "./AddSchoolForm";
 
 const Educations = () => {
     return (
@@ -8,7 +10,7 @@ const Educations = () => {
             <div>
                 {/* Works */}
                 <WorkForm />
-                
+
                 <div className="flex gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <span><FaBriefcase className="text-3xl text-cyan-400" /></span>
                     <div className="flex flex-col">
@@ -22,13 +24,17 @@ const Educations = () => {
 
                 {/* Educations */}
                 <div className="">
-                    <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
-                        <FaGraduationCap className="text-3xl text-cyan-400" />
-                        <span>Went to <span className="font-medium">{'Jamiya Mohammadia Khajuria Madrasha'}</span></span>
-                    </div>
+                    <StudiedForm />
+
                     <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                         <FaGraduationCap className="text-4xl text-cyan-400" />
                         <span>Studied at <span className="font-medium">{'Al-Jamiatul Ahliah Darul Uloom Moinul Islam, Hathazari, Ctg, Bangladesh'}</span></span>
+                    </div>
+
+                    <AddSchoolForm />
+                    <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
+                        <FaGraduationCap className="text-3xl text-cyan-400" />
+                        <span>Went to <span className="font-medium">{'Jamiya Mohammadia Khajuria Madrasha'}</span></span>
                     </div>
                 </div>
             </div>

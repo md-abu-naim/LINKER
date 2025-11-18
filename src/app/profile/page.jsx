@@ -138,17 +138,6 @@ const ProfilePost = () => {
                                 <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                             </div>
                         </div>
-                        {/* <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-white"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                            </svg>
-                        </button> */}
                         <div className="dropdown dropdown-center">
                             <button className="p-2 rounded-full hover:bg-gray-700 transition">
                                 <svg

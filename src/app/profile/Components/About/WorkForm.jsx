@@ -20,10 +20,10 @@ const WorkForm = () => {
     }
     return (
         <div>
-            <input type="checkbox" id="toggleForm" className="peer hidden" />
+            <input type="checkbox" id="toggleWorkForm" className="peer hidden" />
             <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold">Work</h3>
-                <label htmlFor="toggleForm" className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2">
+                <label htmlFor="toggleWorkForm" className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2">
                     <FiPlus className="text-xl" />
                     <span className="text-md">Add Work</span>
                 </label>
