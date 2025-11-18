@@ -1,8 +1,7 @@
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
-import { FiPlus } from "react-icons/fi";
 import WorkForm from "./WorkForm";
-import StudiedForm from "./UnivercityForm";
 import AddSchoolForm from "./AddSchoolForm";
+import UniversityForm from "./UniversityForm";
 
 const Educations = () => {
     return (
@@ -24,7 +23,7 @@ const Educations = () => {
 
                 {/* Educations */}
                 <div className="">
-                    <StudiedForm />
+                    <UniversityForm />
 
                     <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                         <FaGraduationCap className="text-4xl text-cyan-400" />
