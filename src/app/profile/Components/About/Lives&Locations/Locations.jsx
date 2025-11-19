@@ -16,7 +16,9 @@ const Locations = () => {
                         <span className="text-md">Add City</span>
                     </label>
                 </div>
+                
                 <CurrentCityForm />
+
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiHome className="text-3xl text-cyan-400" />
                     <span>Lives in <span className="font-medium">{'Khajuria, Senbag, Noakhali'}</span></span>
