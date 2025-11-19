@@ -1,4 +1,5 @@
 import Educations from "../Components/About/Educations";
+import Locations from "../Components/About/Locations";
 import Overview from "../Components/About/Overview";
 import Sidebar from "../Components/About/Sidebar";
 
@@ -19,7 +20,7 @@ export default async function AboutDynamic({ params }) {
       content = <Educations />;
       break;
     case "about_lives_and_locations":
-      content = <h2>Lives & Locations</h2>;
+      content = <Locations />;
       break;
     case "about_information":
       content = <h2>Basic Info</h2>;

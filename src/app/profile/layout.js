@@ -37,17 +37,17 @@ const ProfileLayout = ({ children }) => {
                             </div>
                         </div>
                         <div className="flex items-center gap-2 mt-2">
-                            <button className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                            <button className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2 px-4">
                                 <span><FiUserPlus /></span>
                                 <span className="text-md">Follow</span>
                             </button>
-                            <Link href={'/profile/about'} className="flex items-center gap-1 bg-cyan-800 hover:bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                            <Link href={'profile/about_customize_profile'} className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2 px-4">
                                 <span><FiEdit2 /></span>
                                 <span className="text-md">Edit Profile</span>
                             </Link>
 
                             <div className="dropdown dropdown-center">
-                                <button tabIndex={0} className="bg-cyan-800 hover:bg-gray-900 hover:text-cyan-300 rounded-md p-2">
+                                <button tabIndex={0} className="bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-6 w-6"

@@ -59,7 +59,7 @@ const ProfilePost = () => {
                     <div className="mt-4">
                         <div className="flex items-center justify-between">
                             <h3 className="text-2xl font-bold">Photos</h3>
-                            <Link href={`/profile/photos`} className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                            <Link href={`/profile/photos`} className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2 px-4">
                                 <span className="text-md">See All Photos</span>
                             </Link>
                         </div>
@@ -75,7 +75,7 @@ const ProfilePost = () => {
                     <div className="mt-6">
                         <div className="flex items-center justify-between">
                             <h3 className="text-2xl font-bold">Followers</h3>
-                            <Link href={`/profile/friends`} className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2 px-4">
+                            <Link href={`/profile/friends`} className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2 px-4">
                                 <span className="text-md">See All Followers</span>
                             </Link>
                         </div>
@@ -113,16 +113,16 @@ const ProfilePost = () => {
 
                     {/* Buttons */}
                     <div className="hidden md:flex mt-4 items-center justify-around border-t border-gray-700 pt-4">
-                        <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700/80 transition-all duration-300 group">
+                        <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700 hover:text-cyan-400 transition-all duration-300 group">
                             <FaVideo className="text-red-500 text-xl group-hover:scale-110 transition-transform" />
-                            <span className="text-gray-300 font-medium">Go Live</span>
+                            <span className="font-medium">Go Live</span>
                         </button>
 
                         <MediaInput />
 
-                        <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700/80 transition-all duration-300 group">
-                            <BsEmojiSunglasses className="text-yellow-500 text-xl group-hover:scale-110 transition-transform" />
-                            <span className="text-gray-300 font-medium">Feelings</span>
+                        <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700 hover:text-cyan-400 transition-all duration-300 group">
+                            <BsEmojiSunglasses className="text-yellow-500 hover:text-cyan-400 text-xl group-hover:scale-110 transition-transform" />
+                            <span className="font-medium">Feelings</span>
                         </button>
                     </div>
                 </div>
