@@ -1,5 +1,10 @@
 
 const LocationForm = () => {
+    const handleTwon = e => {
+        e.preventDefault()
+        const location = e.target.location.value
+        console.log(location);
+    }
     return (
         <form className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
             <div className="flex flex-col gap-1">
