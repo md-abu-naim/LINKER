@@ -12,7 +12,7 @@ const UniversityForm = () => {
             <input type="checkbox" id="toggleuniversityForm" className="peer hidden" />
             <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold">University</h3>
-                <label htmlFor="toggleuniversityForm" className="flex items-center gap-1 bg-gray-900  hover:text-cyan-300 rounded-md p-2">
+                <label htmlFor="toggleuniversityForm" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
                     <FiPlus className="text-xl" />
                     <span className="text-md">Add Versity</span>
                 </label>

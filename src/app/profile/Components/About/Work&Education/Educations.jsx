@@ -1,7 +1,8 @@
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import WorkForm from "./WorkForm";
-import AddSchoolForm from "./AddSchoolForm";
 import UniversityForm from "./UniversityForm";
+import AddSchoolForm from "./AddSchoolForm";
+
 
 const Educations = () => {
     return (

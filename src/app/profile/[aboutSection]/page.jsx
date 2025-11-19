@@ -1,7 +1,7 @@
-import Educations from "../Components/About/Educations";
-import Locations from "../Components/About/Locations";
+import Locations from "../Components/About/Lives&Locations/Locations";
 import Overview from "../Components/About/Overview";
 import Sidebar from "../Components/About/Sidebar";
+import Educations from "../Components/About/Work&Education/Educations";
 
 
 export default async function AboutDynamic({ params }) {
