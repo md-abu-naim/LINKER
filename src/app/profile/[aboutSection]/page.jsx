@@ -1,3 +1,4 @@
+import Information from "../Components/About/Information/Information";
 import Locations from "../Components/About/Lives&Locations/Locations";
 import Overview from "../Components/About/Overview";
 import Sidebar from "../Components/About/Sidebar";
@@ -23,7 +24,7 @@ export default async function AboutDynamic({ params }) {
       content = <Locations />;
       break;
     case "about_information":
-      content = <h2>Basic Info</h2>;
+      content = <Information />;
       break;
     default:
       content = <h2>Page Not Found</h2>;
