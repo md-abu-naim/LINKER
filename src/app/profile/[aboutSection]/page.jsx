@@ -1,3 +1,4 @@
+import CustomizeProfile from "../Components/About/Customization/CustomizeProfile";
 import Information from "../Components/About/Information/Information";
 import Locations from "../Components/About/Lives&Locations/Locations";
 import Overview from "../Components/About/Overview";
@@ -15,7 +16,7 @@ export default async function AboutDynamic({ params }) {
       content = <Overview />;
       break;
     case "about_customize_profile":
-      content = <h2>Customize Profile</h2>;
+      content = <CustomizeProfile />
       break;
     case "about_work_and_education":
       content = <Educations />;
