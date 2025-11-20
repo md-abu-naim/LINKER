@@ -8,7 +8,7 @@ import { FiPlus } from "react-icons/fi";
 const Educations = () => {
     return (
         <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
-            <div>
+            <div className="space-y-1">
                 <input type="checkbox" id="toggleWorkForm" className="peer hidden" />
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold">Work</h3>
@@ -33,7 +33,7 @@ const Educations = () => {
             </div>
 
             {/* Educations */}
-            <div className="">
+            <div className="space-y-1">
                 <input type="checkbox" id="toggleuniversityForm" className="peer hidden" />
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold">University</h3>
@@ -52,7 +52,7 @@ const Educations = () => {
             </div>
 
             {/* School */}
-            <div>
+            <div className="space-y-1">
                 <input type="checkbox" id="toggleSchoolForm" className="peer hidden" />
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold">School</h3>

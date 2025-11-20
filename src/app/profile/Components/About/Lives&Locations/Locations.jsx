@@ -7,7 +7,7 @@ const Locations = () => {
         <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
 
             {/* Current City */}
-            <div>
+            <div className="space-y-1">
                 <input type="checkbox" id="toggleCurrentCityForm" className="peer hidden" />
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold">Current City</h3>
@@ -16,7 +16,7 @@ const Locations = () => {
                         <span className="text-md">Add City</span>
                     </label>
                 </div>
-                
+
                 <CurrentCityForm />
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
@@ -26,7 +26,7 @@ const Locations = () => {
             </div>
 
             {/* Location */}
-            <div>
+            <div className="space-y-1">
                 <input type="checkbox" id="toggleTown" className="peer hidden" />
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold">Home Town</h3>
