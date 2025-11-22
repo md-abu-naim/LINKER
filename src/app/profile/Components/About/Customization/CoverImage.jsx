@@ -34,6 +34,7 @@ const CoverImage = () => {
                         className="w-full max-h-56 md:max-h-80 object-cover rounded-xl shadow-lg shadow-black/40 group-hover:opacity-90 transition"
                     />
 
+
                     {/* Overlay hover effect */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
                         <span className="text-cyan-300 text-lg font-medium">Current Cover</span>
