@@ -11,7 +11,7 @@ const ProfileLayout = ({ children }) => {
                 {/* Profile Information */}
                 <div className="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
-                    <div className="flex items-center justify-center shadow-gray-300">
+                    <div className="flex items-center justify-center shadow-gray-300 cursor-pointer">
                         <Image
                             src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
                             alt="Cover"
@@ -23,7 +23,7 @@ const ProfileLayout = ({ children }) => {
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
                         <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row lg:gap-4">
-                            <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg ">
+                            <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg cursor-pointer">
                                 <Image
                                     src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
                                     alt="Profile"
