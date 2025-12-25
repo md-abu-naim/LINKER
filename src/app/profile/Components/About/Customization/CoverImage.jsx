@@ -13,17 +13,17 @@ const CoverImage = () => {
     }
 
     useEffect(() => {
-        if(!coverFile) return;
+        if (!coverFile) return;
 
         const url = URL.createObjectURL(coverFile)
         setPreviewUrl(url)
 
         return () => URL.revokeObjectURL(url)
- 
+
     }, [coverFile])
 
     console.log(previewUrl);
-    
+
     return (
         <div className="space-y-4 hidden peer-checked:block p-6 rounded-2xl border border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.03)] mt-3">
             <div className="overflow-hidden">
@@ -36,13 +36,12 @@ const CoverImage = () => {
                     <span className="text-lg font-semibold">{coverFile ? coverFile.name : 'Upload Cover'}</span>
                 </label>
             </div>
-            <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-cyan-900/20">
-                Change Cover
-            </button>
+            {
+                coverFile && <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-cyan-900/20">
+                    Change Cover
+                </button>
+            }
         </div>
-
-
-
     );
 };
 

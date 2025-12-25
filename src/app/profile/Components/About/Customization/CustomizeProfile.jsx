@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FiEdit } from "react-icons/fi";
 import CoverImage from "./CoverImage";
+import ProfileImage from "./ProfileImage";
 
 const CustomizeProfile = () => {
     return (
@@ -22,6 +23,27 @@ const CustomizeProfile = () => {
                         src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
                         alt="Cover"
                         className="object-cover rounded-md w-5xl max-h-40 md:max-h-80 shadow-2xl shadow-gray-700"
+                        width={800} height={400}
+                    />
+                </div>
+            </div>
+
+            <div className="space-y-2">
+                <input type="checkbox" id="toggleProfile" className="peer hidden" />
+                <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">Profile</h3>
+                    <label htmlFor="toggleProfile" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
+                        <FiEdit className="text-xl" />
+                        <span className="text-md">Edit Profile</span>
+                    </label>
+                </div>
+                <ProfileImage />
+
+                <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
+                    <Image
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Cover"
+                        className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                         width={800} height={400}
                     />
                 </div>
