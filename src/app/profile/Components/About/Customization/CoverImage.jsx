@@ -25,7 +25,7 @@ const CoverImage = () => {
     return (
         <div className="space-y-4 hidden peer-checked:block p-6 rounded-2xl border border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.03)] mt-3">
             <div className="overflow-hidden">
-                <Image className="w-full max-h-56 md:max-h-80 object-cover rounded-xl shadow-lg" src={coverFile && previewUrl} width={800} height={400} alt="Cover" />
+                <Image className="w-full max-h-56 md:max-h-80 object-cover rounded-xl shadow-lg" src={coverFile ? previewUrl : 'https://i.postimg.cc/MTvqpvT7/cover.jpg'} width={800} height={400} alt="Cover" />
             </div>
             <div className="flex items-center justify-center">
                 <input onChange={handleCoverPreview} name="cover" type="file" id="coverInput" accept="image/*" className="hidden" />

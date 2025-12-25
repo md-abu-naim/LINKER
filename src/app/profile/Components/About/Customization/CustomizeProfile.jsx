@@ -2,10 +2,12 @@ import Image from "next/image";
 import { FiEdit } from "react-icons/fi";
 import CoverImage from "./CoverImage";
 import ProfileImage from "./ProfileImage";
+import BioForm from "./BioForm";
 
 const CustomizeProfile = () => {
     return (
         <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+            {/* Cover  Image*/}
             <div className="space-y-2">
                 <input type="checkbox" id="toggleCover" className="peer hidden" />
                 <div className="flex items-center justify-between">
@@ -28,6 +30,7 @@ const CustomizeProfile = () => {
                 </div>
             </div>
 
+            {/* Profile Image */}
             <div className="space-y-2">
                 <input type="checkbox" id="toggleProfile" className="peer hidden" />
                 <div className="flex items-center justify-between">
@@ -42,10 +45,27 @@ const CustomizeProfile = () => {
                 <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                     <Image
                         src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
-                        alt="Cover"
+                        alt="Profile"
                         className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                         width={800} height={400}
                     />
+                </div>
+            </div>
+
+            <div className="space-y-2">
+                <input type="checkbox" id="toggleBio" className="peer hidden" />
+                <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">Introduce</h3>
+                    <label htmlFor="toggleBio" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
+                        <FiEdit className="text-xl" />
+                        <span className="text-md">Edit Intro</span>
+                    </label>
+                </div>
+
+                <BioForm />
+
+                <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
+                    <p className="text-gray-300 p-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
                 </div>
             </div>
         </div>

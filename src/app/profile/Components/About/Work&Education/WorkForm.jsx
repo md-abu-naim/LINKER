@@ -1,6 +1,5 @@
 'use client'
 import { useState } from "react";
-import { FiPlus } from "react-icons/fi";
 
 const WorkForm = () => {
     const [present, setPresent] = useState(false)
