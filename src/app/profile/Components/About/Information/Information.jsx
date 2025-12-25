@@ -11,7 +11,7 @@ const Information = () => {
             <div className="space-y-1">
                 <input type="checkbox" id="togglePhone" className="peer hidden" />
                 <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold">Phone Number</h3>
+                    <h3 className="text-2xl font-bold">Phone</h3>
                     <label htmlFor="togglePhone" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
                         <FiEdit className="text-xl" />
                         <span className="text-md">Edit Phone</span>

@@ -24,7 +24,7 @@ const Tabs = () => {
             </Link>
             <Link rel="noopener noreferrer" href="/profile/friends" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/friends') ? 'border border-b-0 text-cyan-400' : 'border-b'} border-cyan-400 rounded-t-lg`}>
                 <FiUsers className="text-2xl" />
-                <span>Followers</span>
+                <span>Friends</span>
             </Link>
             <Link rel="noopener noreferrer" href="/profile/photos" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/photos') ? 'border border-b-0 text-cyan-400 font-medium' : 'border-b'} border-cyan-400 rounded-t-lg`}>
                 <FiImage className="text-2xl" />

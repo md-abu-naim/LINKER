@@ -23,7 +23,7 @@ const ProfileImage = () => {
     return (
         <div className="space-y-4 hidden peer-checked:block p-6 rounded-2xl border border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.03)] mt-3">
             <div className="overflow-hidden flex items-center justify-center">
-                <Image className="w-72 h-72 object-cover rounded-full shadow-lg" src={profileFile ? profilePreview : 'https://i.postimg.cc/MTvqpvT7/cover.jpg'} width={800} height={400} alt="Cover" />
+                <Image className="w-72 h-60 md:h-72 object-cover rounded-full shadow-lg" src={profileFile ? profilePreview : 'https://i.postimg.cc/MTvqpvT7/cover.jpg'} width={800} height={400} alt="Cover" />
             </div>
             <div className="flex items-center justify-center">
                 <input onChange={handleProfilePreview} name="profile" type="file" id="ProfileInput" accept="image/*" className="hidden" />
