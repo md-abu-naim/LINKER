@@ -12,7 +12,7 @@ const Friends = () => {
             </div>
 
             {/* Friends Cart Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                 <div className="flex items-center justify-between gap-4 border border-gray-800 rounded-lg p-2">
                     <div className="flex items-center justify-between gap-3">
                         <Image
