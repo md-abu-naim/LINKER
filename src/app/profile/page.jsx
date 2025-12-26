@@ -74,9 +74,9 @@ const ProfilePost = () => {
 
                     <div className="mt-6">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-2xl font-bold">Followers</h3>
+                            <h3 className="text-2xl font-bold">Friends</h3>
                             <Link href={`/profile/friends`} className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2 px-4">
-                                <span className="text-md">See All Followers</span>
+                                <span className="text-md">See All Friends</span>
                             </Link>
                         </div>
                         <div className="grid grid-cols-3 gap-1 md:gap-3 mt-2 border-x border-t border-cyan-950 shadow-2xs rounded-md">
