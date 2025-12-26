@@ -3,8 +3,8 @@ import Link from "next/link";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Shared/MediaInput";
-import PostModal from "../Shared/PostModal";
 import PostBox from "../Shared/PostBox";
+import ImageModal from "../Shared/ImageModal";
 
 
 const Main = () => {
@@ -75,7 +75,7 @@ const Main = () => {
                         Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
                     </p>
 
-                    <PostModal />
+                    <ImageModal />
                 </div>
 
                 {/* Engagement Bar */}

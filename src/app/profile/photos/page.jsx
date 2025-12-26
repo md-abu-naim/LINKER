@@ -1,8 +1,191 @@
+'use client'
+import Image from "next/image";
+import { FiSlash, FiUserX } from "react-icons/fi";
+import { MdEdit } from "react-icons/md";
+import PostModal from "@/app/Components/Shared/PostModal";
 
 const Photos = () => {
+    const images = [
+        'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg',
+    ]
     return (
-        <div>
-            Photos page
+        <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 max-w-5xl mx-auto my-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+            <h3 className="text-3xl font-bold">Photos</h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4">
+                {/* Images */}
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div className="relative border border-gray-700 rounded-lg p-0.5">
+                    <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        alt="Profile"
+                        className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
+                        width={800} height={400}
+                    />
+                    <div className="dropdown dropdown-center absolute top-1 right-1">
+                        <button className="p-2 rounded-full bg-gray-500 hover:bg-gray-700 transition">
+                            <MdEdit className="text-xl text-black" />
+                        </button>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                <span className="">Unfriend</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                <span className="">Block</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* ImageModal */}
+                <PostModal images={images} />
+            </div>
         </div>
     );
 };

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Components/Shared/MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import PostModal from "../Components/Shared/PostModal";
 import PostBox from "../Components/Shared/PostBox";
+import ImageModal from "../Components/Shared/ImageModal";
 
 
 const ProfilePost = () => {
@@ -177,7 +177,7 @@ const ProfilePost = () => {
                             Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
                         </p>
 
-                        <PostModal />
+                        <ImageModal />
                     </div>
 
                     {/* Engagement Bar */}
