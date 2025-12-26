@@ -18,7 +18,7 @@ const CustomizeProfile = () => {
                     </label>
                 </div>
 
-                <CoverImage />
+                {/* <CoverImage /> */}
 
                 <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md p-1">
                     <Image
@@ -40,7 +40,7 @@ const CustomizeProfile = () => {
                         <span className="text-md">Edit Profile</span>
                     </label>
                 </div>
-                <ProfileImage />
+                {/* <ProfileImage /> */}
 
                 <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                     <Image
