@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
 import Emojipicker from './Emojipicker';
 
-const PostModal = ({images}) => {
+const PostModal = ({ images }) => {
     return (
         <dialog id="my_modal_4" className="modal">
             <div className="modal-box hidden md:block w-11/12 max-w-6xl p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl relative rounded-xl">

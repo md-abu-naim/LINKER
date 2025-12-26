@@ -39,7 +39,7 @@ const Images = () => {
             </div>
 
             {/* ImageModal */}
-                <PostModal images={images} />
+            <PostModal images={images} />
         </div>
     );
 };
