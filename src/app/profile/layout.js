@@ -3,6 +3,7 @@ import { LuMessageCircleHeart } from "react-icons/lu";
 import { FiEdit2, FiLink, FiShare2, FiSlash, FiUserPlus, FiUserX } from "react-icons/fi";
 import Link from "next/link";
 import Tabs from "./Components/Tabs";
+import CoverPhoto from "./Components/CoverPhoto";
 
 const ProfileLayout = ({ children }) => {
     return (
@@ -11,14 +12,7 @@ const ProfileLayout = ({ children }) => {
                 {/* Profile Information */}
                 <div className="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
-                    <div className="flex items-center justify-center shadow-gray-300 cursor-pointer">
-                        <Image
-                            src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
-                            alt="Cover"
-                            className="object-cover rounded-b-md w-5xl max-h-40 md:max-h-80 lg:max-h-96 shadow-2xl shadow-gray-700"
-                            width={800} height={400}
-                        />
-                    </div>
+                    <CoverPhoto />
 
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
