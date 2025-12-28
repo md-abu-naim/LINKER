@@ -1,15 +1,15 @@
 import Image from "next/image";
-import { FiEdit2, FiHome, FiLink, FiMapPin, FiSlash, FiUsers, FiUserX } from "react-icons/fi";
+import { FiHome, FiMapPin, FiUsers, } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Components/Shared/MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import PostBox from "../Components/Shared/PostBox";
-import ImageModal from "../Components/Shared/ImageModal";
+import ImageLayout from "../Components/Shared/ImageLayout";
 
 
 const ProfilePost = () => {
-    const images = [
+    const friends = [
         { name: 'Abu Naim', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
         { name: 'Jasim Uddin', img: 'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg' },
         { name: 'Rofiqul Islam', img: 'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp' },
@@ -19,6 +19,13 @@ const ProfilePost = () => {
         { name: 'Salma Sweety', img: 'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg' },
         { name: 'Shakhawat Miyaji', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
         { name: 'Mohammad Abu Naim', img: 'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp' },
+    ]
+    const images = [
+        'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
+        'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
+        'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp',
+        'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg',
+        'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp',
     ]
 
     return (
@@ -66,7 +73,7 @@ const ProfilePost = () => {
                         <div className="grid grid-cols-3 gap-0.5 mt-2 border border-cyan-950 shadow-2xs rounded-md">
                             {
                                 images?.slice(0, 6).map((img, i) => (
-                                    <Image key={i} className="w-32 md:w-60 lg:w-32 h-24 md:h-52 lg:h-32 object-cover rounded-md" src={img.img} alt="Photos" width={400} height={400} />
+                                    <Image key={i} className="w-32 md:w-60 lg:w-32 h-24 md:h-52 lg:h-32 object-cover rounded-md" src={img} alt="Photos" width={400} height={400} />
                                 ))
                             }
                         </div>
@@ -81,7 +88,7 @@ const ProfilePost = () => {
                         </div>
                         <div className="grid grid-cols-3 gap-1 md:gap-3 mt-2 border-x border-t border-cyan-950 shadow-2xs rounded-md">
                             {
-                                images?.slice(0, 6).map((frined, i) => (
+                                friends?.slice(0, 6).map((frined, i) => (
                                     <div key={i} className="">
                                         <Image className="w-32 md:w-56 lg:w-32 h-24 md:h-52 lg:h-32 object-cover rounded-md" src={frined.img} alt="Photos" width={400} height={400} />
                                         <h3 className="text-sm md:text-lg lg:text-sm font-semibold mt-0.5">{frined.name}</h3>
@@ -93,6 +100,7 @@ const ProfilePost = () => {
                 </div>
             </div>
 
+            {/* Post Box */}
             <div className="col-span-12 lg:col-span-7">
                 <div className="rounded-3xl p-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                     {/* Header */}
@@ -138,37 +146,17 @@ const ProfilePost = () => {
                                 <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                             </div>
                         </div>
-                        <div className="dropdown dropdown-center">
-                            <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 text-white"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                                </svg>
-                            </button>
-                            <ul tabIndex="-1" className="dropdown-content menu bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
-                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiEdit2 /></span>
-                                    <span className="">Edit Post</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
-                                    <span className="">Unfollow</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
-                                    <span className="">Block User</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiLink /></span>
-                                    <span className=""> Copy Link</span>
-                                </div>
-                            </ul>
-                        </div>
+                        <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6 text-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                            </svg>
+                        </button>
                     </div>
 
                     {/* Post Content */}
@@ -177,7 +165,7 @@ const ProfilePost = () => {
                             Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
                         </p>
 
-                        <ImageModal />
+                        <ImageLayout images={images} />
                     </div>
 
                     {/* Engagement Bar */}

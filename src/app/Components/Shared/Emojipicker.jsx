@@ -15,12 +15,12 @@ const Emojipicker = () => {
     }
     return (
         <div>
-            <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn text-3xl rounded-full transition-transform duration-200 hover:scale-125 hover:rotate-6">
+            <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn text-lg cursor-pointer rounded-full transition-transform duration-200 hover:scale-125 hover:rotate-6">
                 <span className="animate-bounce">🙂</span>
             </button>
 
             {
-                show && <div className="emoji-container absolute bottom-16 right-0 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
+                show && <div className="emoji-container absolute bottom-10 -right-5 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
                     <EmojiPicker
                         onEmojiClick={(emojiData) => setText((t) => t + emojiData.emoji)}
                         theme="dark"

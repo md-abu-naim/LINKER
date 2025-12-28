@@ -1,30 +1,23 @@
-import Image from "next/image";
 import { LuMessageCircleHeart } from "react-icons/lu";
 import { FiEdit2, FiLink, FiShare2, FiSlash, FiUserPlus, FiUserX } from "react-icons/fi";
 import Link from "next/link";
 import Tabs from "./Components/Tabs";
 import CoverPhoto from "./Components/CoverPhoto";
+import ProfilePicture from "./Components/ProfilePicture";
 
 const ProfileLayout = ({ children }) => {
     return (
         <div>
             <div className="">
                 {/* Profile Information */}
-                <div className="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
+                <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
                     <CoverPhoto />
 
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
                         <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row lg:gap-4">
-                            <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg cursor-pointer">
-                                <Image
-                                    src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
-                                    alt="Profile"
-                                    className="object-cover w-full h-full"
-                                    width={200} height={200}
-                                />
-                            </div>
+                            <ProfilePicture />
                             <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 lg:mt-5">
                                 <h2 className="text-4xl font-semibold text-center">Mohammmad Abu Naim <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
                                 <span className="text-2xl font-medium hidden md:block">(Naim)</span>

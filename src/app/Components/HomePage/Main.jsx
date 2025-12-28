@@ -4,10 +4,17 @@ import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Shared/MediaInput";
 import PostBox from "../Shared/PostBox";
-import ImageModal from "../Shared/ImageModal";
+import ImageLayout from "../Shared/ImageLayout";
 
 
 const Main = () => {
+    const images = [
+        'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
+        'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
+        'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp',
+        'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg',
+        'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp',
+    ]
     return (
         <div>
             {/* Post Box */}
@@ -75,7 +82,7 @@ const Main = () => {
                         Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.
                     </p>
 
-                    <ImageModal />
+                    <ImageLayout images={images} />
                 </div>
 
                 {/* Engagement Bar */}
