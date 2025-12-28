@@ -174,10 +174,10 @@ const ProfilePost = () => {
                             <FaThumbsUp />
                             <span>20</span>
                         </button>
-                        <a href='#comment'  className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                        <button href='#comment' className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                             <FaComment />
                             <span>24</span>
-                        </a>
+                        </button>
                         <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                             <FaShare />
                             <span>8</span>
