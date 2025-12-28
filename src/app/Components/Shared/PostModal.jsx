@@ -130,7 +130,7 @@ const PostModal = ({ images, setOpenModal }) => {
             </div>
 
             {/* Small Device Modal */}
-            
+
         </div>
     );
 };
