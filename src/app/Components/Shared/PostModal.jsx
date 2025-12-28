@@ -11,8 +11,13 @@ import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
 import Emojipicker from './Emojipicker';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { useState } from 'react';
 
 const PostModal = ({ images, setOpenModal }) => {
+     const [open, setOpen] = useState(false);
+
     return (
         <div className='fixed inset-0 z-50 lg:left-28 top-0'>
             <div className="w-full lg:w-11/12 max-w-6xl h-screen lg:h-[90vh] p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl rounded-xl overflow-y-auto relative">
@@ -26,18 +31,14 @@ const PostModal = ({ images, setOpenModal }) => {
                             pagination={true}
                             mousewheel={true}
                             keyboard={true}
+                            loop={true}
                             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                             className="mySwiper w-full h-full"
                         >
                             {
                                 images.map((img, i) => (
-                                    <SwiperSlide key={i}>
-                                        <TransformWrapper initialScale={1} minScale={1} maxScale={4} wheel={{ step: 0.15 }}>
-                                            <TransformComponent>
-                                                <Image className='w-full h-full object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
-                                            </TransformComponent>
-                                        </TransformWrapper>
-
+                                    <SwiperSlide key={i} className=''>
+\                                        <Image onClick={() => setOpen(true)} className='w-full h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
                                     </SwiperSlide>
                                 ))
                             }
@@ -134,6 +135,13 @@ const PostModal = ({ images, setOpenModal }) => {
                     <button onClick={() => setOpenModal(false)} className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
                 </div>
             </div>
+
+
+            <Lightbox
+                open={open}
+                close={() => setOpen(false)}
+                slides={images.map((img) => ({ src: img }))}
+            />
         </div>
     );
 };

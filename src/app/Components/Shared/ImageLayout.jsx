@@ -4,13 +4,14 @@ import PostModal from './PostModal';
 import { useState } from 'react';
 
 const ImageLayout = ({images}) => {
+    const [openModal, setOpenModal] = useState(false)
     const imageCount = images?.length - 4
 
     // Image Layout
     const Imagelayout = () => {
         if (images?.length === 1) {
             return (
-                <div className='mt-2'>
+                <div onClick={() => setOpenModal(true)} className='mt-2'>
                     <Image className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
                 </div>
             )
@@ -18,7 +19,7 @@ const ImageLayout = ({images}) => {
 
         if (images?.length === 3) {
             return (
-                <div className='w-full mt-2 space-y-1 cursor-pointer'>
+                <div onClick={() => setOpenModal(true)} className='w-full mt-2 space-y-1 cursor-pointer'>
                     <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
                     <div className='grid grid-cols-2 gap-1'>
                         {
@@ -32,7 +33,7 @@ const ImageLayout = ({images}) => {
         }
 
         return (
-            <div className='w-full mt-2 grid grid-cols-2 gap-1'>
+            <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
                 {
                     images.slice(0, 4).map((img, index) => (
                         <div key={index} className='relative cursor-pointer'>
@@ -55,8 +56,10 @@ const ImageLayout = ({images}) => {
         <div>
             {Imagelayout()}
 
-            {/* Modal */}
-            {/* <PostModal images={images} /> */}
+            {/* Post Modal */}
+            {
+                openModal && <PostModal images={images}  setOpenModal={setOpenModal} />
+            }
         </div>
     );
 };
