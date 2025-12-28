@@ -30,7 +30,9 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
-        <MobileNavber />
+        <footer>
+          <MobileNavber />
+        </footer>
       </body>
     </html>
   );

@@ -136,7 +136,7 @@ const ProfilePost = () => {
                 </div>
 
                 {/* Post Layout */}
-                <div className="rounded-3xl mt-3 mb-11 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                <div className="rounded-3xl mt-3 mb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                     {/* Header */}
                     <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                         <div className="flex items-center gap-3">
@@ -174,10 +174,10 @@ const ProfilePost = () => {
                             <FaThumbsUp />
                             <span>20</span>
                         </button>
-                        <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                        <a href='#comment'  className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                             <FaComment />
                             <span>24</span>
-                        </button>
+                        </a>
                         <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                             <FaShare />
                             <span>8</span>

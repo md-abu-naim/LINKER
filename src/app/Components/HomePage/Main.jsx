@@ -53,7 +53,7 @@ const Main = () => {
 
 
             {/* Post Layout */}
-            <div className="rounded-3xl mt-3 mb-11 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+            <div className="rounded-3xl mt-3 mb-24 md:mb-10 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                 {/* Header */}
                 <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                     <div className="flex items-center gap-3">

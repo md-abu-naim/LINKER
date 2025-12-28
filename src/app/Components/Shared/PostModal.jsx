@@ -20,7 +20,7 @@ const PostModal = ({ images, setOpenModal }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mt-10'>
+        <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
             <div className="w-full lg:w-11/12 max-w-6xl h-screen lg:h-[90vh] p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl rounded-xl overflow-y-auto relative">
                 <div className='flex flex-col lg:flex-row h-full'>
 
@@ -78,7 +78,7 @@ const PostModal = ({ images, setOpenModal }) => {
                         </div>
 
                         {/* CommentBox */}
-                        <div className='my-3 px-2'>
+                        <div className='mt-3 px-2'>
                             <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
                                 <div className='flex items-center justify-between'>
                                     <div className="flex items-center gap-2">
@@ -110,7 +110,7 @@ const PostModal = ({ images, setOpenModal }) => {
                         </div>
 
                         {/* Comment Input Field */}
-                        <div className="sticky inset-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50">
+                        <div id='comment' className="flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50 mb-12 md:mb-0">
                             <Link href={'/profile'}>
                                 <Image className="w-12 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
                             </Link>

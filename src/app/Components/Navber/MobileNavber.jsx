@@ -53,7 +53,7 @@ const MobileNavber = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 shadow-lg md:hidden backdrop-blur-sm bg-opacity-90 z-50">
+    <nav className="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 shadow-lg md:hidden backdrop-blur-sm bg-opacity-90">
       <ul className="flex justify-around items-center">
         {navLinks.map((link) => (
           <li

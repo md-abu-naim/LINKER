@@ -1,14 +1,17 @@
 'use client'
 import PostModal from "@/app/Components/Shared/PostModal";
 import Image from "next/image";
+import { useState } from "react";
 import { MdDelete, MdDownload, MdEdit, MdPerson, MdPhoto } from "react-icons/md";
 const Images = () => {
+    const [openModal, setOpenModal] = useState(false)
+
     const images = [
         'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg',
     ]
     return (
         <div className="relative border border-gray-700 rounded-lg p-0.5">
-            <Image onClick={() => document.getElementById('my_modal_4').showModal()}
+            <Image onClick={() => setOpenModal(true)}
                 src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
                 alt="Profile"
                 className="object-cover rounded-lg w-52 h-48 shadow-2xl shadow-gray-700 cursor-pointer"
@@ -39,7 +42,9 @@ const Images = () => {
             </div>
 
             {/* ImageModal */}
-            <PostModal images={images} />
+            {
+                openModal && <PostModal images={images}  setOpenModal={setOpenModal} />
+            }
         </div>
     );
 };

@@ -11,7 +11,7 @@ import { IoMdTimer } from "react-icons/io";
 const Navber = () => {
     return (
         <div>
-            <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky z-50">
+            <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky">
                 <div className="flex justify-between items-center pt-1 px-3 sm:px-4">
 
                     {/*Left: Logo + Searchbar */}
