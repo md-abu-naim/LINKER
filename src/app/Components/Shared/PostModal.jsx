@@ -19,7 +19,7 @@ const PostModal = ({ images, setOpenModal }) => {
      const [open, setOpen] = useState(false);
 
     return (
-        <div className='fixed inset-0 z-50 lg:left-28 lg:top-14'>
+        <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mt-10'>
             <div className="w-full lg:w-11/12 max-w-6xl h-screen lg:h-[90vh] p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl rounded-xl overflow-y-auto relative">
                 <div className='flex flex-col lg:flex-row h-full'>
 
@@ -38,7 +38,7 @@ const PostModal = ({ images, setOpenModal }) => {
                             {
                                 images.map((img, i) => (
                                     <SwiperSlide key={i} className=''>
-\                                        <Image onClick={() => setOpen(true)} className='w-full h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                       <Image onClick={() => setOpen(true)} className='w-full h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
                                     </SwiperSlide>
                                 ))
                             }
