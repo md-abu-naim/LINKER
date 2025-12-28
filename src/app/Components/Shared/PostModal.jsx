@@ -34,7 +34,7 @@ const PostModal = ({ images, setOpenModal }) => {
                             keyboard={true}
                             loop={true}
                             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                            className="mySwiper w-full h-full"
+                            className="mySwiper w-full h-[209px] lg:h-full"
                         >
                             {
                                 images.map((img, i) => (
