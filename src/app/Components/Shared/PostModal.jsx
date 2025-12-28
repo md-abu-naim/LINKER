@@ -10,6 +10,7 @@ import { FaComment, FaPhotoVideo, FaShare, FaThumbsUp } from 'react-icons/fa';
 import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
 import Emojipicker from './Emojipicker';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const PostModal = ({ images, setOpenModal }) => {
     return (
@@ -31,7 +32,12 @@ const PostModal = ({ images, setOpenModal }) => {
                             {
                                 images.map((img, i) => (
                                     <SwiperSlide key={i}>
-                                        <Image className='w-full h-full object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                        <TransformWrapper initialScale={1} minScale={1} maxScale={4} wheel={{ step: 0.15 }}>
+                                            <TransformComponent>
+                                                <Image className='w-full h-full object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                            </TransformComponent>
+                                        </TransformWrapper>
+
                                     </SwiperSlide>
                                 ))
                             }
@@ -128,9 +134,6 @@ const PostModal = ({ images, setOpenModal }) => {
                     <button onClick={() => setOpenModal(false)} className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
                 </div>
             </div>
-
-            {/* Small Device Modal */}
-
         </div>
     );
 };
