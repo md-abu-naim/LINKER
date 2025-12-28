@@ -10,13 +10,14 @@ import { FaComment, FaPhotoVideo, FaShare, FaThumbsUp } from 'react-icons/fa';
 import Link from 'next/link';
 import { IoMdSend } from 'react-icons/io';
 import Emojipicker from './Emojipicker';
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 import { useState } from 'react';
 
 const PostModal = ({ images, setOpenModal }) => {
-     const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mt-10'>
@@ -38,7 +39,7 @@ const PostModal = ({ images, setOpenModal }) => {
                             {
                                 images.map((img, i) => (
                                     <SwiperSlide key={i} className=''>
-                                       <Image onClick={() => setOpen(true)} className='w-full h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                        <Image onClick={() => setOpen(true)} className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
                                     </SwiperSlide>
                                 ))
                             }
@@ -140,8 +141,14 @@ const PostModal = ({ images, setOpenModal }) => {
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={images.map((img) => ({ src: img }))}
+                slides={images.map(img => ({ src: img }))}
+                plugins={[Zoom]}
+                zoom={{
+                    maxZoomPixelRatio: 4,
+                    scrollToZoom: true,
+                }}
             />
+
         </div>
     );
 };

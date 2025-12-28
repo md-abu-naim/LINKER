@@ -17,7 +17,7 @@ const Navber = () => {
                     {/*Left: Logo + Searchbar */}
                     <div className="flex items-center gap-2">
                         <Link href={'/'} className="flex items-center gap-2">
-                            <Image src='/Logo.png' alt="Linker" width={38} height={28} className="w-9 h-auto" />
+                            <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-9 h-auto" />
                             <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                         </Link>
                         <div className="hidden md:block">
@@ -50,7 +50,7 @@ const Navber = () => {
                                 <h2 className="text-2xl mx-4 font-semibold">Notifications</h2>
 
                                 <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={24} height={20} className="inline-block w-14 h-14 border border-cyan-400 rounded-full " />
+                                    <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={600} height={400} className="inline-block w-14 h-14 border border-cyan-400 rounded-full " />
                                     <div className="flex flex-col">
                                         <span className="text-xl">Mohammad abu Naim <span className="text-sm">and 3 others reacted to your photo: {'jfds'}</span></span>
                                         <small className="text-cyan-400">2m ago</small>
