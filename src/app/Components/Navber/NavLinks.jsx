@@ -10,7 +10,7 @@ const NavLinks = () => {
     const navLinks = [
         { href: '/', icon:<FaHome className="text-2xl md:text-3xl" />, title: 'Home' },
         { href: '/friends', icon:<FaUserFriends className="text-2xl md:text-3xl" />, title: 'Friends' },
-        { href: '/explore', icon:<MdOutlineExplore className="text-2xl md:text-3xl" />, title: 'Explore' },
+        { href: '/explores', icon:<MdOutlineExplore className="text-2xl md:text-3xl" />, title: 'Explore' },
     ]
     
     return (
