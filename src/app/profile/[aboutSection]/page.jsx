@@ -1,9 +1,9 @@
-import CustomizeProfile from "../Components/About/Customization/CustomizeProfile";
-import Information from "../Components/About/Information/Information";
-import Locations from "../Components/About/Lives&Locations/Locations";
-import Overview from "../Components/About/Overview";
-import Sidebar from "../Components/About/Sidebar";
-import Educations from "../Components/About/Work&Education/Educations";
+import CustomizeProfile from "./Customization/CustomizeProfile";
+import Information from "./Information/Information";
+import Locations from "./Lives&Locations/Locations";
+import Overview from "./Overview";
+import Sidebar from "./Sidebar";
+import Educations from "./Work&Education/Educations";
 
 
 export default async function AboutDynamic({ params }) {
