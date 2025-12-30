@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "LINKER",
-  description: "The communication platform for nations.",
+  description: "The social media communication platform for the nations.",
 };
 
 export default function RootLayout({ children }) {

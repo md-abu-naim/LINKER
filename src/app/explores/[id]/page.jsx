@@ -25,19 +25,19 @@ const Videos = async ({ params }) => {
     const video = videos.find(v => v._id === id)
 
     return (
-        <div className='flex justify-between'>
+        <div className='relative flex justify-between'>
             {/* Left Side */}
-            <div className='m-2'>
+            <div className='absolute md:static m-2 lg:w-96'>
                 <button className="btn cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></button>
             </div>
 
             {/* Center Video */}
-            <div className='flex items-center justify-between gap-3'>
+            <div className='flex items-center justify-between gap-3 h-[90vh]'>
                 <div className='flex w-full h-full'>
                     <video src={video.video} playsInline controls autoFocus
                         className='w-96 h-full object-cover rounded-md' ></video>
 
-                    <div className="flex flex-col items-center justify-end gap-4 mb-4 py-2 md:py-1">
+                    <div className="absolute md:static -right-4 bottom-6 flex flex-col items-center justify-end gap-5 mb-4 py-2 md:py-1 z-50">
                         <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                             <FaThumbsUp />
                             <span>20</span>
@@ -64,14 +64,14 @@ const Videos = async ({ params }) => {
                     </div>
                 </div>
 
-                <div className='flex flex-col gap-4'>
+                <div className='md:flex flex-col gap-4 hidden'>
                     <button className='bg-gray-700 hover:bg-gray-800 p-3 rounded-full'><FaChevronUp className='text-3xl font-bold' /></button>
                     <button className='bg-gray-700 hover:bg-gray-800 p-3 rounded-full'><FaChevronDown className='text-3xl font-bold' /></button>
                 </div>
             </div>
 
             {/* Right Side */}
-            <div className='lg:w-1/3 w-full md:flex flex-col bg-gray-950 border-l border-gray-800 lg:max-h-[90vh] lg:overflow-hidden hover:overflow-y-auto'>
+            <div className='hidden lg:w-1/3 w-full lg:flex flex-col bg-gray-950 border-l border-gray-800 lg:max-h-[90vh] lg:overflow-hidden hover:overflow-y-auto'>
                 <div className='p-4 space-y-1'>
                     <div className="flex items-center gap-3 p-">
                         <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
