@@ -22,7 +22,7 @@ const Tabs = () => {
                 <FiUser className="text-2xl" />
                 <span>About</span>
             </Link>
-            <Link rel="noopener noreferrer" href="/profile/friends" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/friends') ? 'border border-b-0 text-cyan-400' : 'border-b'} border-cyan-400 rounded-t-lg`}>
+            <Link rel="noopener noreferrer" href="/profile/owner_friends" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/owner_friends') ? 'border border-b-0 text-cyan-400' : 'border-b'} border-cyan-400 rounded-t-lg`}>
                 <FiUsers className="text-2xl" />
                 <span>Friends</span>
             </Link>
@@ -30,7 +30,7 @@ const Tabs = () => {
                 <FiImage className="text-2xl" />
                 <span>Photos</span>
             </Link>
-            <Link rel="noopener noreferrer" href="/profile/owner_explores" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/explore') ? 'border border-b-0 text-cyan-400 font-medium' : 'border-b'} border-cyan-400 rounded-t-lg`}>
+            <Link rel="noopener noreferrer" href="/profile/owner_explores" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${isActive('/profile/owner_explores') ? 'border border-b-0 text-cyan-400 font-medium' : 'border-b'} border-cyan-400 rounded-t-lg`}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
