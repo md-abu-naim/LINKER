@@ -4,14 +4,12 @@ import Link from 'next/link';
 import React from 'react';
 import { FaChevronDown, FaChevronUp, FaComment, FaPhotoVideo, FaShare, FaThumbsUp } from 'react-icons/fa';
 import { IoMdSend } from 'react-icons/io';
-import { RxCross1 } from 'react-icons/rx';
 import BackButton from './BackButton';
 
 const Videos = async ({ params, searchParams }) => {
     const { id } = await params
     const url = await searchParams
     const showSidebar = url?.comments
-    console.log(showSidebar);
 
     const videos = [
         { "_id": "0001", "video": "https://res.cloudinary.com/dcqnddytj/video/upload/v1766982713/testVideo_x1w7rk.mp4", "views": "150" },
