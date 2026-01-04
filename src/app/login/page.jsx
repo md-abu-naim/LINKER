@@ -68,7 +68,7 @@ const Login = () => {
                     <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-10 h-auto" />
                     <h1 className="text-3xl font-bold text-cyan-400">Login Form</h1>
                 </div>
-                
+
                 <LoginForm />
             </div>
         </div>
