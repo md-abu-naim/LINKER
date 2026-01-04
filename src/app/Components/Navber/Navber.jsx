@@ -11,12 +11,12 @@ import { IoMdTimer } from "react-icons/io";
 const Navber = () => {
     return (
         <div>
-            <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md sticky">
+            <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md">
                 <div className="flex justify-between items-center pt-1 px-3 sm:px-4">
 
                     {/*Left: Logo + Searchbar */}
                     <div className="flex items-center gap-2">
-                        <Link href={'/'} className="flex items-center gap-2">
+                        <Link href='/' className="flex items-center gap-2">
                             <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-9 h-auto" />
                             <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                         </Link>
