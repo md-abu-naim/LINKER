@@ -20,7 +20,7 @@ const Login = () => {
                     <div className='relative flex flex-row md:flex-col bg-gray-950 gap-1 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
                         <span className='absolute top-1 left-1 font-extrabold bg-gray-900 hover:bg-gray-800 rounded-full p-0.5'><RxCross1 /></span>
                         <Image
-                            className='w-12 h-14 md:w-40 mx-auto md:h-48 rounded-lg object-cover'
+                            className='w-12 h-14 md:w-full md:mx-auto md:h-48 rounded-lg object-cover'
                             src={'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} alt='Profile' width={600} height={400} />
 
                         <h3 className='text-md font-medium text-center mt-2'>Mohammad Abu Naim</h3>
@@ -28,7 +28,7 @@ const Login = () => {
                     <div className='relative flex flex-row md:flex-col bg-gray-950 gap-1 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
                         <span className='absolute top-1 left-1 font-extrabold bg-gray-700 hover:bg-gray-900 rounded-full p-0.5'><RxCross1 /></span>
                         <Image
-                            className='w-12 h-14 md:w-40 mx-auto md:h-48 rounded-lg object-cover'
+                            className='w-12 h-14 md:w-full md:mx-auto md:h-48 rounded-lg object-cover'
                             src={'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} alt='Profile' width={600} height={400} />
 
                         <h3 className='text-md font-medium text-center mt-2'>Mohammad Abu Naim</h3>
@@ -36,7 +36,7 @@ const Login = () => {
                     <div className='relative flex flex-row md:flex-col bg-gray-950 gap-1 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
                         <span className='absolute top-1 left-1 font-extrabold bg-gray-700 hover:bg-gray-900 rounded-full p-0.5'><RxCross1 /></span>
                         <Image
-                            className='w-12 h-14 md:w-40 mx-auto md:h-48 rounded-lg object-cover'
+                            className='w-12 h-14 md:w-full md:mx-auto md:h-48 rounded-lg object-cover'
                             src={'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} alt='Profile' width={600} height={400} />
 
                         <h3 className='text-md font-medium text-center mt-2'>Mohammad Abu Naim</h3>
@@ -44,7 +44,7 @@ const Login = () => {
                     <div className='relative flex flex-row md:flex-col bg-gray-950 gap-1 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
                         <span className='absolute top-1 left-1 font-extrabold bg-gray-700 hover:bg-gray-900 rounded-full p-0.5'><RxCross1 /></span>
                         <Image
-                            className='w-12 h-14 md:w-40 mx-auto md:h-48 rounded-lg object-cover'
+                            className='w-12 h-14 md:w-full md:mx-auto md:h-48 rounded-lg object-cover'
                             src={'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} alt='Profile' width={600} height={400} />
 
                         <h3 className='text-md font-medium text-center mt-2'>Mohammad Abu Naim</h3>
@@ -52,7 +52,7 @@ const Login = () => {
 
                     {/* Add Account */}
                     <div className='flex flex-row md:flex-col gap-1 bg-gray-950 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
-                        <div className='flex items-center justify-center bg-gray-900 rounded-lg w-12 h-12 md:w-40 md:h-48 mx-auto'>
+                        <div className='flex items-center justify-center bg-gray-900 rounded-lg w-12 h-12 md:w-full md:h-48 md:mx-auto'>
                             <FaPlus className='text-4xl text-cyan-400' />
                         </div>
                         <h3 className='text-md font-medium text-center mt-2 text-cyan-400'>Add New Account</h3>
