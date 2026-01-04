@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
+import LoginForm from './LoginForm';
 
 const Login = () => {
     return (
@@ -51,12 +53,12 @@ const Login = () => {
                     </div>
 
                     {/* Add Account */}
-                    <div className='flex flex-row md:flex-col gap-1 bg-gray-950 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
+                    <a href='#account' className='flex flex-row md:flex-col gap-1 bg-gray-950 p-2 md:p-4 rounded-lg shadow-2xs cursor-pointer hover:scale-95 transition-all'>
                         <div className='flex items-center justify-center bg-gray-900 rounded-lg w-12 h-12 md:w-full md:h-48 md:mx-auto'>
                             <FaPlus className='text-4xl text-cyan-400' />
                         </div>
                         <h3 className='text-md font-medium text-center mt-2 text-cyan-400'>Add New Account</h3>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -66,32 +68,8 @@ const Login = () => {
                     <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-10 h-auto" />
                     <h1 className="text-3xl font-bold text-cyan-400">Login Form</h1>
                 </div>
-                <div className="space-y-5 bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
-                    <form className='space-y-8'>
-                        <div className="flex flex-col gap-1">
-                            <label className="text-sm text-cyan-400 font-medium">Email</label>
-                            <input type="text" name="email" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Ex: example@gmail.com" required />
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <label className="text-sm text-cyan-400 font-medium">Password</label>
-                            <input type="password" name="password" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Ex: *******" required />
-                        </div>
-
-                        <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 ">
-                            Log in
-                        </button>
-                    </form>
-
-                    <p className='text-md font-medium text-center text-cyan-500 underline cursor-pointer'>Forggotten Password</p>
-
-                    <div className="divider">OR</div>
-
-                    <div className='md:mx-8'>
-                        <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
-                            Create New Account
-                        </button>
-                    </div>
-                </div>
+                
+                <LoginForm />
             </div>
         </div>
     );
