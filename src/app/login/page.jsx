@@ -7,7 +7,7 @@ const Login = () => {
     return (
         <div className='flex flex-col lg:flex-row gap-4 mb-11'>
             {/* Left side */}
-            <div className='lg:flex-1 lg:mt-14 lg:ml-20'>
+            <div className='flex-1 lg:mt-14 lg:ml-16 mx-5'>
                 <div className="flex items-center gap-2">
                     <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-12 h-auto" />
                     <h1 className="text-3xl font-bold text-cyan-400 uppercase">LINKER</h1>
@@ -60,15 +60,14 @@ const Login = () => {
                 </div>
             </div>
 
-
             {/* Right side */}
-            <div className='flex-1 p-16'>
+            <div className='flex-1 p-5 md:p-16 mt-5 lg:border-l  border-cyan-400'>
                 <div className="flex items-center justify-center gap-2">
                     <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-10 h-auto" />
                     <h1 className="text-3xl font-bold text-cyan-400">Login Form</h1>
                 </div>
-                <div className="bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
-                    <form className='space-y-5'>
+                <div className="space-y-5 bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
+                    <form className='space-y-8'>
                         <div className="flex flex-col gap-1">
                             <label className="text-sm text-cyan-400 font-medium">Email</label>
                             <input type="text" name="email" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Ex: example@gmail.com" required />
@@ -84,6 +83,14 @@ const Login = () => {
                     </form>
 
                     <p className='text-md font-medium text-center text-cyan-500 underline cursor-pointer'>Forggotten Password</p>
+
+                    <div className="divider">OR</div>
+
+                    <div className='md:mx-8'>
+                        <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
+                            Create New Account
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
