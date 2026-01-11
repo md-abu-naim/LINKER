@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Register = () => {
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const year = [...Array(80)].map((_, i) => {
+        const newYear = new Date().getFullYear() - 1
+        console.log(newYear);
+    })
     return (
         <div className="p-2">
             <div className=" bg-gray-950/40 p-3 md:p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-4 max-w-xl mx-auto mb-12 md:mb-0">
@@ -26,17 +33,32 @@ const Register = () => {
                     <div>
                         <h3 className="text-lg font-semibold text-cyan-400">Date Of Birth</h3>
                         <div className="flex items-center justify-between gap-2">
+                            {
+                                <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+                                    <option value="">Select Day</option>
+                                    {
+                                        [...Array(31)].map((_, i) => (
+                                            <option key={i} value={i + 1}>{i + 1}</option>
+                                        ))
+                                    }
+                                </select>
+                            }
                             <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
-                                <option value="">1</option>
-                                <option value="">2</option>
+                                <option value="">Select Month</option>
+                                {
+                                    months.map((name, i) => <option key={i} value={name}>{name}</option>)
+                                }
                             </select>
                             <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
-                                <option value="">Jan</option>
-                                <option value="">Feb</option>
-                            </select>
-                            <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
-                                <option value="">2026</option>
-                                <option value="">2025</option>
+                                <option value="">Select Year</option>
+                                {
+                                    [...Array(80)].map((_, i) => {
+                                        const year = new Date().getFullYear() - i
+                                        return (
+                                            <option key={i} value="">{year}</option>
+                                        )
+                                    })
+                                }
                             </select>
                         </div>
                     </div>
@@ -44,17 +66,17 @@ const Register = () => {
                     <div>
                         <h3 className="text-lg font-semibold text-cyan-400">Gender</h3>
                         <div className="flex items-center justify-between gap-2">
-                            <label className="flex items-center justify-between p-3 w-full space-x-1 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+                            <label htmlFor="male" className="flex items-center justify-between p-3 w-full space-x-1 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                 Male
-                                <input type="radio" name="" id="male" />
+                                <input type="radio" value={'Male'} name="gender" id="male" />
                             </label>
                             <label htmlFor="female" className="flex items-center justify-between p-3 w-full space-x-1 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                 Female
-                                <input type="radio" name="" id="female" />
+                                <input type="radio" value={'Female'} name="gender" id="female" />
                             </label>
                             <label htmlFor="others" className="flex items-center justify-between p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                 Others
-                                <input type="radio" name="" id="others" />
+                                <input type="radio" value={'Others'} name="gender" id="others" />
                             </label>
                         </div>
                     </div>
