@@ -1,14 +1,29 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 
 const Register = () => {
 
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const handleRegister = e => {
+        e.preventDefault()
+        const form = e.target
+        const firstName = form.firstName.value
+        const lastName = form.lastName.value
+        const day = form.day.value
+        const month = form.month.value
+        const year = form.year.value
+        const gender= form.gender.value
+        const email= form.email.value
+        const password= form.password.value
 
-    const year = [...Array(80)].map((_, i) => {
-        const newYear = new Date().getFullYear() - 1
-        console.log(newYear);
-    })
+        const name = `${firstName} ${lastName}`
+        const birth = `${day} ${month} ${year}`
+
+        const user = {name, birth, gender, email, password}
+        console.log(user);
+    }
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return (
         <div className="p-2">
             <div className=" bg-gray-950/40 p-3 md:p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-4 max-w-xl mx-auto mb-12 md:mb-0">
@@ -18,7 +33,7 @@ const Register = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-center text-gray-400">Create a new account. </h3>
 
-                <form className='space-y-4 mb-5'>
+                <form onSubmit={handleRegister} className='space-y-4 mb-5'>
                     <div className="flex flex-col md:flex-row items-center justify-between gap-2">
                         <div className="flex flex-col gap-1 w-full">
                             <label className="text-sm text-cyan-400 font-medium">First Name</label>
@@ -34,7 +49,7 @@ const Register = () => {
                         <h3 className="text-lg font-semibold text-cyan-400">Date Of Birth</h3>
                         <div className="flex items-center justify-between gap-2">
                             {
-                                <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+                                <select name="day" className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                     <option value="">Select Day</option>
                                     {
                                         [...Array(31)].map((_, i) => (
@@ -43,19 +58,19 @@ const Register = () => {
                                     }
                                 </select>
                             }
-                            <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+                            <select name="month" className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                 <option value="">Select Month</option>
                                 {
                                     months.map((name, i) => <option key={i} value={name}>{name}</option>)
                                 }
                             </select>
-                            <select className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+                            <select name="year" className="p-3 w-full rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                                 <option value="">Select Year</option>
                                 {
                                     [...Array(80)].map((_, i) => {
                                         const year = new Date().getFullYear() - i
                                         return (
-                                            <option key={i} value="">{year}</option>
+                                            <option key={i} value={year}>{year}</option>
                                         )
                                     })
                                 }
