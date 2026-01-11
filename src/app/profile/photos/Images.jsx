@@ -3,6 +3,7 @@ import PostModal from "@/app/Components/Shared/PostModal";
 import Image from "next/image";
 import { useState } from "react";
 import { MdDelete, MdDownload, MdEdit, MdPerson, MdPhoto } from "react-icons/md";
+
 const Images = () => {
     const [openModal, setOpenModal] = useState(false)
 

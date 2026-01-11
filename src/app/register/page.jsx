@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import RegisterForm from "./RegisterForm";
 
+export const metadata = {
+  title: "LINKER | Register",
+  description: "LINKER register page pore registation",
+};
+
 const Register = () => {
     return (
         <div className="p-2">

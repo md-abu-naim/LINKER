@@ -5,6 +5,10 @@ import Overview from "./Overview";
 import Sidebar from "./Sidebar";
 import Educations from "./Work&Education/Educations";
 
+export const metadata = {
+  title: "LINKER | | Abouts",
+  description: "Linker current user's about page",
+};
 
 export default async function AboutDynamic({ params }) {
   const { aboutSection } = await params;

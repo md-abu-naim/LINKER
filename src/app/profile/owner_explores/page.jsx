@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { FaRegEye } from "react-icons/fa";
 
+export const metadata = {
+  title: "LINKER | Profile | Owner Explores",
+  description: "LINKER current user's explores page ",
+};
+
 const OwnerExplores = () => {
     const videos = [
         { "_id": "0001", "video": "https://res.cloudinary.com/dcqnddytj/video/upload/v1766982713/testVideo_x1w7rk.mp4", "views": "150" },
