@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
 import LoginForm from './LoginForm';
+import Link from 'next/link';
 
 const Login = () => {
     return (
@@ -69,7 +69,15 @@ const Login = () => {
                     <h1 className="text-3xl font-bold text-cyan-400">Login Form</h1>
                 </div>
 
-                <LoginForm />
+                <div className="space-y-5 bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-4">
+                    <LoginForm />
+
+                    <p className='text-md font-medium text-center text-cyan-500 underline cursor-pointer'>Forggotten Password</p>
+
+                    <div className="divider">OR</div>
+
+                    <Link href={'/register'} className="btn w-full border border-gray-400 hover:text-gray-400 py-3 rounded-2xl font-semibold text-lg">Create New Account</Link>
+                </div>
             </div>
         </div>
     );
