@@ -44,7 +44,7 @@ const Images = () => {
 
             {/* ImageModal */}
             {
-                openModal && <PostModal images={images}  setOpenModal={setOpenModal} />
+                openModal && <PostModal images={images} setOpenModal={setOpenModal} />
             }
         </div>
     );
