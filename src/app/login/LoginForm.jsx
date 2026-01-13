@@ -1,5 +1,6 @@
 'use client'
-import Link from "next/link";
+import { signIn } from "next-auth/react"
+
 
 const LoginForm = () => {
 
@@ -10,6 +11,7 @@ const LoginForm = () => {
         const password = form.password.value
 
         const user = { email, password }
+        signIn()
         console.log(user);
     }
     return (
