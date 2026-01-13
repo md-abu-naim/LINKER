@@ -12,7 +12,7 @@ export const authOptions = {
             // e.g. domain, username, password, 2FA token, etc.
             // You can pass any HTML attribute to the <input> tag through the object.
             credentials: {
-                email: { label: "Email", type: "email", placeholder: "jsmith" },
+                email: { label: "Email", type: "text", placeholder: "jsmith" },
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
@@ -22,9 +22,9 @@ export const authOptions = {
                 // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
                 // You can also use the `req` object to obtain additional parameters
                 // (i.e., the request IP address)
-                console.log('credentials', credentials);
-                const user = {email: credentials.email, password: credentials.password}
-                console.log(object);
+                console.log('credentials');
+                const user = { email: credentials.email, password: credentials.password }
+                console.log('user', user);
 
                 // If no error and we have user data, return it
                 if (user) {
@@ -34,7 +34,11 @@ export const authOptions = {
                 return null
             }
         })
-    ]
+    ],
+    pages: {
+        signIn: '/login',
+        signOut: '/login',
+    }
 }
 
 const handler = NextAuth(authOptions)

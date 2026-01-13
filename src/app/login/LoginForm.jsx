@@ -1,17 +1,20 @@
 'use client'
-import { signIn } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 
 
 const LoginForm = () => {
+    const session = useSession()
+    console.log(session);
 
-    const handleLogin = e => {
-        e.preventDefault()
+    const handleLogin = async(e) => {
+        e.preventDefault();
         const form = e.target
         const email = form.email.value
         const password = form.password.value
 
         const user = { email, password }
-        signIn()
+
+        signIn("credentials", { email, password })
         console.log(user);
     }
     return (
