@@ -3,6 +3,7 @@ import "./globals.css";
 import Navber from "./Components/Navber/Navber";
 import MobileNavber from "./Components/Navber/MobileNavber";
 import AuthProviders from "@/Providers/AuthProviders";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
