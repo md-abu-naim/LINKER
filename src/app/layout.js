@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
           </header>
           <main>
             {children}
+            <SpeedInsights />
           </main>
           <footer>
             <MobileNavber />
