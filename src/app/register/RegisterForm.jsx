@@ -1,7 +1,10 @@
 'use client'
+
+import { signIn } from "next-auth/react";
+
 const RegisterForm = () => {
 
-    const handleRegister = e => {
+    const handleRegister = async(e) => {
         e.preventDefault()
         const form = e.target
         const firstName = form.firstName.value
@@ -17,6 +20,8 @@ const RegisterForm = () => {
         const birth = `${day} ${month} ${year}`
 
         const user = { name, birth, gender, email, password }
+
+       await signIn("credentials", { email, password, birth, gender, callbackUrl: "/" })
         console.log(user);
     }
 

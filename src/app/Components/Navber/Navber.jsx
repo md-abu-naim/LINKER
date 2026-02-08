@@ -5,10 +5,15 @@ import { FaBell, FaBookmark } from "react-icons/fa";
 import Searchbar from "./Searchbar";
 import NavLinks from "./NavLinks";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdFeedback, MdHelpOutline, MdLogout } from "react-icons/md";
+import { MdFeedback, MdHelpOutline } from "react-icons/md";
 import { IoMdTimer } from "react-icons/io";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import LogOutBtn from "./LogOutBtn";
 
-const Navber = () => {
+const Navber = async() => {
+    const session = await getServerSession(authOptions)
+    console.log('from nevber',session);
     return (
         <div>
             <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md">
@@ -105,10 +110,7 @@ const Navber = () => {
                                     <span className="text-xl bg-gray-800 p-2 rounded-full"><MdFeedback /></span>
                                     <span className="text-xl">Give Feedback</span>
                                 </Link>
-                                <button className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className="text-xl bg-gray-800 p-2 rounded-full"><MdLogout /></span>
-                                    <span className="text-xl">Log Out</span>
-                                </button>
+                                <LogOutBtn />
                             </div>
                         </div>
                     </div>

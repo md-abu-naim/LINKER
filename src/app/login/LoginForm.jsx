@@ -14,7 +14,7 @@ const LoginForm = () => {
 
         const user = { email, password }
 
-        signIn("credentials", { email, password })
+        signIn("credentials", { email, password, callbackUrl: "/" })
         console.log(user);
     }
     return (
