@@ -1,6 +1,6 @@
 # LINKER - Social Media Mini Platform
 
-###### Live site![Linker](https://linkerbd.vercel.app)   Server-site ![Server](https://github.com/md-abu-naim/LINKER-SERVER)
+###### Live site![Linker](https://linkerbd.vercel.app)         Server-site ![Server](https://github.com/md-abu-naim/LINKER-SERVER)
 
 **LINKER** is a modern, fully responsive social media mini-platform built with **Next.js**, **Tailwind CSS**. The platform is designed to provide a smooth, fast, and intuitive user experience similar to popular platforms like Facebook and LinkedIn. It includes a clean UI, responsive layouts, and key social media features.
 
