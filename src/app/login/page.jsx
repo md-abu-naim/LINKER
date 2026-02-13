@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "LINKER | Login",
-  description: "LINKER log in page for existing user login",
+  description: "LINKER login page for existing user login",
 };
 
 const Login = () => {
