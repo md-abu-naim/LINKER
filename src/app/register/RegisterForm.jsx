@@ -1,5 +1,6 @@
 'use client'
 import axios from "axios";
+import { signIn } from "next-auth/react";
 
 const RegisterForm = () => {
 
@@ -24,6 +25,7 @@ const RegisterForm = () => {
        axios.post('http://localhost:5000/users', user)
        .then(res => {
         console.log(res.data);
+        signIn("credentials", { email, password, callbackUrl: "/" })
        })
     }
 
