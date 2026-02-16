@@ -1,11 +1,10 @@
 'use client'
-
-import { signIn } from "next-auth/react";
+import axios from "axios";
 
 const RegisterForm = () => {
 
-    const handleRegister = async(e) => {
-        e.preventDefault()
+    const handleRegister = (e) => {
+        e.preventDefault();
         const form = e.target
         const firstName = form.firstName.value
         const lastName = form.lastName.value
@@ -20,9 +19,12 @@ const RegisterForm = () => {
         const birth = `${day} ${month} ${year}`
 
         const user = { name, birth, gender, email, password }
-
-       await signIn("credentials", { email, password, birth, gender, callbackUrl: "/" })
         console.log(user);
+
+       axios.post('http://localhost:5000/users', user)
+       .then(res => {
+        console.log(res.data);
+       })
     }
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
