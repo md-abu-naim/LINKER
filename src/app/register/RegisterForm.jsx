@@ -20,13 +20,17 @@ const RegisterForm = () => {
         const birth = `${day} ${month} ${year}`
 
         const user = { name, birth, gender, email, password }
-        console.log(user);
 
-       axios.post('http://localhost:5000/users', user)
-       .then(res => {
-        console.log(res.data);
-        signIn("credentials", { email, password, callbackUrl: "/" })
-       })
+        axios.post('http://localhost:5000/users', user)
+            .then(res => {
+                console.log(res.data.data);
+                if (res.data.data.insertedId) {
+                    signIn("credentials", { email, password, callbackUrl: "/" })
+                    alert("Registration successful");
+                } else {
+                    alert(res.data.data.message || "Registration failed");
+                }
+            })
     }
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

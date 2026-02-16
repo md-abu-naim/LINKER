@@ -13,7 +13,7 @@ import LogOutBtn from "./LogOutBtn";
 
 const Navber = async() => {
     const session = await getServerSession(authOptions)
-    console.log('from nevber',session);
+    console.log(session);
     return (
         <div>
             <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md">
