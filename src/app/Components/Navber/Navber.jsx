@@ -11,7 +11,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import LogOutBtn from "./LogOutBtn";
 
-const Navber = async() => {
+const Navber = async () => {
     const session = await getServerSession(authOptions)
     console.log(session);
     return (
