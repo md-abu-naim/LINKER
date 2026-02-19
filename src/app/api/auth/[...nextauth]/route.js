@@ -16,24 +16,25 @@ export const authOptions = {
 
             async authorize(credentials, req) {
 
-                const user = { email: credentials.email, password: credentials.password }
-                // console.log(user)
+                try {
+                    const res = await axios.post('http://localhost:5000/users/login', { email: credentials.email, password: credentials.password })
+                    const data = res.data
 
-                axios.post('http://localhost:5000/users/login', user)
-                    .then(res => {
-                        // console.log(res.data.data);
-                        if (res.data.data.insertedId) {
-                            elart('Login successfully')
-                        }
-                    })
-
-                // If no error and we have user data, return it
-                if (user) {
-                    return user
+                    if (!data || !data.token) {
+                        return null;
+                    }
+                    
+                    return {
+                        id: data.user.id,
+                        email: data.user.email,
+                        token: data.user.token
+                    }
                 }
-                // Return null if user data could not be retrieved
-                return null
+                catch (error) {
+                    return null;
+                }
             }
+
         })
     ],
     pages: {
@@ -47,11 +48,13 @@ export const authOptions = {
         async jwt({ token, user }) {
             if (user) {
                 token.accessToken = user.token
+                token.id = user.id
             }
             return token
         },
         async session({ session, token }) {
             session.accessToken = token.accessToken
+            session.user.id = token.id
             return session
         }
     }

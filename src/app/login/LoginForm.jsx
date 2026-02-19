@@ -1,21 +1,28 @@
 'use client'
 import { signIn, useSession } from "next-auth/react"
+import { useRouter } from "next/navigation";
 
 
 const LoginForm = () => {
     const session = useSession()
+    const router = useRouter()
+
     console.log(session);
 
-    const handleLogin = async(e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         const form = e.target
         const email = form.email.value
         const password = form.password.value
 
-        const user = { email, password }
+        const result = await signIn("credentials", { email, password,  redirect: false})
 
-        signIn("credentials", { email, password, callbackUrl: "/" })
-        console.log(user);
+        if (result?.error) {
+            alert("Invalid email or password");
+        }else{
+            alert('login success')
+            router.push('/')
+        }
     }
     return (
         <form onSubmit={handleLogin} id='account' className='space-y-8'>

@@ -23,7 +23,7 @@ const RegisterForm = () => {
 
         axios.post('http://localhost:5000/users', user)
             .then(res => {
-                console.log(res.data.data);
+               
                 if (res.data.data.insertedId) {
                     signIn("credentials", { email, password, callbackUrl: "/" })
                     alert("Registration successful");
