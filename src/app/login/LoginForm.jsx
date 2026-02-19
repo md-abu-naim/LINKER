@@ -15,11 +15,11 @@ const LoginForm = () => {
         const email = form.email.value
         const password = form.password.value
 
-        const result = await signIn("credentials", { email, password,  redirect: false})
+        const result = await signIn("credentials", { email, password, redirect: false })
 
         if (result?.error) {
             alert("Invalid email or password");
-        }else{
+        } else {
             alert('login success')
             router.push('/')
         }
