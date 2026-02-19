@@ -21,7 +21,7 @@ const RegisterForm = () => {
 
         const user = { name, birth, gender, email, password }
 
-        axios.post('http://localhost:5000/users', user)
+        axios.post('https://linkerbd-server.vercel.app/users', user)
             .then(res => {
                
                 if (res.data.data.insertedId) {

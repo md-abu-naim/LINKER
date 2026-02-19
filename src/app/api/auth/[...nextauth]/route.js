@@ -17,7 +17,7 @@ export const authOptions = {
             async authorize(credentials, req) {
 
                 try {
-                    const res = await axios.post('http://localhost:5000/users/login', { email: credentials.email, password: credentials.password })
+                    const res = await axios.post('https://linkerbd-server.vercel.app/users/login', { email: credentials.email, password: credentials.password })
                     const data = res.data
 
                     if (!data || !data.token) {
