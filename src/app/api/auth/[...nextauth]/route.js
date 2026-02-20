@@ -23,7 +23,7 @@ export const authOptions = {
                     if (!data || !data.token) {
                         return null;
                     }
-                    
+
                     return {
                         id: data.user.id,
                         email: data.user.email,
