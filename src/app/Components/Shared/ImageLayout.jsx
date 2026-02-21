@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PostModal from './PostModal';
 import { useState } from 'react';
 
-const ImageLayout = ({images}) => {
+const ImageLayout = ({images, post}) => {
     const [openModal, setOpenModal] = useState(false)
     const imageCount = images?.length - 4
 
@@ -58,7 +58,7 @@ const ImageLayout = ({images}) => {
 
             {/* Post Modal */}
             {
-                openModal && <PostModal images={images}  setOpenModal={setOpenModal} />
+                openModal && <PostModal images={images} post={post}  setOpenModal={setOpenModal} />
             }
         </div>
     );

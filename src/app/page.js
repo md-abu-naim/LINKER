@@ -16,8 +16,10 @@ const Home = () => {
       </main>
 
       {/* Right Sidebar: Message */}
-      <aside className='col-span-3 p-4 hidden lg:block border h-full overflow-hidden hover:overflow-y-auto scroll-smooth'>
+      <aside className='col-span-3 p-4 hidden lg:block h-full overflow-hidden hover:overflow-y-auto scroll-smooth'>
         <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
+        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
+        {/* <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
         <p className="text-sm text-gray-600">Extra content or widgets here.</p>
         <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
         <p className="text-sm text-gray-600">Extra content or widgets here.</p>
@@ -66,9 +68,7 @@ const Home = () => {
         <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
         <p className="text-sm text-gray-600">Extra content or widgets here.</p>
         <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
+        <p className="text-sm text-gray-600">Extra content or widgets here.</p> */}
       </aside>
     </div>
 

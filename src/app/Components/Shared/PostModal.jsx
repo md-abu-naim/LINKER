@@ -16,8 +16,9 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import { useState } from 'react';
 
-const PostModal = ({ images, setOpenModal }) => {
+const PostModal = ({ images, setOpenModal, post }) => {
     const [open, setOpen] = useState(false);
+    const {author, image, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
@@ -50,30 +51,30 @@ const PostModal = ({ images, setOpenModal }) => {
                     <div className='lg:w-1/3 w-full md:flex flex-col bg-gray-950 border-l border-gray-800 lg:max-h-[90vh] lg:overflow-hidden hover:overflow-y-auto my-4'>
                         <div className='p-4 space-y-1'>
                             <div className="flex items-center gap-3 p-">
-                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src={author.avatar} width={50} height={50} alt="User" />
                                 <div className="flex flex-col">
-                                    <span className="font-semibold text-sm md:text-lg">Mohammad Abu Naim</span>
-                                    <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
+                                    <span className="font-semibold text-sm md:text-lg">{author.name}</span>
+                                    <span className="text-gray-400 text-sm">{createdAt} · {visibility}</span>
                                 </div>
                             </div>
 
                             {/* Caption */}
-                            <p className='text-gray-200'>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
+                            <p className='text-gray-200'>{content}</p>
                         </div>
 
                         {/* Engagement */}
                         <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-y border-gray-700">
                             <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                 <FaThumbsUp />
-                                <span>20</span>
+                                <span>{likes}</span>
                             </button>
                             <a href='#comment' className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                 <FaComment />
-                                <span>24</span>
+                                <span>{commentsCount}</span>
                             </a>
                             <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
                                 <FaShare />
-                                <span>8</span>
+                                <span>{shares}</span>
                             </button>
                         </div>
 
@@ -104,9 +105,9 @@ const PostModal = ({ images, setOpenModal }) => {
                                     <p>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
                                 </div>
                             </div>
-                            <div className='mt-1'>
+                            {/* <div className='mt-1'>
                                 <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Comment Input Field */}
