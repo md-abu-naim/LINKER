@@ -16,9 +16,9 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import { useState } from 'react';
 
-const PostModal = ({ images, setOpenModal, post }) => {
+const PostModal = ({ setOpenModal, post }) => {
     const [open, setOpen] = useState(false);
-    const {author, image, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
+    const { author, image, content, visibility, createdAt, likes, commentsCount, shares, comments } = post || {}
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
@@ -38,7 +38,7 @@ const PostModal = ({ images, setOpenModal, post }) => {
                             className="mySwiper w-full h-[209px] lg:h-full"
                         >
                             {
-                                images.map((img, i) => (
+                                image.map((img, i) => (
                                     <SwiperSlide key={i} className=''>
                                         <Image onClick={() => setOpen(true)} className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
                                     </SwiperSlide>
@@ -79,39 +79,45 @@ const PostModal = ({ images, setOpenModal, post }) => {
                         </div>
 
                         {/* CommentBox */}
-                        <div className='mt-3 px-2'>
-                            <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
-                                <div className='flex items-center justify-between'>
-                                    <div className="flex items-center gap-2">
-                                        <Image className="w-10 h-10 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold text-sm">Mohammad Abu Naim</span>
-                                            <small className="text-gray-400">24 hours ago </small>
+                        <div className='mb-24'>
+                            {
+                                comments?.map((c, i) => (
+                                    <div key={i} className='mt-3 px-2'>
+                                        <div className='bg-gray-900 px-3 py-2 rounded-2xl'>
+                                            <div className='flex items-center justify-between'>
+                                                <div className="flex items-center gap-2">
+                                                    <Image className="w-10 h-10 rounded-full border-2 border-cyan-400 object-cover" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" width={50} height={50} alt="User" />
+                                                    <div className="flex flex-col">
+                                                        <span className="font-semibold text-sm">{c.name}</span>
+                                                        <small className="text-gray-400">24 hours ago </small>
+                                                    </div>
+                                                </div>
+                                                <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        className="h-6 w-6 text-white"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div className=' text-gray-200'>
+                                                <p>{c.comment}.</p>
+                                            </div>
                                         </div>
+                                        <div className='mt-1'>
+                                        <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
                                     </div>
-                                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-6 w-6 text-white"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div className=' text-gray-200'>
-                                    <p>Just finished working on my new full-stack project! 🚀 Feeling super excited about the progress.</p>
-                                </div>
-                            </div>
-                            {/* <div className='mt-1'>
-                                <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
-                            </div> */}
+                                    </div>
+                                ))
+                            }
                         </div>
 
                         {/* Comment Input Field */}
-                        <div id='comment' className="flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50 mb-12 md:mb-0">
+                        <div id='comment' className="fixed bottom-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50 mb-12 md:mb-0 w-sm">
                             <Link href={'/profile'}>
                                 <Image className="w-12 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
                             </Link>
@@ -142,7 +148,7 @@ const PostModal = ({ images, setOpenModal, post }) => {
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={images.map(img => ({ src: img }))}
+                slides={image.map(img => ({ src: img }))}
                 plugins={[Zoom]}
                 zoom={{
                     maxZoomPixelRatio: 4,

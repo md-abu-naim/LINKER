@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 const Main = async() => {
-    const res = await axios(`http://localhost:5000/posts`)
+    const res = await axios(`${process.env.PUBLIC_API}/posts`)
     const posts = res.data
 
     // const images = [
@@ -88,7 +88,7 @@ const Main = async() => {
                         {post.content}
                     </p>
 
-                    <ImageLayout images={post.image} post={post} />
+                    <ImageLayout post={post} />
                 </div>
 
                 {/* Engagement Bar */}
