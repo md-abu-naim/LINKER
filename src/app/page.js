@@ -1,5 +1,6 @@
 import LeftAside from './Components/HomePage/LeftAside';
 import Main from './Components/HomePage/Main';
+import MessengerSidebar from './Components/HomePage/RightSide';
 
 const Home = () => {
   return (
@@ -16,59 +17,8 @@ const Home = () => {
       </main>
 
       {/* Right Sidebar: Message */}
-      <aside className='col-span-3 p-4 hidden lg:block h-full overflow-hidden hover:overflow-y-auto scroll-smooth'>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        {/* <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p>
-        <h2 className="font-semibold mb-3">Messenger Upcoming</h2>
-        <p className="text-sm text-gray-600">Extra content or widgets here.</p> */}
+      <aside className='col-span-3 p-4 hidden lg:block h-full overflow-hidden hover:overflow-y-auto scroll-smooth g-gray-900 border border-gray-800 rounded-2xl shadow-lg'>
+        <MessengerSidebar />
       </aside>
     </div>
 

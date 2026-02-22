@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ProfilePicture = () => {
     const [openModal, setOpenModal] = useState(false)
-    const images = [
+    const image = [
         'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg',
     ]
     return (
@@ -22,7 +22,7 @@ const ProfilePicture = () => {
 
             {/* ImageModal */}
             {
-                openModal && <PostModal images={images}  setOpenModal={setOpenModal} />
+                openModal && <PostModal images={image}  setOpenModal={setOpenModal} />
             }
         </div>
     );

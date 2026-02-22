@@ -108,9 +108,9 @@ const PostModal = ({ setOpenModal, post }) => {
                                                 <p>{c.comment}.</p>
                                             </div>
                                         </div>
-                                        <div className='mt-1'>
+                                        {/* <div className='mt-1'>
                                         <Image className="rounded-2xl h-full object-cover" src="https://i.postimg.cc/RVNGzwQD/Soothing-Green-Tea-Face-Cream.jpg" width={250} height={300} alt="User" />
-                                    </div>
+                                    </div> */}
                                     </div>
                                 ))
                             }
