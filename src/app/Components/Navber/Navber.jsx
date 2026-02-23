@@ -12,8 +12,6 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import LogOutBtn from "./LogOutBtn";
 
 const Navber = async () => {
-    const session = await getServerSession(authOptions)
-    console.log(session);
     return (
         <div>
             <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md">

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata = {
   title: "LINKER",
   description: "The social media communication platform for the nations.",
@@ -23,22 +24,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <AuthProviders>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <header>
-            <Navber />
-          </header>
-          <main>
-            {children}
-            <SpeedInsights />
-          </main>
-          <footer>
-            <MobileNavber />
-          </footer>
+          <AuthProviders>
+            <header>
+              <Navber />
+            </header>
+            <main>
+              {children}
+              <SpeedInsights />
+            </main>
+            <footer>
+              <MobileNavber />
+            </footer>
+          </AuthProviders>
         </body>
-      </AuthProviders>
     </html>
   );
 }
