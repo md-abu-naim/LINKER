@@ -88,7 +88,7 @@ const Main = async() => {
                         {post.content}
                     </p>
 
-                    <ImageLayout post={post} />
+                    <ImageLayout post={post} images={post.image} />
                 </div>
 
                 {/* Engagement Bar */}

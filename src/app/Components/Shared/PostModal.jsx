@@ -16,9 +16,9 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import { useState } from 'react';
 
-const PostModal = ({ setOpenModal, post }) => {
+const PostModal = ({ images, setOpenModal, post }) => {
     const [open, setOpen] = useState(false);
-    const { author, image, content, visibility, createdAt, likes, commentsCount, shares, comments } = post || {}
+    const {author, image, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
@@ -38,7 +38,7 @@ const PostModal = ({ setOpenModal, post }) => {
                             className="mySwiper w-full h-[209px] lg:h-full"
                         >
                             {
-                                image.map((img, i) => (
+                                images.map((img, i) => (
                                     <SwiperSlide key={i} className=''>
                                         <Image onClick={() => setOpen(true)} className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
                                     </SwiperSlide>
@@ -117,7 +117,7 @@ const PostModal = ({ setOpenModal, post }) => {
                         </div>
 
                         {/* Comment Input Field */}
-                        <div id='comment' className="fixed bottom-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50 mb-12 md:mb-0 w-sm">
+                        <div id='comment' className="fixed bottom-0 flex items-center gap-3 px-4 py-3 border-t border-gray-700 bg-gray-900 z-50 mb-12 md:mb-0 w-[370px]">
                             <Link href={'/profile'}>
                                 <Image className="w-12 h-10 rounded-full border border-cyan-400 object-cover cursor-pointer" src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={40} height={40} />
                             </Link>
@@ -148,7 +148,7 @@ const PostModal = ({ setOpenModal, post }) => {
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={image.map(img => ({ src: img }))}
+                slides={images.map(img => ({ src: img }))}
                 plugins={[Zoom]}
                 zoom={{
                     maxZoomPixelRatio: 4,
