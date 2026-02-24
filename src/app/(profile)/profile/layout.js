@@ -6,8 +6,8 @@ import CoverPhoto from "./Components/CoverPhoto";
 import ProfilePicture from "./Components/ProfilePicture";
 
 export const metadata = {
-  title: "LINKER | Profile | Post",
-  description: "LINKER user profile page",
+    title: "LINKER | Profile | Post",
+    description: "LINKER user profile page",
 };
 
 const ProfileLayout = ({ children }) => {
