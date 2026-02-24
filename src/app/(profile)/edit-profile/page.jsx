@@ -1,64 +1,74 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FiEdit } from 'react-icons/fi';
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const EditProfile = () => {
     return (
-        <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl w-2/4 mx-auto p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
-            {/* Cover  Image*/}
-            <div className="space-y-2">
-                <input type="checkbox" id="toggleCover" className="peer hidden" />
-                <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold">Cover</h3>
-                    <label htmlFor="toggleCover" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
-                        <FiEdit className="text-xl" />
-                        <span className="text-md">Edit Cover</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md p-1">
-                    <Image
-                        src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
-                        alt="Cover"
-                        className="object-cover rounded-md w-5xl max-h-40 md:max-h-80 shadow-2xl shadow-gray-700"
-                        width={800} height={400}
-                    />
-                </div>
+        <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+            <div className='flex items-center gap-2 justify-between'>
+                <Link href={'/register'} className="bg-gray-800 hover:bg-gray-900 py-1 px-3 rounded-md text-cyan-400 hover:text-cyan-300 text-xl flex items-center gap-1"><GrLinkPrevious /> Back</Link>
+                <Link href={'/'} className="bg-gray-800 hover:bg-gray-900 py-1 px-3 rounded-md text-cyan-400 hover:text-cyan-300 text-xl flex items-center gap-1">Skip <GrLinkNext /></Link>
             </div>
+            <div className='w-10/12 mx-auto'>
+                {/* Cover  Image*/}
+                <div className="space-y-2">
+                    <input type="checkbox" id="toggleCover" className="peer hidden" />
+                    <div className="flex items-center justify-between">
+                        <h3 className="text-2xl font-bold">Cover</h3>
+                        <label htmlFor="toggleCover" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
+                            <FiEdit className="text-xl" />
+                            <span className="text-md">Edit Cover</span>
+                        </label>
+                    </div>
 
-            {/* Profile Image */}
-            <div className="space-y-2">
-                <input type="checkbox" id="toggleProfile" className="peer hidden" />
-                <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold">Profile</h3>
-                    <label htmlFor="toggleProfile" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
-                        <FiEdit className="text-xl" />
-                        <span className="text-md">Edit Profile</span>
-                    </label>
+                    <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md">
+                        <Image
+                            src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
+                            alt="Cover"
+                            className="object-cover rounded-md w-6xl max-h-40 md:max-h-96 shadow-2xl shadow-gray-700"
+                            width={800} height={400}
+                        />
+                    </div>
                 </div>
 
-                <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
-                    <Image
-                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
-                        alt="Profile"
-                        className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
-                        width={800} height={400}
-                    />
-                </div>
-            </div>
+                <div className='flex justify-around gap-10 mt-7'>
+                    {/* Profile Image */}
+                    <div className="space-y-2 flex-1">
+                        <input type="checkbox" id="toggleProfile" className="peer hidden" />
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-2xl font-bold">Profile</h3>
+                            <label htmlFor="toggleProfile" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
+                                <FiEdit className="text-xl" />
+                                <span className="text-md">Edit Profile</span>
+                            </label>
+                        </div>
 
-            <div className="space-y-2">
-                <input type="checkbox" id="toggleBio" className="peer hidden" />
-                <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold">Introduce</h3>
-                    <label htmlFor="toggleBio" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
-                        <FiEdit className="text-xl" />
-                        <span className="text-md">Edit Intro</span>
-                    </label>
-                </div>
+                        <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
+                            <Image
+                                src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                                alt="Profile"
+                                className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
+                                width={800} height={400}
+                            />
+                        </div>
+                    </div>
 
-                <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
-                    <p className="text-gray-300 p-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
+                    <div className="space-y-2 flex-1">
+                        <input type="checkbox" id="toggleBio" className="peer hidden" />
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-2xl font-bold">Introduce</h3>
+                            <label htmlFor="toggleBio" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
+                                <FiEdit className="text-xl" />
+                                <span className="text-md">Edit Intro</span>
+                            </label>
+                        </div>
+
+                        <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
+                            <p className="text-gray-300 p-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

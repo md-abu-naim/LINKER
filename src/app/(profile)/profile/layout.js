@@ -15,7 +15,7 @@ const ProfileLayout = ({ children }) => {
         <div>
             <div className="">
                 {/* Profile Information */}
-                <div className="relative bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
+                <div className="relative bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
                     <CoverPhoto />
 

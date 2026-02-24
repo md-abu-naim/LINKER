@@ -22,7 +22,7 @@ const Main = async() => {
     return (
         <div className="mb-24 md:mb-10">
             {/* Post Box */}
-            <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+            <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
                     <Link href='/profile'>
@@ -59,7 +59,7 @@ const Main = async() => {
             {/* Post Layout */}
             {
                posts.map((post, i) => (
-                <div key={i} className="rounded-3xl mt-3 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                <div key={i} className="rounded-3xl mt-3 bg-linear-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                 {/* Header */}
                 <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                     <div className="flex items-center gap-3">

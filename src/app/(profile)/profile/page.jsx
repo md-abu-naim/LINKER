@@ -2,10 +2,10 @@ import Image from "next/image";
 import { FiHome, FiMapPin, FiUsers, } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
-import { MediaInput } from "../Components/Shared/MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import PostBox from "../Components/Shared/PostBox";
-import ImageLayout from "../Components/Shared/ImageLayout";
+import ImageLayout from "@/app/Components/Shared/ImageLayout";
+import PostBox from "@/app/Components/Shared/PostBox";
+import { MediaInput } from "@/app/Components/Shared/MediaInput";
 
 
 const ProfilePost = () => {
@@ -31,7 +31,7 @@ const ProfilePost = () => {
     return (
         <div className="grid grid-cols-12 gap-6 max-w-5xl mx-auto mt-2 px-2 md:px-4 lg:px-0">
             <div className="col-span-12 lg:col-span-5">
-                <div className="rounded-3xl p-3 md:px-4 space-y-2 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+                <div className="rounded-3xl p-3 md:px-4 space-y-2 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                     <h3 className="text-2xl font-bold">Introduce</h3>
                     <p className="text-gray-300">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
                     <hr className="text-cyan-800" />
@@ -102,7 +102,7 @@ const ProfilePost = () => {
 
             {/* Post Box */}
             <div className="col-span-12 lg:col-span-7">
-                <div className="rounded-3xl p-4 md:mt-0 md:p-6 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
+                <div className="rounded-3xl p-4 md:mt-0 md:p-6 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-3 md:mb-4">
                         <Link href='/profile'>
@@ -136,7 +136,7 @@ const ProfilePost = () => {
                 </div>
 
                 {/* Post Layout */}
-                <div className="rounded-3xl mt-3 mb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                <div className="rounded-3xl mt-3 mb-16 bg-linear-to-br from-gray-950 via-gray-800 to-gray-950 shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                     {/* Header */}
                     <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
                         <div className="flex items-center gap-3">
