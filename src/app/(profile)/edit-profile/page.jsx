@@ -7,7 +7,7 @@ import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const EditProfile = () => {
-    const {createImageUrl, revokeImageUrl} = useImageUrl()
+    const { createImageUrl, revokeImageUrl } = useImageUrl()
     const [profileUrl, setProfileUrl] = useState(null)
     const [coverUrl, setCoverUrl] = useState(null)
     const [bio, setBio] = useState('')
@@ -16,9 +16,9 @@ const EditProfile = () => {
     const handleProfilePreview = (e) => {
         const file = e.target.files[0]
         console.log(file);
-        if(!file) return null
+        if (!file) return null
 
-        if(profileUrl) revokeImageUrl(profileUrl)
+        if (profileUrl) revokeImageUrl(profileUrl)
 
         const url = createImageUrl(file)
         setProfileUrl(url)
@@ -26,14 +26,14 @@ const EditProfile = () => {
 
     const handleCoverPreview = (e) => {
         const file = e.target.files[0]
-        if(!file) return null
+        if (!file) return null
 
-        if(coverUrl) revokeImageUrl(coverUrl)
+        if (coverUrl) revokeImageUrl(coverUrl)
 
         const url = createImageUrl(file)
         setCoverUrl(url)
     }
-    
+
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
