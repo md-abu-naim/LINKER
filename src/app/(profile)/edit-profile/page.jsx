@@ -1,39 +1,39 @@
 'use client'
+import { useImageUrl } from '@/app/Hooks/useImageUrl';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const EditProfile = () => {
-    const [coverFile, setCoverFile] = useState(null)
-    const [profileFile, setProfileFile] = useState(null)
-    const [previewCover, setPreviewCover] = useState(null)
-    const [previewProfile, setPreviewProfile] = useState(null)
+    const {createImageUrl, revokeImageUrl} = useImageUrl()
+    const [profileUrl, setProfileUrl] = useState(null)
+    const [coverUrl, setCoverUrl] = useState(null)
     const [bio, setBio] = useState('')
 
-    console.log(profileFile, previewProfile);
 
+    const handleProfilePreview = (e) => {
+        const file = e.target.files[0]
+        console.log(file);
+        if(!file) return null
 
-    // useEffect(() => {
-    //     if (!coverFile) return;
+        if(profileUrl) revokeImageUrl(profileUrl)
 
-    //     const url = URL.createObjectURL(coverFile)
-    //     setPreviewCover(url)
+        const url = createImageUrl(file)
+        setProfileUrl(url)
+    }
 
-    //     return () => URL.revokeObjectURL(url)
+    const handleCoverPreview = (e) => {
+        const file = e.target.files[0]
+        if(!file) return null
 
-    // }, [coverFile])
+        if(coverUrl) revokeImageUrl(coverUrl)
 
-
-    useEffect(() => {
-        if (!profileFile) return;
-
-        const url = URL.createObjectURL(profileFile)
-        setPreviewProfile(url)
-
-        return () => URL.revokeObjectURL(url)
-    }, [profileFile])
+        const url = createImageUrl(file)
+        setCoverUrl(url)
+    }
+    
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
@@ -47,7 +47,7 @@ const EditProfile = () => {
                     <div className="flex items-center justify-between">
                         <h3 className="text-2xl font-bold">Cover</h3>
 
-                        <input onChange={(e) => setCoverFile(e.target.files[0])} name="cover" type="file" id="coverInput" accept="image/*" className="hidden" />
+                        <input onChange={handleCoverPreview} name="cover" type="file" id="coverInput" accept="image/*" className="hidden" />
                         <label htmlFor='coverInput' className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
                             <FiEdit className="text-xl" />
                             <span className="text-md">Edit Cover</span>
@@ -56,7 +56,7 @@ const EditProfile = () => {
 
                     <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md">
                         <Image
-                            src={previewCover || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
+                            src={coverUrl || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
                             alt="Cover"
                             className="cover rounded-md w-6xl max-h-40 md:max-h-96 shadow-2xl shadow-gray-700"
                             width={800} height={400}
@@ -71,7 +71,7 @@ const EditProfile = () => {
                         <div className="flex items-center justify-between">
                             <h3 className="text-2xl font-bold">Profile</h3>
 
-                            <input onChange={(e) => setProfileFile(e.target.files[0])} name="profile" type="file" id="profileInput" accept="image/*" className="hidden" />
+                            <input onChange={handleProfilePreview} name="profile" type="file" id="profileInput" accept="image/*" className="hidden" />
                             <label htmlFor="profileInput" className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 hover:text-cyan-400 rounded-md p-2">
                                 <FiEdit className="text-xl" />
                                 <span className="text-md">Edit Profile</span>
@@ -80,7 +80,7 @@ const EditProfile = () => {
 
                         <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                             <Image
-                                src={previewProfile || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
+                                src={profileUrl || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
                                 alt="Profile"
                                 className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                                 width={800} height={400}

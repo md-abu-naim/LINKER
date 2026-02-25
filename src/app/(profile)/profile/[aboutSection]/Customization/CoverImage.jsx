@@ -1,21 +1,22 @@
 'use client'
+import { useImageUrl } from "@/app/Hooks/useImageUrl";
 import Image from "next/image";
 import { useState } from "react";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const CoverImage = () => {
+    const {createImageUrl, revokeImageUrl} = useImageUrl()
     const [coverUrl, setCoverUrl] = useState(null);
 
     const handleCoverPreview = (e) => {
-        const file = e.target.files[0];
+        const file = e.target.files[0]
+        if(!file) return null
 
-        if (coverUrl) {
-            URL.revokeObjectURL(coverUrl);
-        }
+        if(coverUrl) revokeImageUrl(coverUrl)
 
-        const url = URL.createObjectURL(file);
-        setCoverUrl(url);
-    };
+        const url = createImageUrl(file)
+        setCoverUrl(url)
+    }
 
     return (
         <div className="space-y-4 hidden peer-checked:block p-6 rounded-2xl border border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.03)] mt-3">
