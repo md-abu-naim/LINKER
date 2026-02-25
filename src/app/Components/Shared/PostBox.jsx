@@ -21,11 +21,11 @@ const PostBox = () => {
 
     return (
         <div onClick={handleWrapperClick} role="dialog" className="modal mt-7 flex items-center justify-center backdrop-blur-md bg-black/40" >
-            <div className="modal-box relative max-w-lg w-full bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl text-white border border-cyan-500/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
+            <div className="modal-box relative max-w-lg w-full bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl text-white border border-cyan-500/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
 
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-gray-700 pb-3">
-                    <h2 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Create a New Post</h2>
+                    <h2 className="text-2xl font-bold tracking-wide bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Create a New Post</h2>
                     <label htmlFor="my_modal_6" className="cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></label>
                 </div>
 
@@ -81,7 +81,7 @@ const PostBox = () => {
 
                 {/* Post Button */}
                 <div className="mt-6">
-                    <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
+                    <button className="w-full bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
                         Share Post 🚀
                     </button>
                 </div>
