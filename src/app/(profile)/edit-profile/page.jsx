@@ -1,5 +1,7 @@
 'use client'
 import { useImageUrl } from '@/app/Hooks/useImageUrl';
+import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -10,12 +12,13 @@ const EditProfile = () => {
     const { createImageUrl, revokeImageUrl } = useImageUrl()
     const [profileUrl, setProfileUrl] = useState(null)
     const [coverUrl, setCoverUrl] = useState(null)
+    const {data: session} = useSession()
     const [bio, setBio] = useState('')
 
 
     const handleProfilePreview = (e) => {
         const file = e.target.files[0]
-        console.log(file);
+
         if (!file) return null
 
         if (profileUrl) revokeImageUrl(profileUrl)
@@ -32,6 +35,19 @@ const EditProfile = () => {
 
         const url = createImageUrl(file)
         setCoverUrl(url)
+    }
+
+
+    const handleUser = async() => {
+        const updateData = {
+            profile: profileUrl,
+            cover: coverUrl,
+            bio
+        }
+        // console.log(updateData);
+        const res = await axios.put(`${process.env.PUBLIC_API}/users/update/${session?.user?.email}`, updateData)
+        const data = await res.data
+        console.log(data);
     }
 
 
@@ -114,7 +130,7 @@ const EditProfile = () => {
                 </div>
 
                 {/* Continue button */}
-                <button className="w-full bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
+                <button onClick={handleUser} className="w-full bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
                     Save and Continue
                 </button>
             </div>
