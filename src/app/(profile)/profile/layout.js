@@ -4,27 +4,35 @@ import Link from "next/link";
 import Tabs from "./Components/Tabs";
 import CoverPhoto from "./Components/CoverPhoto";
 import ProfilePicture from "./Components/ProfilePicture";
+import { getServerSession } from "next-auth";
+import axios from "axios";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export const metadata = {
     title: "LINKER | Profile | Post",
     description: "LINKER user profile page",
 };
 
-const ProfileLayout = ({ children }) => {
+const ProfileLayout = async({ children }) => {
+    const {user: session} = await getServerSession(authOptions)
+
+    const res = await axios(`${process.env.PUBLIC_API}/users/${session?.email}`)
+    const user = await res.data.data
+
     return (
         <div>
             <div className="">
                 {/* Profile Information */}
                 <div className="relative bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
-                    <CoverPhoto />
+                    <CoverPhoto cover={user.cover} />
 
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
                         <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row lg:gap-4">
-                            <ProfilePicture />
+                            <ProfilePicture profile={user.profile} />
                             <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 lg:mt-5">
-                                <h2 className="text-4xl font-semibold text-center">Mohammmad Abu Naim <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
+                                <h2 className="text-4xl font-semibold text-center">{user.name || "Anonymous"} <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
                                 <span className="text-2xl font-medium hidden md:block">(Naim)</span>
                             </div>
                         </div>
