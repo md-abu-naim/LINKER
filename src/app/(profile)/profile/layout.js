@@ -25,14 +25,14 @@ const ProfileLayout = async({ children }) => {
                 {/* Profile Information */}
                 <div className="relative bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
                     {/* Cover */}
-                    <CoverPhoto cover={user.cover} />
+                    <CoverPhoto cover={user?.cover} />
 
                     {/* Profile & Name */}
                     <div className="flex items-center flex-col lg:flex-row justify-between lg:w-5xl mx-auto">
                         <div className="relative -mt-8 px-6 flex items-center flex-col lg:flex-row lg:gap-4">
-                            <ProfilePicture profile={user.profile} />
+                            <ProfilePicture profile={user?.profile} />
                             <div className="flex items-center flex-row lg:flex-col lg:items-start gap-2 lg:gap-0 lg:mt-5">
-                                <h2 className="text-4xl font-semibold text-center">{user.name || "Anonymous"} <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
+                                <h2 className="text-4xl font-semibold text-center">{user?.name || "Anonymous"} <span className="text-2xl font-medium md:hidden">(Naim)</span></h2>
                                 <span className="text-2xl font-medium hidden md:block">(Naim)</span>
                             </div>
                         </div>
