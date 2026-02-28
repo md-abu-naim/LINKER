@@ -17,7 +17,7 @@ const Navber = async () => {
                 {/*Left: Logo + Searchbar */}
                 <div className="flex items-center gap-2">
                     <Link href='/' className="flex items-center gap-2">
-                        <Image src='/Logo.png' alt="Linker" width={600} height={400} className="w-9 h-auto" />
+                        <Image src='/Logo.png' alt="Linker" width={36} height={36} />
                         <span className="hidden lg:block text-xl font-bold text-cyan-400">LINKER</span>
                     </Link>
                     <div className="hidden md:block">

@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 const Main = async() => {
-    const res = await axios(`${process.env.PUBLIC_API}/posts`)
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
 
     // const images = [

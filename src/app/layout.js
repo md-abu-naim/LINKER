@@ -31,10 +31,12 @@ export default function RootLayout({ children }) {
             <header>
               <Navber />
             </header>
+
             <main>
               {children}
               <SpeedInsights />
             </main>
+            
             <footer>
               <MobileNavber />
             </footer>

@@ -14,11 +14,9 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 const LeftAside = async() => {
     const {user: session} = await getServerSession(authOptions)
-    console.log(session);
 
-    const res = await axios(`${process.env.PUBLIC_API}/users/${session?.email}`)
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
     const user = await res.data.data
-
 
 
     const navLinks = [

@@ -10,14 +10,15 @@ export const authOptions = {
             name: 'Credentials',
 
             credentials: {
-                email: { label: "Email", type: "text", placeholder: "name@example.com" },
+                name: { label: "Name", type: "text", placeholder: "Jhon doe" },
+                email: { label: "Email", type: "text", placeholder: "example@gmail.com" },
                 password: { label: "Password", type: "password" }
             },
 
             async authorize(credentials, req) {
 
                 try {
-                    const res = await axios.post(`${process.env.PUBLIC_API}/users/login`, { email: credentials.email, password: credentials.password })
+                    const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/users/login`, { email: credentials.email, password: credentials.password })
                     const data = res.data
 
                     if (!data || !data.token) {
@@ -26,6 +27,7 @@ export const authOptions = {
 
                     return {
                         id: data.user.id,
+                        name: data.user.name,
                         email: data.user.email,
                         token: data.user.token
                     }

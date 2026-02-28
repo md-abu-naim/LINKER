@@ -15,9 +15,11 @@ export const metadata = {
 
 const ProfileLayout = async({ children }) => {
     const {user: session} = await getServerSession(authOptions)
+    console.log('from layout',session);
 
-    const res = await axios(`${process.env.PUBLIC_API}/users/${session?.email}`)
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
     const user = await res.data.data
+    console.log('prom layout user', user);
 
     return (
         <div>
