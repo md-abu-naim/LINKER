@@ -3,7 +3,6 @@ import axios from "axios";
 import { signIn } from "next-auth/react";
 
 const RegisterForm = () => {
-    console.log(process.env.NEXT_PUBLIC_API);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -20,13 +19,23 @@ const RegisterForm = () => {
         const name = `${firstName} ${lastName}`
         const birth = `${day} ${month} ${year}`
 
-        const user = { name, birth, gender, email, password }
+        const bio = ''
+        const cover = ''
+        const profile = ''
+        const currentCity = ''
+        const location = ''
+        const school = ''
+        const university = ''
+        const work = ''
+
+        const user = { name, birth, gender, email, password, bio, cover, profile, currentCity, location, school, university, work }
+        console.log(user);
 
         axios.post(`${process.env.NEXT_PUBLIC_API}/users`, user)
             .then(res => {
-               
+               console.log(res.data);
                 if (res.data.data.insertedId) {
-                    signIn("credentials", { email, password, callbackUrl: "/" })
+                    signIn("credentials", { email, password, callbackUrl: "/edit-profile" })
                     alert("Registration successful");
                 } else {
                     alert(res.data.data.message || "Registration failed");
