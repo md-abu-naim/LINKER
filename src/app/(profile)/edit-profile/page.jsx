@@ -42,7 +42,8 @@ const EditProfile = () => {
         const updateData = {
             profile: profileUrl,
             cover: coverUrl,
-            bio
+            bio,
+            ...session
         }
         // console.log(updateData);
         const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.email}`, updateData)
