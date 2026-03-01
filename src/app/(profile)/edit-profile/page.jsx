@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
@@ -48,11 +48,21 @@ const EditProfile = () => {
             name: session?.user?.name
         }
         // console.log(updateData);
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
-        const data = await res.data
-        console.log(data);
+        // const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
+        // const data = await res.data
+        // console.log(data);
     }
 
+    useEffect(() => {
+    if (!session?.user?.id) return
+
+    axios
+        .get(`${process.env.NEXT_PUBLIC_API}/users/user/${session.user.id}`)
+        .then(res => {
+            const u = res.data.data
+            console.log(u);
+        })
+}, [session])
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
