@@ -8,11 +8,12 @@ import { useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
+
 const EditProfile = () => {
     const { createImageUrl, revokeImageUrl } = useImageUrl()
     const [profileUrl, setProfileUrl] = useState(null)
     const [coverUrl, setCoverUrl] = useState(null)
-    const {data: session} = useSession()
+    const { data: session } = useSession()
     const [bio, setBio] = useState('')
 
 
@@ -38,15 +39,16 @@ const EditProfile = () => {
     }
 
 
-    const handleUser = async() => {
+    const handleUser = async () => {
         const updateData = {
             profile: profileUrl,
             cover: coverUrl,
             bio,
-            ...session
+            email: session?.user?.email,
+            name: session?.user?.name
         }
         // console.log(updateData);
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.email}`, updateData)
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
         const data = await res.data
         console.log(data);
     }
