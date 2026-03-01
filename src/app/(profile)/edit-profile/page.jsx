@@ -54,15 +54,15 @@ const EditProfile = () => {
     }
 
     useEffect(() => {
-    if (!session?.user?.id) return
+        if (!session?.user?.id) return
 
-    axios
-        .get(`${process.env.NEXT_PUBLIC_API}/users/user/${session.user.id}`)
-        .then(res => {
-            const u = res.data.data
-            console.log(u);
-        })
-}, [session])
+        axios
+            .get(`${process.env.NEXT_PUBLIC_API}/users/user/${session.user.id}`)
+            .then(res => {
+                const u = res.data.data
+                console.log(u);
+            })
+    }, [session])
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
