@@ -55,7 +55,7 @@ const EditProfile = () => {
             name, birth, gender, email, password, bio, cover,
             profile, currentCity, location, school, work, university
         }
-        console.log(updateData);
+        
         const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
         const data = await res.data.data
         if(data.modifiedCount > 0){
@@ -94,7 +94,7 @@ const EditProfile = () => {
 
                     <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md">
                         <Image
-                            src={cover || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
+                            src={cover || user?.cover || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
                             alt="Cover"
                             className="cover rounded-md w-6xl max-h-40 md:max-h-96 shadow-2xl shadow-gray-700"
                             width={800} height={400}
@@ -118,7 +118,7 @@ const EditProfile = () => {
 
                         <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                             <Image
-                                src={profile || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
+                                src={profile || user?.profile || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
                                 alt="Profile"
                                 className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                                 width={800} height={400}
@@ -147,7 +147,7 @@ const EditProfile = () => {
 
 
                         <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
-                            <p className="text-gray-300 p-3">{bio || 'FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App'}</p>
+                            <p className="text-gray-300 p-3">{bio || user?.bio || 'FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App'}</p>
                         </div>
                     </div>
                 </div>
