@@ -4,18 +4,27 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+
+
 
 
 const EditProfile = () => {
     const { createImageUrl, revokeImageUrl } = useImageUrl()
     const [profileUrl, setProfileUrl] = useState(null)
     const [coverUrl, setCoverUrl] = useState(null)
+    const [profile, setProfile] = useState()
     const { data: session } = useSession()
+    const [user, setUser] = useState()
     const [bio, setBio] = useState('')
+    const router = useRouter()
 
+    console.log(profile);
+
+    const { name, birth, gender, email, password, currentCity, location, school, work, university } = user || {}
 
     const handleProfilePreview = (e) => {
         const file = e.target.files[0]
@@ -26,6 +35,13 @@ const EditProfile = () => {
 
         const url = createImageUrl(file)
         setProfileUrl(url)
+
+        const formData = new FormData()
+        formData.append('image', file)
+        axios.post(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMG_API}`, formData)
+            .then(res => {
+                setProfile(res.data.data.display_url)
+            })
     }
 
     const handleCoverPreview = (e) => {
@@ -41,26 +57,24 @@ const EditProfile = () => {
 
     const handleUser = async () => {
         const updateData = {
-            profile: profileUrl,
-            cover: coverUrl,
-            bio,
-            email: session?.user?.email,
-            name: session?.user?.name
+            name, birth, gender, email, password, bio, cover: coverUrl,
+            profile: profileUrl, currentCity, location, school, work, university
         }
-        // console.log(updateData);
-        // const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
-        // const data = await res.data
-        // console.log(data);
+        console.log(updateData);
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
+        const data = await res.data.data
+        if(data.modifiedCount > 0){
+            router.push('/')
+        }
     }
 
     useEffect(() => {
         if (!session?.user?.id) return
 
-        axios
-            .get(`${process.env.NEXT_PUBLIC_API}/users/user/${session.user.id}`)
+        axios.get(`${process.env.NEXT_PUBLIC_API}/users/user/${session?.user?.id}`)
             .then(res => {
-                const u = res.data.data
-                console.log(u);
+                const data = res.data.data
+                setUser(data);
             })
     }, [session])
 
@@ -131,7 +145,8 @@ const EditProfile = () => {
                         <div className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
                             <div className="flex flex-col gap-1">
                                 <label className="text-sm text-cyan-400 font-medium">Introduce</label>
-                                <textarea onChange={(e) => setBio(e.target.value)} maxLength={150} name="description" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none min-h-[120px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Describe your role, responsibilities...">{bio}</textarea>
+                                <textarea onChange={(e) => setBio(e.target.value)} maxLength={150} defaultValue={user?.bio} name="description" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none min-h-[120px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Describe your role, responsibilities..."></textarea>
+                                <span className='text-end text-cyan-400'>Max: 150</span>
                             </div>
                         </div>
 

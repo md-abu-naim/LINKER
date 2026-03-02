@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosCommon = axios.create({
-    baseURL: process.env.PUBLIC_API
+    baseURL: process.env.NEXT_PUBLIC_API
 })
 
 const useAxios = () => {
