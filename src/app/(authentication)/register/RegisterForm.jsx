@@ -29,11 +29,9 @@ const RegisterForm = () => {
         const work = ''
 
         const user = { name, birth, gender, email, password, bio, cover, profile, currentCity, location, school, work, university }
-        console.log(user);
 
         axios.post(`${process.env.NEXT_PUBLIC_API}/users`, user)
             .then(res => {
-               console.log(res.data);
                 if (res.data.data.insertedId) {
                     signIn("credentials", { email, password, callbackUrl: "/edit-profile" })
                     alert("Registration successful", res.data.data);

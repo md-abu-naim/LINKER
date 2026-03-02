@@ -1,5 +1,4 @@
 'use client'
-import { useImageUrl } from '@/app/Hooks/useImageUrl';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
@@ -9,12 +8,7 @@ import { useEffect, useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
-
-
-
 const EditProfile = () => {
-    const { createImageUrl, revokeImageUrl } = useImageUrl()
-    const [coverUrl, setCoverUrl] = useState(null)
     const [profile, setProfile] = useState(null)
     const [cover, setCover] = useState(null)
     const { data: session } = useSession()
@@ -39,6 +33,7 @@ const EditProfile = () => {
 
     const handleCoverPreview = (e) => {
         const file = e.target.files[0]
+        
         if (!file) return null
 
         const formData = new FormData()
@@ -75,10 +70,12 @@ const EditProfile = () => {
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl  p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+            {/* Next & Prev button */}
             <div className='flex items-center gap-2 justify-between'>
                 <Link href={'/register'} className="bg-gray-800 hover:bg-gray-900 py-1 px-3 rounded-md text-cyan-400 hover:text-cyan-300 text-xl flex items-center gap-1"><GrLinkPrevious /> Back</Link>
                 <Link href={'/'} className="bg-gray-800 hover:bg-gray-900 py-1 px-3 rounded-md text-cyan-400 hover:text-cyan-300 text-xl flex items-center gap-1">Skip <GrLinkNext /></Link>
             </div>
+
             <div className='w-10/12 mx-auto space-y-7'>
                 {/* Cover  Image*/}
                 <div className="space-y-2">
@@ -140,7 +137,7 @@ const EditProfile = () => {
                         <div className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
                             <div className="flex flex-col gap-1">
                                 <label className="text-sm text-cyan-400 font-medium">Introduce</label>
-                                <textarea onChange={(e) => setBio(e.target.value)} maxLength={150} defaultValue={user?.bio} name="description" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none min-h-[120px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Describe your role, responsibilities..."></textarea>
+                                <textarea onChange={(e) => setBio(e.target.value)} maxLength={150} defaultValue={user?.bio} name="description" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none min-h-[120px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Describe your role, responsibilities..." />
                                 <span className='text-end text-cyan-400'>Max: 150</span>
                             </div>
                         </div>

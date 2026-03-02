@@ -5,20 +5,11 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdTimer } from "react-icons/io";
 import { MdFeedback, MdHelpOutline, MdNotListedLocation, MdOutlineExplore } from "react-icons/md";
 import { LuMessageCircleHeart } from "react-icons/lu";
-import axios from "axios";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 
 
 
-const LeftAside = async() => {
-    const {user: session} = await getServerSession(authOptions)
-
-    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
-    const user = await res.data.data
-
-
+const LeftAside = async({user}) => {
     const navLinks = [
         { href: "/friends", icon: <FaUserFriends />, label: "Friends" },
         { href: "/explore", icon: <MdOutlineExplore />, label: "Explore Videos" },
@@ -29,6 +20,7 @@ const LeftAside = async() => {
         { href: "/help&support", icon: <MdHelpOutline />, label: "Help & Support" },
         { href: "/feedback", icon: <MdFeedback />, label: "Give Feedback" },
     ]
+
     return (
         <>
             <div className="space-y-4">

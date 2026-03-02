@@ -1,19 +1,27 @@
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
 import LeftAside from './Components/HomePage/LeftAside';
 import Main from './Components/HomePage/Main';
 import MessengerSidebar from './Components/HomePage/RightSide';
+import axios from 'axios';
 
-const Home = () => {
+const Home = async () => {
+  const { user: session } = await getServerSession(authOptions)
+
+  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
+  const user = await response.data.data
+
   return (
     <div className='grid grid-cols-12 gap-6 mt-11 md:p-4 px-2 h-screen overflow-hidden fixed inset-0'>
 
       {/* Left Sidebar */}
       <aside className='col-span-3 hidden lg:block h-full overflow-hidden hover:overflow-y-auto scroll-smooth'>
-        <LeftAside />
+        <LeftAside user={user} />
       </aside>
 
       {/* Main Content */}
       <main className='col-span-12 lg:col-span-6 md:px-10 h-full overflow-y-auto scroll-smooth scrollable'>
-        <Main />
+        <Main user={user} />
       </main>
 
       {/* Right Sidebar: Message */}

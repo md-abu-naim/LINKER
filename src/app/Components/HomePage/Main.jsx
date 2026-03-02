@@ -7,8 +7,7 @@ import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
 
-
-const Main = async() => {
+const Main = async () => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
 
@@ -58,56 +57,56 @@ const Main = async() => {
 
             {/* Post Layout */}
             {
-               posts.map((post, i) => (
-                <div key={i} className="rounded-3xl mt-3 bg-linear-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
-                {/* Header */}
-                <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
-                    <div className="flex items-center gap-3">
-                        <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src={post.author.avatar} width={50} height={50} alt="User" />
-                        <div className="flex flex-col">
-                            <span className="font-semibold text-sm md:text-lg">{post.author.name}</span>
-                            <span className="text-gray-400 text-sm">24 hours ago · {post.visibility}</span>
+                posts.map((post, i) => (
+                    <div key={i} className="rounded-3xl mt-3 bg-linear-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
+                        {/* Header */}
+                        <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">
+                            <div className="flex items-center gap-3">
+                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src={post.author.avatar} width={50} height={50} alt="User" />
+                                <div className="flex flex-col">
+                                    <span className="font-semibold text-sm md:text-lg">{post.author.name}</span>
+                                    <span className="text-gray-400 text-sm">24 hours ago · {post.visibility}</span>
+                                </div>
+                            </div>
+                            <button className="p-2 rounded-full hover:bg-gray-700 transition">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Post Content */}
+                        <div className="p-4">
+                            <p className="text-gray-300 text-base leading-relaxed">
+                                {post.content}
+                            </p>
+
+                            <ImageLayout post={post} images={post.image} />
+                        </div>
+
+                        {/* Engagement Bar */}
+                        <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-t border-gray-700">
+                            <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                                <FaThumbsUp />
+                                <span>{post.likes}</span>
+                            </button>
+                            <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                                <FaComment />
+                                <span>{post.commentsCount}</span>
+                            </button>
+                            <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
+                                <FaShare />
+                                <span>{post.shares}</span>
+                            </button>
                         </div>
                     </div>
-                    <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Post Content */}
-                <div className="p-4">
-                    <p className="text-gray-300 text-base leading-relaxed">
-                        {post.content}
-                    </p>
-
-                    <ImageLayout post={post} images={post.image} />
-                </div>
-
-                {/* Engagement Bar */}
-                <div className="flex items-center justify-around gap-3 py-2 md:py-1 border-t border-gray-700">
-                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
-                        <FaThumbsUp />
-                        <span>{post.likes}</span>
-                    </button>
-                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
-                        <FaComment />
-                        <span>{post.commentsCount}</span>
-                    </button>
-                    <button className="flex items-center gap-2 px-6 py-1 text-xl text-gray-400 rounded-lg hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-200 ease-in-out">
-                        <FaShare />
-                        <span>{post.shares}</span>
-                    </button>
-                </div>
-            </div>
-               )) 
+                ))
             }
 
             {/* Post Box Modal */}
