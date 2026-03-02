@@ -7,7 +7,7 @@ import { InputMedia } from "./MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaUserTag, FaVideo } from "react-icons/fa";
 
-const PostBox = () => {
+const PostBox = ({user}) => {
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
@@ -31,7 +31,7 @@ const PostBox = () => {
 
                 {/* Profile */}
                 <div className="flex items-center gap-3 mt-5">
-                    <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={48} height={48} className="w-12 h-12 border border-cyan-400 rounded-full " />
+                    <Image src={user?.profile ||"https://i.postimg.cc/65X8XRRf/Face-Care.png"} alt="User" width={48} height={48} className="w-12 h-12 border border-cyan-400 rounded-full " />
                     <div className="flex flex-col">
                         <span className="font-semibold text-lg">Mohammad Abu Naim</span>
                         <select name="visibility" defaultValue="public" className="select select-sm text-sm w-28 h-4 bg-gray-800/80 border-none outline-none cursor-pointer">

@@ -7,7 +7,7 @@ import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
 
-const Main = async () => {
+const Main = async ({user}) => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
 
@@ -25,7 +25,7 @@ const Main = async () => {
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
                     <Link href='/profile'>
-                        <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={50} height={50} className="w-9 h-9 md:w-12 md:h-12 border border-cyan-400 rounded-full hover:scale-105 transition-all duration-300" />
+                        <Image src={user?.profile || "https://i.postimg.cc/65X8XRRf/Face-Care.png"} alt="User" width={50} height={50} className="w-9 h-9 md:w-12 md:h-12 border border-cyan-400 rounded-full hover:scale-105 transition-all duration-300" />
                     </Link>
                     <div className="flex flex-col">
                         <h3 className="text-sm md:text-lg font-semibold text-gray-100">Mohammad Abu Naim</h3>
@@ -111,7 +111,7 @@ const Main = async () => {
 
             {/* Post Box Modal */}
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-            <PostBox />
+            <PostBox user={user} />
         </div>
     );
 };
