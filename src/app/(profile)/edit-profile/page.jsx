@@ -14,15 +14,13 @@ import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const EditProfile = () => {
     const { createImageUrl, revokeImageUrl } = useImageUrl()
-    const [profileUrl, setProfileUrl] = useState(null)
     const [coverUrl, setCoverUrl] = useState(null)
-    const [profile, setProfile] = useState()
+    const [profile, setProfile] = useState(null)
+    const [cover, setCover] = useState(null)
     const { data: session } = useSession()
     const [user, setUser] = useState()
     const [bio, setBio] = useState('')
     const router = useRouter()
-
-    console.log(profile);
 
     const { name, birth, gender, email, password, currentCity, location, school, work, university } = user || {}
 
@@ -30,11 +28,6 @@ const EditProfile = () => {
         const file = e.target.files[0]
 
         if (!file) return null
-
-        if (profileUrl) revokeImageUrl(profileUrl)
-
-        const url = createImageUrl(file)
-        setProfileUrl(url)
 
         const formData = new FormData()
         formData.append('image', file)
@@ -48,17 +41,19 @@ const EditProfile = () => {
         const file = e.target.files[0]
         if (!file) return null
 
-        if (coverUrl) revokeImageUrl(coverUrl)
-
-        const url = createImageUrl(file)
-        setCoverUrl(url)
+        const formData = new FormData()
+        formData.append('image', file)
+        axios.post(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMG_API}`, formData)
+            .then(res => {
+                setCover(res.data.data.display_url)
+            })
     }
 
 
     const handleUser = async () => {
         const updateData = {
-            name, birth, gender, email, password, bio, cover: coverUrl,
-            profile: profileUrl, currentCity, location, school, work, university
+            name, birth, gender, email, password, bio, cover,
+            profile, currentCity, location, school, work, university
         }
         console.log(updateData);
         const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
@@ -99,7 +94,7 @@ const EditProfile = () => {
 
                     <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md">
                         <Image
-                            src={coverUrl || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
+                            src={cover || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
                             alt="Cover"
                             className="cover rounded-md w-6xl max-h-40 md:max-h-96 shadow-2xl shadow-gray-700"
                             width={800} height={400}
@@ -123,7 +118,7 @@ const EditProfile = () => {
 
                         <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                             <Image
-                                src={profileUrl || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
+                                src={profile || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
                                 alt="Profile"
                                 className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                                 width={800} height={400}
