@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 import Educations from "./Work&Education/Educations";
 import { getServerSession } from "next-auth";
 import axios from "axios";
+import NotFound from "@/app/not-found";
 
 export const metadata = {
   title: "LINKER | | Abouts",
@@ -29,19 +30,19 @@ export default async function AboutDynamic({ params }) {
       content = <Overview user={user} />;
       break;
     case "about_customize_profile":
-      content = <CustomizeProfile />
+      content = <CustomizeProfile user={user} />
       break;
     case "about_work_and_education":
-      content = <Educations />;
+      content = <Educations user={user} />;
       break;
     case "about_lives_and_locations":
-      content = <Locations />;
+      content = <Locations user={user} />;
       break;
     case "about_information":
-      content = <Information />;
+      content = <Information user={user} />;
       break;
     default:
-      content = <h2>Page Not Found</h2>;
+      content = <NotFound />;
   }
 
   return (

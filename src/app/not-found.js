@@ -48,7 +48,7 @@ const NotFound = () => {
           <div className="relative w-72 h-72 md:w-96 md:h-96">
 
             {/* Decorative Circle */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400 to-gray-500 shadow-inner"></div>
+            <div className="absolute inset-0 rounded-full bg-linear-to-br from-cyan-400 to-gray-500 shadow-inner"></div>
             <div className="absolute inset-10 rounded-full bg-gray-300 flex items-center justify-center shadow-lg">
               <span className="text-6xl font-bold text-gray-950">
                 :(

@@ -4,7 +4,7 @@ import CoverImage from "./CoverImage";
 import ProfileImage from "./ProfileImage";
 import BioForm from "./BioForm";
 
-const CustomizeProfile = () => {
+const CustomizeProfile = ({user}) => {
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             {/* Cover  Image*/}
@@ -22,7 +22,7 @@ const CustomizeProfile = () => {
 
                 <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md p-1">
                     <Image
-                        src="https://i.postimg.cc/MTvqpvT7/cover.jpg"
+                        src={user?.cover || "https://i.postimg.cc/MTvqpvT7/cover.jpg"}
                         alt="Cover"
                         className="object-cover rounded-md w-5xl max-h-40 md:max-h-80 shadow-2xl shadow-gray-700"
                         width={800} height={400}
@@ -44,7 +44,7 @@ const CustomizeProfile = () => {
 
                 <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                     <Image
-                        src="https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"
+                        src={user?.profile || "https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg"}
                         alt="Profile"
                         className="object-cover rounded-full w-60 h-60 shadow-2xl border-4 border-cyan-400 shadow-gray-700"
                         width={800} height={400}

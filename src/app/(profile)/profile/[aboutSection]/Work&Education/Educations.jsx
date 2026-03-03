@@ -5,7 +5,8 @@ import AddSchoolForm from "./AddSchoolForm";
 import { FiPlus } from "react-icons/fi";
 
 
-const Educations = () => {
+const Educations = ({user}) => {
+    const {work, school, university} = user || {}
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             <div className="space-y-1">
@@ -47,7 +48,7 @@ const Educations = () => {
 
                 <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <FaGraduationCap className="text-4xl text-cyan-400" />
-                    <span>Studied at <span className="font-medium">{'Al-Jamiatul Ahliah Darul Uloom Moinul Islam, Hathazari, Ctg, Bangladesh'}</span></span>
+                    <span>Studied at <span className="font-medium">{university}</span></span>
                 </div>
             </div>
 
@@ -64,10 +65,12 @@ const Educations = () => {
 
                 <AddSchoolForm />
 
-                <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
+                {
+                    school && <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <FaGraduationCap className="text-3xl text-cyan-400" />
-                    <span>Went to <span className="font-medium">{'Jamiya Mohammadia Khajuria Madrasha'}</span></span>
+                    <span>Went to <span className="font-medium">{school}</span></span>
                 </div>
+                }
             </div>
         </div>
     );
