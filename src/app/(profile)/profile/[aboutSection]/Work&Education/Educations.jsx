@@ -65,12 +65,10 @@ const Educations = ({user}) => {
 
                 <AddSchoolForm />
 
-                {
-                    school && <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
+                <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <FaGraduationCap className="text-3xl text-cyan-400" />
                     <span>Went to <span className="font-medium">{school}</span></span>
                 </div>
-                }
             </div>
         </div>
     );
