@@ -4,7 +4,7 @@ import PhoneForm from "./PhoneForm";
 import { MdMarkEmailUnread } from "react-icons/md";
 import EmailForm from "./EmailForm";
 
-const Information = () => {
+const Information = ({user}) => {
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             {/* Phone Number */}
@@ -41,7 +41,7 @@ const Information = () => {
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <MdMarkEmailUnread className="text-3xl text-cyan-400" />
-                    <span>Email: <a href="mailto:" className="font-medium hover:underline hover:text-cyan-400">{'mohammadnaim.dev@gmail.com'}</a></span>
+                    <span>Email: <a href="mailto:" className="font-medium hover:underline hover:text-cyan-400">{user?.email}</a></span>
                 </div>
             </div>
         </div>
