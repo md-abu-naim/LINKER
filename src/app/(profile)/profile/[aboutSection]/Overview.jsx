@@ -3,9 +3,10 @@ import { FiHome, FiMapPin, FiUser, FiUsers } from "react-icons/fi";
 import { LuShield } from "react-icons/lu";
 import { MdMarkEmailUnread } from "react-icons/md";
 
-const Overview = () => {
+const Overview = ({user}) => {
+    const {work, school, university, gender, birth, email, currentCity, location} = user || {}
     return (
-        <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+        <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             {/* Works */}
             <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                 <FaBriefcase className="text-3xl text-cyan-400" />
@@ -19,11 +20,11 @@ const Overview = () => {
             <div className="">
                 <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <FaGraduationCap className="text-3xl text-cyan-400" />
-                    <span>Went to <span className="font-medium">{'Jamiya Mohammadia Khajuria Madrasha'}</span></span>
+                    <span>Went to <span className="font-medium">{school}</span></span>
                 </div>
                 <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                     <FaGraduationCap className="text-4xl text-cyan-400" />
-                    <span>Studied at <span className="font-medium">{'Al-Jamiatul Ahliah Darul Uloom Moinul Islam, Hathazari, Ctg, Bangladesh'}</span></span>
+                    <span>Studied at <span className="font-medium">{university}</span></span>
                 </div>
             </div>
 
@@ -31,11 +32,11 @@ const Overview = () => {
             <div className=" text-md">
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiHome className="text-3xl text-cyan-400" />
-                    <span>Lives in <span className="font-medium">{'Khajuria, Senbag, Noakhali'}</span></span>
+                    <span>Lives in <span className="font-medium">{currentCity}</span></span>
                 </div>
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiMapPin className="text-3xl text-cyan-400" />
-                    <span>From <span className="font-medium">{'Senbag, Noakhali, Chittagang, Bangladesh'}</span></span>
+                    <span>From <span className="font-medium">{location}</span></span>
                 </div>
             </div>
 
@@ -59,7 +60,7 @@ const Overview = () => {
                 </div>
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <MdMarkEmailUnread className="text-3xl text-cyan-400" />
-                    <span>Email: <a href="mailto:" className="font-medium hover:underline hover:text-cyan-400">{'mohammadnaim.dev@gmail.com'}</a></span>
+                    <span>Email: <a href="mailto:" className="font-medium hover:underline hover:text-cyan-400">{email}</a></span>
                 </div>
             </div>
 
@@ -67,11 +68,11 @@ const Overview = () => {
             <div className="text-md">
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiUser className="text-3xl text-cyan-400" />
-                    <span>Gender: <span className="font-medium">{'Male'}</span></span>
+                    <span>Gender: <span className="font-medium">{gender}</span></span>
                 </div>
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiUser className="text-3xl text-cyan-400" />
-                    <span>Birth: <span className="font-medium">{'Fabruary 2004'}</span></span>
+                    <span>Birth: <span className="font-medium">{birth}</span></span>
                 </div>
             </div>
         </div>

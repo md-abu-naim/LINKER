@@ -1,9 +1,12 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import CustomizeProfile from "./Customization/CustomizeProfile";
 import Information from "./Information/Information";
 import Locations from "./Lives&Locations/Locations";
 import Overview from "./Overview";
 import Sidebar from "./Sidebar";
 import Educations from "./Work&Education/Educations";
+import { getServerSession } from "next-auth";
+import axios from "axios";
 
 export const metadata = {
   title: "LINKER | | Abouts",
@@ -13,11 +16,17 @@ export const metadata = {
 export default async function AboutDynamic({ params }) {
   const { aboutSection } = await params;
 
+  const { user: session } = await getServerSession(authOptions)
+
+  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
+  const user = await response.data.data
+
+
   let content;
 
   switch (aboutSection) {
     case "about":
-      content = <Overview />;
+      content = <Overview user={user} />;
       break;
     case "about_customize_profile":
       content = <CustomizeProfile />
