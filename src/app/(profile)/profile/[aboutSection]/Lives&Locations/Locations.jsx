@@ -2,9 +2,9 @@ import { FiHome, FiMapPin, FiPlus } from "react-icons/fi";
 import CurrentCityForm from "./CurrentCityForm";
 import LocationForm from "./LocationForm";
 
-const Locations = () => {
+const Locations = ({user}) => {
     return (
-        <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+        <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
 
             {/* Current City */}
             <div className="space-y-1">
@@ -21,7 +21,7 @@ const Locations = () => {
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiHome className="text-3xl text-cyan-400" />
-                    <span>Lives in <span className="font-medium">{'Khajuria, Senbag, Noakhali'}</span></span>
+                    <span>Lives in <span className="font-medium">{user?.currentCity}</span></span>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@ const Locations = () => {
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiMapPin className="text-3xl text-cyan-400" />
-                    <span>From <span className="font-medium">{'Senbag, Noakhali, Chittagang, Bangladesh'}</span></span>
+                    <span>From <span className="font-medium">{user?.location}</span></span>
                 </div>
             </div>
         </div>
