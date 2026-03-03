@@ -18,7 +18,7 @@ const CustomizeProfile = ({user}) => {
                     </label>
                 </div>
 
-                <CoverImage />
+                <CoverImage user={user} />
 
                 <div className="flex items-center justify-center shadow-gray-300 border-2 border-cyan-400 rounded-md p-1">
                     <Image
