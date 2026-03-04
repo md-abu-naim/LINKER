@@ -4,7 +4,7 @@ import { LuShield } from "react-icons/lu";
 import { MdMarkEmailUnread } from "react-icons/md";
 
 const Overview = ({ user }) => {
-    const { work, school, university, gender, birth, email, currentCity, location, joined } = user || {}
+    const { work, school, university, gender, birth, email, phone, currentCity, location, joined } = user || {}
 
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
@@ -12,8 +12,8 @@ const Overview = ({ user }) => {
             <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
                 <FaBriefcase className="text-3xl text-cyan-400" />
                 <div className="flex flex-col">
-                    <span className="font-medium">Work {work.position} <span className="font-normal"> at</span> {work.company}</span>
-                    <small className="text-gray-300 text-sm">{work.fromYear} {work && to} {work.toYear}</small>
+                    <span className="font-medium">Work {work?.position} <span className="font-normal"> at</span> {work?.company}</span>
+                    <small className="text-gray-300 text-sm">{work?.fromYear} {work && 'to'} {work?.toYear}</small>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ const Overview = ({ user }) => {
             <div className="text-md">
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FaPhoneAlt className="text-3xl text-cyan-400" />
-                    <span>Phone: <span className="font-medium hover:underline hover:text-cyan-400">{'01882585833'}</span></span>
+                    <span>Phone: <span className="font-medium hover:underline hover:text-cyan-400">{phone}</span></span>
                 </div>
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <MdMarkEmailUnread className="text-3xl text-cyan-400" />
