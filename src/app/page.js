@@ -6,9 +6,9 @@ import MessengerSidebar from './Components/HomePage/RightSide';
 import axios from 'axios';
 
 const Home = async () => {
-  const { user: session } = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions)
 
-  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
+  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`)
   const user = await response.data.data
 
   return (
