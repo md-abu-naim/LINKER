@@ -1,11 +1,17 @@
 'use client'
+import axios from "axios";
 
-const AddSchoolForm = () => {
+const AddSchoolForm = ({user}) => {
 
-    const handleSchool = e => {
+    const handleSchool = async(e) => {
         e.preventDefault()
         const school = e.target.school.value
-        console.log(school);
+
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { school})
+        const data = await res.data.data
+        if (data.modifiedCount > 0) {
+            alert('Update School')
+        }
     }
     return (
         <form onSubmit={handleSchool} className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">

@@ -5,7 +5,6 @@ const UniversityForm = ({user}) => {
     const handleUniversity = async(e) => {
         e.preventDefault()
         const university = e.target.university.value
-        console.log(university);
 
         const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { university})
         const data = await res.data.data
