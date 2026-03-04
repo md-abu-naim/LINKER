@@ -17,7 +17,7 @@ const Locations = ({user}) => {
                     </label>
                 </div>
 
-                <CurrentCityForm />
+                <CurrentCityForm user={user} />
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiHome className="text-3xl text-cyan-400" />
@@ -36,7 +36,7 @@ const Locations = ({user}) => {
                     </label>
                 </div>
 
-                <LocationForm />
+                <LocationForm user={user} />
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FiMapPin className="text-3xl text-cyan-400" />
