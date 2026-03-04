@@ -1,21 +1,28 @@
 'use client'
+import axios from "axios";
 import { useState } from "react";
 
-const WorkForm = () => {
+const WorkForm = ({user}) => {
     const [present, setPresent] = useState(false)
 
-    const handleWork = (e) => {
+    const handleWork = async(e) => {
         e.preventDefault()
         const form = e.target
         const company = form.company.value
         const position = form.position.value
-        const city = form.city.value
+        const location = form.location.value
         const description = form.description.value
         const fromYear = form.fromYear.value
         const toYear = present ? 'Present' : form.toYear.value
 
-        const workData = { company, position, city, description, fromYear, toYear }
-        console.log(workData);
+        const work = { company, position, location, description, fromYear, toYear }
+
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { work})
+        const data = await res.data.data
+        console.log(data);
+        if (data.modifiedCount > 0) {
+            alert('Update work')
+        }
     }
     return (
         <form onSubmit={handleWork} className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
@@ -29,7 +36,7 @@ const WorkForm = () => {
             </div>
             <div className="flex flex-col gap-1">
                 <label className="text-sm text-cyan-400 font-medium">City / Town</label>
-                <input type="text" name="city" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Ex: Dhaka, Chittagong" />
+                <input type="text" name="location" className="p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-400 text-gray-200 transition-all outline-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" placeholder="Ex: Dhaka, Chittagong" />
             </div>
             <div className="flex flex-col gap-1">
                 <label className="text-sm text-cyan-400 font-medium">Description</label>
