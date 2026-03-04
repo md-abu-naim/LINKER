@@ -13,7 +13,7 @@ export const metadata = {
     description: "LINKER user profile page",
 };
 
-const ProfileLayout = async({ children }) => {
+const ProfileLayout = async ({ children }) => {
     const session = await getServerSession(authOptions)
 
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`)
