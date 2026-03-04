@@ -16,7 +16,7 @@ export const metadata = {
 const ProfileLayout = async({ children }) => {
     const session = await getServerSession(authOptions)
 
-    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user.email}`)
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`)
     const user = await res.data.data
 
     return (
