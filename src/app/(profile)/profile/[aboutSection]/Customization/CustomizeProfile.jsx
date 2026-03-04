@@ -40,7 +40,7 @@ const CustomizeProfile = ({user}) => {
                         <span className="text-md">Edit Profile</span>
                     </label>
                 </div>
-                <ProfileImage />
+                <ProfileImage user={user} />
 
                 <div className="flex items-center justify-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                     <Image
@@ -62,7 +62,7 @@ const CustomizeProfile = ({user}) => {
                     </label>
                 </div>
 
-                <BioForm />
+                <BioForm user={user} />
 
                 <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
                     <p className="text-gray-300 p-3">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>

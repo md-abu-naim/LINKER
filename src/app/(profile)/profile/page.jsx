@@ -6,9 +6,17 @@ import { BsEmojiSunglasses } from "react-icons/bs";
 import ImageLayout from "@/app/Components/Shared/ImageLayout";
 import PostBox from "@/app/Components/Shared/PostBox";
 import { MediaInput } from "@/app/Components/Shared/MediaInput";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
+import axios from "axios";
 
 
-const ProfilePost = () => {
+const ProfilePost = async() => {
+     const {user: session} = await getServerSession(authOptions)
+
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
+    const user = await res.data.data
+
     const friends = [
         { name: 'Abu Naim', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },
         { name: 'Jasim Uddin', img: 'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg' },
@@ -33,29 +41,29 @@ const ProfilePost = () => {
             <div className="col-span-12 lg:col-span-5">
                 <div className="rounded-3xl p-3 md:px-4 space-y-2 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                     <h3 className="text-2xl font-bold">Introduce</h3>
-                    <p className="text-gray-300">FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App</p>
+                    <p className="text-gray-300">{user?.bio}</p>
                     <hr className="text-cyan-800" />
 
                     <div className="mt-2 space-y-3">
                         <div className="flex items-center gap-2">
                             <FaBriefcase className="text-xl text-cyan-400" />
-                            <span><span className="text-cyan-400">Work at</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                            <span><span className="text-cyan-400">Work at</span> {user?.work}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaGraduationCap className="text-2xl text-cyan-400" />
-                            <span><span className="text-cyan-400">Went to</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                            <span><span className="text-cyan-400">Went to</span> {user?.school}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaGraduationCap className="text-2xl text-cyan-400" />
-                            <span><span className="text-cyan-400">Studied at</span> {'Jamiya Mohammadia Khajuria Madrasha'}</span>
+                            <span><span className="text-cyan-400">Studied at</span> {user?.university}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FiHome className="text-2xl text-cyan-400" />
-                            <span><span className="text-cyan-400">Lives in</span> {'Khajuria, Senbag, Noakhali'}</span>
+                            <span><span className="text-cyan-400">Lives in</span> {user?.currentCity}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FiMapPin className="text-2xl text-cyan-400" />
-                            <span><span className="text-cyan-400">From to</span> {'Khajuria, Senbag, Noakhali'}</span>
+                            <span><span className="text-cyan-400">From to</span> {user?.location}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FiUsers className="text-2xl text-cyan-400" />
@@ -106,10 +114,10 @@ const ProfilePost = () => {
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-3 md:mb-4">
                         <Link href='/profile'>
-                            <Image src="https://i.postimg.cc/65X8XRRf/Face-Care.png" alt="User" width={50} height={50} className="w-9 h-9 md:w-12 md:h-12 border border-cyan-400 rounded-full hover:scale-105 transition-all duration-300" />
+                            <Image src={user?.profile || "https://i.postimg.cc/65X8XRRf/Face-Care.png"} alt="User" width={50} height={50} className="w-9 h-9 md:w-12 md:h-12 border border-cyan-400 rounded-full hover:scale-105 transition-all duration-300" />
                         </Link>
                         <div className="flex flex-col">
-                            <h3 className="text-sm md:text-lg font-semibold text-gray-100">Mohammad Abu Naim</h3>
+                            <h3 className="text-sm md:text-lg font-semibold text-gray-100">{user.name}</h3>
                             <p className="text-xs md:text-sm text-gray-500">Share something inspiring ✨</p>
                         </div>
                     </div>
@@ -186,7 +194,7 @@ const ProfilePost = () => {
                 </div>
 
                 <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-                <PostBox />
+                <PostBox user={user} />
             </div>
         </div>
     );
