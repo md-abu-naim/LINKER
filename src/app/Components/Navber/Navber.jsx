@@ -9,7 +9,7 @@ import { MdFeedback, MdHelpOutline } from "react-icons/md";
 import { IoMdTimer } from "react-icons/io";
 import LogOutBtn from "./LogOutBtn";
 
-const Navber = async () => {
+const Navber = () => {
     return (
         <nav className="w-full bg-gray-900 border-b border-gray-800 shadow-md">
             <div className="flex justify-between items-center pt-1 px-3 sm:px-4">

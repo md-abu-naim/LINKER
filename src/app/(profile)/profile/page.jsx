@@ -13,9 +13,9 @@ import { LuShield } from "react-icons/lu";
 
 
 const ProfilePost = async () => {
-    const { user: session } = await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
 
-    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
+    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user.email}`)
     const user = await res.data.data
 
     const friends = [
