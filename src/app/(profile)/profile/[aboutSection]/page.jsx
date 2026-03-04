@@ -15,9 +15,8 @@ export const metadata = {
 };
 
 export default async function AboutDynamic({ params }) {
-  const { aboutSection } = await params;
-
   const { user: session } = await getServerSession(authOptions)
+  const { aboutSection } = await params;
 
   const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
   const user = await response.data.data

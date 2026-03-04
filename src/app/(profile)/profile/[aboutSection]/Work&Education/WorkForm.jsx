@@ -2,10 +2,10 @@
 import axios from "axios";
 import { useState } from "react";
 
-const WorkForm = ({user}) => {
+const WorkForm = ({ user }) => {
     const [present, setPresent] = useState(false)
 
-    const handleWork = async(e) => {
+    const handleWork = async (e) => {
         e.preventDefault()
         const form = e.target
         const company = form.company.value
@@ -17,7 +17,7 @@ const WorkForm = ({user}) => {
 
         const work = { company, position, location, description, fromYear, toYear }
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { work})
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { work })
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {

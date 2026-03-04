@@ -1,13 +1,13 @@
 'use client'
 import axios from "axios";
 
-const AddSchoolForm = ({user}) => {
+const AddSchoolForm = ({ user }) => {
 
-    const handleSchool = async(e) => {
+    const handleSchool = async (e) => {
         e.preventDefault()
         const school = e.target.school.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { school})
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { school })
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             alert('Update School')

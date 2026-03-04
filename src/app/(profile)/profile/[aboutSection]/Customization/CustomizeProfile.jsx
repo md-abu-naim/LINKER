@@ -4,7 +4,7 @@ import CoverImage from "./CoverImage";
 import ProfileImage from "./ProfileImage";
 import BioForm from "./BioForm";
 
-const CustomizeProfile = ({user}) => {
+const CustomizeProfile = ({ user }) => {
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 space-y-2 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             {/* Cover  Image*/}
@@ -65,7 +65,7 @@ const CustomizeProfile = ({user}) => {
                 <BioForm user={user} />
 
                 <div className="text-center shadow-gray-300 rounded-md border border-gray-700 p-1">
-                    <p className="text-gray-300 p-3">{user?.bio ||"FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App"}</p>
+                    <p className="text-gray-300 p-3">{user?.bio || "FullStack Developer | Frontend Developer | React | Next.js | Node.js | MERN Stack | MongoDB | Web App"}</p>
                 </div>
             </div>
         </div>

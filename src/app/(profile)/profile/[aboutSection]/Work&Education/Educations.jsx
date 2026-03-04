@@ -5,8 +5,8 @@ import AddSchoolForm from "./AddSchoolForm";
 import { FiPlus } from "react-icons/fi";
 
 
-const Educations = ({user}) => {
-    const {work, school, university} = user || {}
+const Educations = ({ user }) => {
+    const { work, school, university } = user || {}
     return (
         <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 mb-16 lg:mb-3 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             <div className="space-y-1">

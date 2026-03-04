@@ -21,11 +21,11 @@ const CoverImage = ({ user }) => {
             })
     }
 
-    const hanldeUpdateCover = async(user) => {
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {cover})
+    const hanldeUpdateCover = async (user) => {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { cover })
         const data = await res.data.data
         console.log(data);
-        if(data.modifiedCount > 0){
+        if (data.modifiedCount > 0) {
             alert('Update Cover')
         }
     }

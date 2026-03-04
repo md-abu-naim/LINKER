@@ -18,7 +18,7 @@ const Sidebar = () => {
     ]
 
     return (
-        <div className="bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+        <div className="bg-linear-to-b from-gray-950 via-gray-950 to-gray-900 border border-gray-800 rounded-2xl backdrop-blur-xl p-4 shadow-[0_0_35px_rgba(0,0,0,0.3)] hover:-translate-y-1">
             <h4 className="text-2xl font-bold mb-2">About</h4>
             <div className="flex flex-col space-y-2">
                 {

@@ -1,19 +1,19 @@
 "use client"
 import axios from "axios";
 
-const UniversityForm = ({user}) => {
-    const handleUniversity = async(e) => {
+const UniversityForm = ({ user }) => {
+    const handleUniversity = async (e) => {
         e.preventDefault()
         const university = e.target.university.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { university})
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { university })
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {
             alert('Update University')
         }
     }
-    
+
     return (
         <form onSubmit={handleUniversity} className="space-y-5 hidden peer-checked:block bg-gray-950/40 p-6 rounded-xl border border-gray-800 shadow-[0_0_20px_rgba(0,255,255,0.04)] mt-2">
             <div className="flex flex-col gap-1">

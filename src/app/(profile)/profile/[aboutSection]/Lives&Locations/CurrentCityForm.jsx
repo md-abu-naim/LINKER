@@ -1,13 +1,13 @@
 'use client'
 import axios from "axios";
 
-const CurrentCityForm = ({user}) => {
+const CurrentCityForm = ({ user }) => {
 
-    const handleCurrentCity = async(e) => {
+    const handleCurrentCity = async (e) => {
         e.preventDefault()
         const currentCity = e.target.currentCity.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {currentCity })
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { currentCity })
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             alert('Update Current City')

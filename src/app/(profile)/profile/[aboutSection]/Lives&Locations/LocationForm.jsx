@@ -1,12 +1,12 @@
 'use client'
 import axios from "axios";
 
-const LocationForm = ({user}) => {
-    const handleTwon = async(e) => {
+const LocationForm = ({ user }) => {
+    const handleTwon = async (e) => {
         e.preventDefault()
         const location = e.target.location.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {location})
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { location })
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             alert('Update location')

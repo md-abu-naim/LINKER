@@ -22,7 +22,7 @@ const ProfileImage = ({ user }) => {
     }
 
     const hanldeUpdateProfile = async (user) => {
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {profile: profileUrl})
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { profile: profileUrl })
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {
