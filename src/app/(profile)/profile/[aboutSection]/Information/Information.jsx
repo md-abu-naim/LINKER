@@ -18,7 +18,7 @@ const Information = ({user}) => {
                     </label>
                 </div>
 
-                <PhoneForm />
+                <PhoneForm user={user} />
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <FaPhoneVolume className="text-2xl text-cyan-400" />
@@ -37,7 +37,7 @@ const Information = ({user}) => {
                     </label>
                 </div>
 
-                <EmailForm />
+                <EmailForm user={user} />
 
                 <div className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded-sm">
                     <MdMarkEmailUnread className="text-3xl text-cyan-400" />
