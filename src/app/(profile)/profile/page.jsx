@@ -9,10 +9,11 @@ import { MediaInput } from "@/app/Components/Shared/MediaInput";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import axios from "axios";
+import { LuShield } from "react-icons/lu";
 
 
-const ProfilePost = async() => {
-     const {user: session} = await getServerSession(authOptions)
+const ProfilePost = async () => {
+    const { user: session } = await getServerSession(authOptions)
 
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
     const user = await res.data.data
@@ -47,7 +48,7 @@ const ProfilePost = async() => {
                     <div className="mt-2 space-y-3">
                         <div className="flex items-center gap-2">
                             <FaBriefcase className="text-xl text-cyan-400" />
-                            <span><span className="text-cyan-400">Work at</span> {user?.work}</span>
+                            <span><span className="text-cyan-400">Work at</span> {user?.work?.company}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaGraduationCap className="text-2xl text-cyan-400" />
@@ -68,6 +69,10 @@ const ProfilePost = async() => {
                         <div className="flex items-center gap-2">
                             <FiUsers className="text-2xl text-cyan-400" />
                             <span><span className="text-cyan-400">Followed by</span> {'10000 People'}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <LuShield className="text-2xl text-cyan-400" />
+                            <span><span className="text-cyan-400">Joined</span> {user?.joined}</span>
                         </div>
                     </div>
 
