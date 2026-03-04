@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FiHome, FiMapPin, FiUsers, } from "react-icons/fi";
+import { FiEdit2, FiHome, FiLink, FiMapPin, FiShare2, FiSlash, FiUsers, FiUserX, } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { BsEmojiSunglasses } from "react-icons/bs";
@@ -159,17 +159,37 @@ const ProfilePost = async () => {
                                 <span className="text-gray-400 text-sm">24 hours ago · 🌍 Public</span>
                             </div>
                         </div>
-                        <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-white"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                            </svg>
-                        </button>
+                        <div className="dropdown dropdown-center">
+                            <button tabIndex={0} className="p-2 rounded-full hover:bg-gray-700 transition">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                </svg>
+                            </button>
+                            <ul tabIndex="-1" className="dropdown-content menu mt-0.5 bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiEdit2 /></span>
+                                    <span className="">Edit Post</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                    <span className="">Saved</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                    <span className="">Pin Post</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiLink /></span>
+                                    <span className=""> Copy Link</span>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
 
                     {/* Post Content */}
