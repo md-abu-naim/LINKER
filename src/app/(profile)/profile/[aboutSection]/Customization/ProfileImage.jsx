@@ -22,12 +22,7 @@ const ProfileImage = ({ user }) => {
     }
 
     const hanldeUpdateProfile = async (user) => {
-        const updateData = {
-            ...user, profile: profileUrl
-        }
-        console.log(updateData);
-
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, updateData)
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {profile: profileUrl})
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {
@@ -38,7 +33,7 @@ const ProfileImage = ({ user }) => {
     return (
         <div className="space-y-4 hidden peer-checked:block p-6 rounded-2xl border border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.03)] mt-3">
             <div className="overflow-hidden flex items-center justify-center">
-                <Image className="w-72 h-60 md:h-72 object-cover rounded-full shadow-lg" src={profileUrl ? profileUrl : user?.cover || 'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} width={800} height={400} alt="Cover" />
+                <Image className="w-72 h-60 md:h-72 object-cover rounded-full shadow-lg" src={profileUrl ? profileUrl : user?.profile || 'https://i.postimg.cc/GmqrhrbJ/86c86962-8cd0-4319-b9fc-7815555986b5.jpg'} width={800} height={400} alt="Cover" />
             </div>
             <div className="flex items-center justify-center">
                 <input onChange={handleProfilePreview} name="profile" type="file" id="ProfileInput" accept="image/*" className="hidden" />

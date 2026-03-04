@@ -22,12 +22,7 @@ const CoverImage = ({ user }) => {
     }
 
     const hanldeUpdateCover = async(user) => {
-        const updateData = {
-         ...user, cover:cover
-        }
-        console.log(updateData);
-        
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, updateData)
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, {cover})
         const data = await res.data.data
         console.log(data);
         if(data.modifiedCount > 0){

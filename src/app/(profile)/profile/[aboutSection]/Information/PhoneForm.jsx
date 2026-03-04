@@ -7,9 +7,7 @@ const PhoneForm = ({user}) => {
         e.preventDefault()
         const phoneNumber = e.target.phone.value
 
-        const updateData = { phone: phoneNumber}
-        console.log(updateData);
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, updateData)
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { phone: phoneNumber})
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {

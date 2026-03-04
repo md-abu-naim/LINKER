@@ -46,10 +46,7 @@ const EditProfile = () => {
 
 
     const handleUser = async () => {
-        const updateData = {
-            name, birth, gender, email, password, bio, cover,
-            profile, currentCity, location, school, work, university
-        }
+        const updateData = { bio, cover, profile}
         
         const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
         const data = await res.data.data
