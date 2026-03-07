@@ -5,7 +5,6 @@ import Tabs from "./Components/Tabs";
 import CoverPhoto from "./Components/CoverPhoto";
 import ProfilePicture from "./Components/ProfilePicture";
 import { getServerSession } from "next-auth";
-import axios from "axios";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export const metadata = {
@@ -16,8 +15,16 @@ export const metadata = {
 const ProfileLayout = async ({ children }) => {
     const session = await getServerSession(authOptions)
 
-    const res = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`)
-    const user = await res.data.data
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
+        {
+            headers: {
+                Authorization: `Bearer ${session?.accessToken}`
+            },
+        }
+    )
+
+    const data = await res.json()
+    const user = data.data
 
     return (
         <div>

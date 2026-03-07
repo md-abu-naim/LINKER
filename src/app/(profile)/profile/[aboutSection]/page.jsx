@@ -15,11 +15,20 @@ export const metadata = {
 };
 
 export default async function AboutDynamic({ params }) {
-  const { user: session } = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions)
   const { aboutSection } = await params;
 
-  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.email}`)
-  const user = await response.data.data
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
+    {
+      headers: {
+        Authorization: `Bearer ${session?.accessToken}`
+      },
+    }
+  )
+
+  const data = await res.json()
+  const user = data.data
+  console.log(user);
 
 
   let content;
