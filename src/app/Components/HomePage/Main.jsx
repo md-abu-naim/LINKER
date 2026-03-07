@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsEmojiSunglasses } from "react-icons/bs";
+import { BsEmojiSunglasses, BsFillPinAngleFill } from "react-icons/bs";
 import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
 import { MediaInput } from "../Shared/MediaInput";
 import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
+import { FiBookmark, FiEdit2, FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
 
-const Main = async ({user}) => {
+const Main = async ({ user }) => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
 
@@ -68,17 +69,37 @@ const Main = async ({user}) => {
                                     <span className="text-gray-400 text-sm">24 hours ago · {post.visibility}</span>
                                 </div>
                             </div>
-                            <button className="p-2 rounded-full hover:bg-gray-700 transition">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 text-white"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
-                                </svg>
-                            </button>
+                            <div className="dropdown dropdown-center">
+                                <button tabIndex={0} className="p-2 rounded-full hover:bg-gray-700 transition">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M12 12h.01M18 12h.01" />
+                                    </svg>
+                                </button>
+                                <ul tabIndex="-1" className="dropdown-content menu mt-0.5 bg-gray-900 rounded-box z-50 w-52 p-2 shadow-lg border border-cyan-700 right-24">
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiEyeOff /></span>
+                                        <span className="">Hide Post</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiBookmark /></span>
+                                        <span className="">Saved</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                        <span className="">Block {post.author.name}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
+                                        <span className=" bg-gray-800 p-2 rounded-full"><FiLink /></span>
+                                        <span className=""> Copy Link</span>
+                                    </div>
+                                </ul>
+                            </div>
                         </div>
 
                         {/* Post Content */}

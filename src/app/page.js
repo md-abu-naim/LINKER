@@ -3,13 +3,20 @@ import { authOptions } from './api/auth/[...nextauth]/route';
 import LeftAside from './Components/HomePage/LeftAside';
 import Main from './Components/HomePage/Main';
 import MessengerSidebar from './Components/HomePage/RightSide';
-import axios from 'axios';
 
 const Home = async () => {
   const session = await getServerSession(authOptions)
 
-  const response = await axios(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`)
-  const user = await response.data.data
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
+    {
+      headers: {
+        Authorization: `Bearer ${session?.accessToken}`
+      },
+    }
+  )
+
+  const data = await res.json()
+  const user = data.data
 
   return (
     <div className='grid grid-cols-12 gap-6 mt-11 md:p-4 px-2 h-screen overflow-hidden fixed inset-0'>

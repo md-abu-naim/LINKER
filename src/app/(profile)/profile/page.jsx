@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { FiEdit2, FiHome, FiLink, FiMapPin, FiShare2, FiSlash, FiUsers, FiUserX, } from "react-icons/fi";
+import { FiBookmark, FiEdit2, FiHome, FiLink, FiMapPin, FiUsers, } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
-import { BsEmojiSunglasses } from "react-icons/bs";
+import { BsEmojiSunglasses, BsFillPinAngleFill } from "react-icons/bs";
 import ImageLayout from "@/app/Components/Shared/ImageLayout";
 import PostBox from "@/app/Components/Shared/PostBox";
 import { MediaInput } from "@/app/Components/Shared/MediaInput";
@@ -177,11 +177,11 @@ const ProfilePost = async () => {
                                     <span className="">Edit Post</span>
                                 </div>
                                 <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiUserX /></span>
+                                    <span className=" bg-gray-800 p-2 rounded-full"><FiBookmark /></span>
                                     <span className="">Saved</span>
                                 </div>
                                 <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">
-                                    <span className=" bg-gray-800 p-2 rounded-full"><FiSlash /></span>
+                                    <span className=" bg-gray-800 p-2 rounded-full"><BsFillPinAngleFill /></span>
                                     <span className="">Pin Post</span>
                                 </div>
                                 <div className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700">

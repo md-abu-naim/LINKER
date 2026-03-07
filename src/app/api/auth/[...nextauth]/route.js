@@ -29,7 +29,7 @@ export const authOptions = {
                         id: data.user.id,
                         name: data.user.name,
                         email: data.user.email,
-                        token: data.user.token
+                        token: data.token
                     }
                 }
                 catch (error) {
@@ -46,17 +46,22 @@ export const authOptions = {
     session: {
         strategy: "jwt",
     },
+    jwt: {
+        secret: process.env.NEXTAUTH_SECRET
+    },
     callbacks: {
         async jwt({ token, user }) {
             if (user) {
-                token.accessToken = user.token
+                token.email = user.email
                 token.id = user.id
+                token.accessToken = user.token 
             }
             return token
         },
         async session({ session, token }) {
-            session.accessToken = token.accessToken
+            session.user.email = token.email
             session.user.id = token.id
+            session.accessToken = token.accessToken
             return session
         }
     }
