@@ -1,13 +1,14 @@
 'use client'
+import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 
 const PhoneForm = ({ user }) => {
 
     const HandlePhone = async (e) => {
         e.preventDefault()
-        const phoneNumber = e.target.phone.value
+        const phone = e.target.phone.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { phone: phoneNumber })
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, {phone})
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {
