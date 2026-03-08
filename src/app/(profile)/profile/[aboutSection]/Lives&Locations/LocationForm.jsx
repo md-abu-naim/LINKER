@@ -1,4 +1,5 @@
 'use client'
+import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 
 const LocationForm = ({ user }) => {
@@ -6,7 +7,9 @@ const LocationForm = ({ user }) => {
         e.preventDefault()
         const location = e.target.location.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { location })
+        // const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { location })
+        // const data = await res.data.data
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, {location})
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             alert('Update location')

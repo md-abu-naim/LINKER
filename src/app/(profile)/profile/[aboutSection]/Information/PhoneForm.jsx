@@ -10,7 +10,6 @@ const PhoneForm = ({ user }) => {
 
         const res = await axiosSecure.put(`/users/update/${user?._id}`, {phone})
         const data = await res.data.data
-        console.log(data);
         if (data.modifiedCount > 0) {
             alert('Update number')
         }
