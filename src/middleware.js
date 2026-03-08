@@ -7,7 +7,7 @@ export const middleware = async (req) => {
     
     const { pathname } = req.nextUrl
     
-    const publicRoutes = ["/login", "/register", "/edit-profile"]
+    const publicRoutes = ["/login", "/register"]
     
     if (!token && !publicRoutes.includes(pathname)) {
         return NextResponse.redirect(new URL('/login', req.url))

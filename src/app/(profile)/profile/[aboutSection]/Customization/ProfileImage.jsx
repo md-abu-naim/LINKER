@@ -1,4 +1,5 @@
 'use client'
+import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
@@ -22,7 +23,9 @@ const ProfileImage = ({ user }) => {
     }
 
     const hanldeUpdateProfile = async (user) => {
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { profile: profileUrl })
+        // const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { profile: profileUrl })
+        // const data = await res.data.data
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, { profile: profileUrl })
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {

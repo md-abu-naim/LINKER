@@ -1,4 +1,5 @@
 'use client'
+import axiosSecure from '@/lib/AxiosSecure';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
@@ -15,8 +16,6 @@ const EditProfile = () => {
     const [user, setUser] = useState()
     const [bio, setBio] = useState('')
     const router = useRouter()
-
-    const { name, birth, gender, email, password, currentCity, location, school, work, university } = user || {}
 
     const handleProfilePreview = (e) => {
         const file = e.target.files[0]
@@ -48,7 +47,7 @@ const EditProfile = () => {
     const handleUser = async () => {
         const updateData = { bio, cover, profile}
         
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${session?.user?.id}`, updateData)
+        const res = await axiosSecure.put(`/users/update/${session?.user?.id}`, updateData)
         const data = await res.data.data
         if(data.modifiedCount > 0){
             router.push('/')
@@ -58,7 +57,7 @@ const EditProfile = () => {
     useEffect(() => {
         if (!session?.user?.id) return
 
-        axios.get(`${process.env.NEXT_PUBLIC_API}/users/user/${session?.user?.id}`)
+        axiosSecure.get(`/users/user/${session?.user?.id}`)
             .then(res => {
                 const data = res.data.data
                 setUser(data);

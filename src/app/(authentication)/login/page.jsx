@@ -6,11 +6,11 @@ import LoginForm from './LoginForm';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "LINKER | Login",
-  description: "LINKER login page for existing user login",
+    title: "LINKER | Login",
+    description: "LINKER login page for existing user login",
 };
 
-const Login = () => {
+const Login = async () => {
     return (
         <div className='flex flex-col lg:flex-row gap-4 mb-11'>
             {/* Left side */}

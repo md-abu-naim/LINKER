@@ -1,16 +1,15 @@
 'use client'
-import axios from "axios";
+import axiosSecure from "@/lib/AxiosSecure";
 
 const BioForm = ({ user }) => {
 
     const handleBio = async (e) => {
         e.preventDefault()
         const bio = e.target.bio.value
-        console.log(bio);
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { bio })
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, {bio})
         const data = await res.data.data
-        console.log(data);
+        
         if (data.modifiedCount > 0) {
             alert('Update bio')
         }

@@ -1,5 +1,6 @@
 'use client'
 
+import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
@@ -22,7 +23,7 @@ const CoverImage = ({ user }) => {
     }
 
     const hanldeUpdateCover = async (user) => {
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { cover })
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, { cover })
         const data = await res.data.data
         console.log(data);
         if (data.modifiedCount > 0) {
