@@ -1,6 +1,5 @@
 'use client'
 import axiosSecure from "@/lib/AxiosSecure";
-import axios from "axios";
 
 const PhoneForm = ({ user }) => {
 

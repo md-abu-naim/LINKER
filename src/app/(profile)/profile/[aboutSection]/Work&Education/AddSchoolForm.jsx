@@ -1,5 +1,5 @@
 'use client'
-import axios from "axios";
+import axiosSecure from "@/lib/AxiosSecure";
 
 const AddSchoolForm = ({ user }) => {
 
@@ -7,7 +7,7 @@ const AddSchoolForm = ({ user }) => {
         e.preventDefault()
         const school = e.target.school.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { school })
+       const res = await axiosSecure.put(`/users/update/${user?._id}`, {school})
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             alert('Update School')

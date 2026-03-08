@@ -1,14 +1,13 @@
 "use client"
-import axios from "axios";
+import axiosSecure from "@/lib/AxiosSecure";
 
 const UniversityForm = ({ user }) => {
     const handleUniversity = async (e) => {
         e.preventDefault()
         const university = e.target.university.value
 
-        const res = await axios.put(`${process.env.NEXT_PUBLIC_API}/users/update/${user?._id}`, { university })
+        const res = await axiosSecure.put(`/users/update/${user?._id}`, {university})
         const data = await res.data.data
-        console.log(data);
         if (data.modifiedCount > 0) {
             alert('Update University')
         }

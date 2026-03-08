@@ -25,7 +25,7 @@ const Educations = ({ user }) => {
                     <span><FaBriefcase className="text-3xl text-cyan-400" /></span>
                     <div className="flex flex-col">
                         <span className="font-medium">{work.position} <span className="font-normal"> at</span> {work.company}</span>
-                        <small className="text-gray-300 text-sm">{work.fromYear} to {work.toYear} · {work.location}</small>
+                        <small className="text-gray-300 text-sm">{work.fromYear} {work && 'to'} {work.toYear} {work && '·'} {work.location}</small>
                         <p className="text-sm text-gray-400">
                             {work.description}
                         </p>
