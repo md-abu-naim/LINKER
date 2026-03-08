@@ -1,5 +1,6 @@
 'use client'
 import axiosSecure from "@/lib/AxiosSecure";
+import toast from "react-hot-toast";
 
 const PhoneForm = ({ user }) => {
 
@@ -10,7 +11,9 @@ const PhoneForm = ({ user }) => {
         const res = await axiosSecure.put(`/users/update/${user?._id}`, {phone})
         const data = await res.data.data
         if (data.modifiedCount > 0) {
-            alert('Update number')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
     return (

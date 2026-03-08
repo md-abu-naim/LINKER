@@ -18,11 +18,11 @@ import { useState } from 'react';
 
 const PostModal = ({ images, setOpenModal, post }) => {
     const [open, setOpen] = useState(false);
-    const {author, image, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
+    const {author, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
-            <div className="w-full lg:w-11/12 max-w-6xl h-screen lg:h-[90vh] p-0 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl rounded-xl overflow-y-auto relative">
+            <div className="w-full lg:w-11/12 max-w-6xl h-screen lg:h-[90vh] p-0 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl rounded-xl overflow-y-auto relative">
                 <div className='flex flex-col lg:flex-row h-full'>
 
                     {/* Left Side: image slider */}
@@ -51,9 +51,9 @@ const PostModal = ({ images, setOpenModal, post }) => {
                     <div className='lg:w-1/3 w-full md:flex flex-col bg-gray-950 border-l border-gray-800 lg:max-h-[90vh] lg:overflow-hidden hover:overflow-y-auto my-4'>
                         <div className='p-4 space-y-1'>
                             <div className="flex items-center gap-3 p-">
-                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src={author.avatar} width={50} height={50} alt="User" />
+                                <Image className="w-12 h-12 rounded-full border-2 border-cyan-400 object-cover" src={author?.avatar} width={50} height={50} alt="User" />
                                 <div className="flex flex-col">
-                                    <span className="font-semibold text-sm md:text-lg">{author.name}</span>
+                                    <span className="font-semibold text-sm md:text-lg">{author?.name}</span>
                                     <span className="text-gray-400 text-sm">{createdAt} · {visibility}</span>
                                 </div>
                             </div>

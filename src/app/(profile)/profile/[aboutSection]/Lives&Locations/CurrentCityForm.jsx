@@ -1,6 +1,7 @@
 'use client'
 import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const CurrentCityForm = ({ user }) => {
 
@@ -11,7 +12,9 @@ const CurrentCityForm = ({ user }) => {
         const res = await axiosSecure.put(`/users/update/${user?._id}`, {currentCity})
         const data = await res.data.data
         if (data.modifiedCount > 0) {
-            alert('Update Current City')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
     return (

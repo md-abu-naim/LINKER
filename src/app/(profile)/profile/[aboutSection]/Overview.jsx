@@ -24,7 +24,7 @@ const Overview = ({ user }) => {
                     <span>Went to <span className="font-medium">{school}</span></span>
                 </div>
                 <div className="flex items-center gap-3 text-md hover:bg-gray-800 p-2 rounded-sm">
-                    <FaGraduationCap className="text-4xl text-cyan-400" />
+                    <FaGraduationCap className="text-3xl text-cyan-400" />
                     <span>Studied at <span className="font-medium">{university}</span></span>
                 </div>
             </div>

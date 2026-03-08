@@ -4,6 +4,7 @@ import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const CoverImage = ({ user }) => {
@@ -25,9 +26,10 @@ const CoverImage = ({ user }) => {
     const hanldeUpdateCover = async (user) => {
         const res = await axiosSecure.put(`/users/update/${user?._id}`, { cover })
         const data = await res.data.data
-        console.log(data);
         if (data.modifiedCount > 0) {
-            alert('Update Cover')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
 

@@ -1,6 +1,7 @@
 'use client'
 import axios from "axios";
 import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
 
@@ -34,9 +35,9 @@ const RegisterForm = () => {
             .then(res => {
                 if (res.data.data.insertedId) {
                     signIn("credentials", { email, password, callbackUrl: "/edit-profile" })
-                    alert("Registration successful", res.data.data);
+                    toast.success("Registration successfully.");
                 } else {
-                    alert(res.data.data.message || "Registration failed");
+                    toast.error(res.data.data.message || "Registration failed");
                 }
             })
     }

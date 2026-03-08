@@ -1,6 +1,7 @@
 'use client'
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
     const router = useRouter()
@@ -14,12 +15,13 @@ const LoginForm = () => {
         const result = await signIn("credentials", { email, password, redirect: false })
 
         if (result?.error) {
-            alert("Invalid email or password");
+            toast.error('Something went wrong. Please try again.')
         } else {
-            alert('login success')
+            toast.success('Login successfully.')
             router.push('/')
         }
     }
+    
     return (
         <form onSubmit={handleLogin} id='account' className='space-y-8'>
             <div className="flex flex-col gap-1">

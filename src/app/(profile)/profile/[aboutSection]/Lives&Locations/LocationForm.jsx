@@ -1,5 +1,6 @@
 'use client'
 import axiosSecure from "@/lib/AxiosSecure";
+import toast from "react-hot-toast";
 
 const LocationForm = ({ user }) => {
     const handleTwon = async (e) => {
@@ -9,7 +10,9 @@ const LocationForm = ({ user }) => {
         const res = await axiosSecure.put(`/users/update/${user?._id}`, {location})
         const data = await res.data.data
         if (data.modifiedCount > 0) {
-            alert('Update location')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
     return (

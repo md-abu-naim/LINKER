@@ -28,8 +28,6 @@ export default async function AboutDynamic({ params }) {
 
   const data = await res.json()
   const user = data.data
-  console.log(user);
-
 
   let content;
 

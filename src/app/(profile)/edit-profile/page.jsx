@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FiEdit } from 'react-icons/fi';
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
@@ -49,8 +50,11 @@ const EditProfile = () => {
         
         const res = await axiosSecure.put(`/users/update/${session?.user?.id}`, updateData)
         const data = await res.data.data
-        if(data.modifiedCount > 0){
+        if (data.modifiedCount > 0) {
+            toast.success('Changes saved successfully.')
             router.push('/')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
 

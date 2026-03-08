@@ -3,6 +3,7 @@ import axiosSecure from "@/lib/AxiosSecure";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const ProfileImage = ({ user }) => {
@@ -25,9 +26,10 @@ const ProfileImage = ({ user }) => {
     const hanldeUpdateProfile = async (user) => {
         const res = await axiosSecure.put(`/users/update/${user?._id}`, { profile: profileUrl })
         const data = await res.data.data
-        console.log(data);
         if (data.modifiedCount > 0) {
-            alert('Update profile')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
 

@@ -4,6 +4,7 @@ import Navber from "./Components/Navber/Navber";
 import MobileNavber from "./Components/Navber/MobileNavber";
 import AuthProviders from "@/Providers/AuthProviders";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
 
             <main>
               {children}
+              <Toaster position="top-right" />
               <SpeedInsights />
             </main>
             

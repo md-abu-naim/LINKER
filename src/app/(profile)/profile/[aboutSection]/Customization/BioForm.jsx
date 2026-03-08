@@ -1,5 +1,6 @@
 'use client'
 import axiosSecure from "@/lib/AxiosSecure";
+import toast from "react-hot-toast";
 
 const BioForm = ({ user }) => {
 
@@ -11,7 +12,9 @@ const BioForm = ({ user }) => {
         const data = await res.data.data
         
         if (data.modifiedCount > 0) {
-            alert('Update bio')
+            toast.success('Changes saved successfully.')
+        }else{
+            toast.error('Something went wrong. Please try again.')
         }
     }
     return (
