@@ -17,10 +17,8 @@ const PostInput = ({ user }) => {
         const emojiContainer = e.target.closest('.emoji-container')
 
         if (emojiBtn || emojiContainer) return
-        setShow(false)
+        // setShow(false)
     }
-
-    console.log('from bahir', previewUrl);
 
     const handleMedia = async (e) => {
         const files = Array.from(e.target.files)
@@ -59,7 +57,7 @@ const PostInput = ({ user }) => {
             avatar: user.profile
         }
 
-        const post = { author, visibility, content, media, createdAt, media, mediaType }
+        const post = { author, visibility, content, createdAt, media: previewUrl, mediaType: 'image' }
         console.log(post);
     }
 
@@ -71,7 +69,7 @@ const PostInput = ({ user }) => {
         >
             <form
                 onSubmit={handlePost}
-                className="relative w-full max-w-xl rounded-3xl border border-white/10 bg-linear-to-b from-gray-900 via-gray-900 to-black text-white shadow-2xl p-6 flex flex-col h-[90vh] overflow-hidden"
+                className="relative w-full max-w-xl rounded-3xl border border-white/10 bg-linear-to-b from-gray-900 via-gray-900 to-black text-white shadow-2xl p-6 flex flex-col h-screen overflow-hidden"
             >
 
                 {/* HEADER */}
@@ -88,32 +86,31 @@ const PostInput = ({ user }) => {
                     </label>
                 </div>
 
+                {/* USER */}
+                <div className="flex items-center gap-3 mt-2">
+                    <Image
+                        src={user?.profile || "https://i.postimg.cc/65X8XRRf/Face-Care.png"}
+                        alt="user"
+                        width={45}
+                        height={45}
+                        className="rounded-full border border-cyan-400"
+                    />
+                    <div className="flex flex-col">
+                        <span className="font-semibold text-sm">{user.name}</span>
+                        <select
+                            name="visibility"
+                            defaultValue="public"
+                            className="text-xs bg-gray-800 rounded-md px-2 py-0.5 mt-1 w-fit outline-none"
+                        >
+                            <option value="public">🌍 Public</option>
+                            <option value="friends">👥 Friends</option>
+                            <option value="private">🔒 Only Me</option>
+                        </select>
+                    </div>
+                </div>
+
                 {/* SCROLLABLE CONTENT */}
                 <div className="flex-1 overflow-y-auto mt-5 space-y-4">
-
-                    {/* USER */}
-                    <div className="flex items-center gap-3">
-                        <Image
-                            src={user?.profile || "https://i.postimg.cc/65X8XRRf/Face-Care.png"}
-                            alt="user"
-                            width={45}
-                            height={45}
-                            className="rounded-full border border-cyan-400"
-                        />
-                        <div className="flex flex-col">
-                            <span className="font-semibold text-sm">Mohammad Abu Naim</span>
-                            <select
-                                name="visibility"
-                                defaultValue="public"
-                                className="text-xs bg-gray-800 rounded-md px-2 py-0.5 mt-1 w-fit outline-none"
-                            >
-                                <option value="public">🌍 Public</option>
-                                <option value="friends">👥 Friends</option>
-                                <option value="private">🔒 Only Me</option>
-                            </select>
-                        </div>
-                    </div>
-
                     {/* TEXTAREA */}
                     <div className="relative">
                         <textarea
@@ -139,24 +136,26 @@ const PostInput = ({ user }) => {
                         <div className="mt-2 h-px w-full bg-linear-to-r from-transparent via-cyan-500/40 to-transparent"></div>
 
                         {/* emoji button */}
-                        <button
-                            type="button"
-                            onClick={() => setShow(!show)}
-                            className="absolute top-1 right-0 text-xl hover:scale-110 transition"
+                        <div
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                setShow(prev => !prev)
+                            }}
+                            className="absolute top-1 right-1 text-xl hover:scale-110 transition"
                         >
                             🙂
-                        </button>
+                        </div>
 
                         {show && (
-                            <div className="absolute top-10 right-0 z-20 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
+                            <div className="absolute -top-9 right-0 z-50 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
                                 <EmojiPicker
                                     onEmojiClick={(emojiData) =>
                                         setText((t) => t + emojiData.emoji)
                                     }
                                     theme="dark"
-                                    previewConfig={{ showPreview: false }}
-                                    width={320}
-                                    height={360}
+                                    // previewConfig={{ showPreview: false }}
+                                    // width={320}
+                                    // height={360}
                                 />
                             </div>
                         )}
@@ -166,10 +165,10 @@ const PostInput = ({ user }) => {
                     {/* MEDIA PREVIEW */}
                     {previewUrl?.length > 0 && (
                         <>
-                            {/* <div className="flex justify-end z-10">
+                            <div className="flex justify-end z-10">
                                 <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
                                     <RxCross1 size={14} />
-                                </div> */}
+                                </div>
                             </div>
                             <div className="grid grid-cols-2 gap-3">
                                 {previewUrl.map((url, index) => {
