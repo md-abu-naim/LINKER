@@ -1,92 +1,51 @@
 'use client'
 import Image from "next/image";
-import { RxCross1 } from "react-icons/rx";
-import EmojiPicker from "emoji-picker-react";
-import { useState } from "react";
-import { InputMedia } from "./MediaInput";
+import { MediaInput } from "./MediaInput";
 import { BsEmojiSunglasses } from "react-icons/bs";
-import { FaUserTag, FaVideo } from "react-icons/fa";
+import { FaVideo } from "react-icons/fa";
+import Link from "next/link";
+import PostInput from "./PostInput";
 
-const PostBox = ({user}) => {
-    const [show, setShow] = useState(false)
-    const [text, setText] = useState('')
-
-    const handleWrapperClick = (e) => {
-        const emojiBtn = e.target.closest('.emoji-btn')
-        const emojiContainer = e.target.closest('.emoji-container')
-
-        if (emojiBtn || emojiContainer) return
-        setShow(false)
-    }
-
+const PostBox = ({ user }) => {
     return (
-        <div onClick={handleWrapperClick} role="dialog" className="modal mt-7 flex items-center justify-center backdrop-blur-md bg-black/40" >
-            <div className="modal-box relative max-w-lg w-full bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl text-white border border-cyan-500/20 shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(6,182,212,0.7)]">
-
+        <>
+            <div className="rounded-3xl p-4 mt-4 md:mt-0 md:p-6 bg-linear-to-b from-gray-900 via-gray-850 to-gray-950 backdrop-blur-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,255,200,0.15)] transition-all duration-500 hover:-translate-y-1">
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-gray-700 pb-3">
-                    <h2 className="text-2xl font-bold tracking-wide bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Create a New Post</h2>
-                    <label htmlFor="my_modal_6" className="cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors rounded-full p-2 text-xl"><RxCross1 /></label>
-                </div>
-
-                {/* Profile */}
-                <div className="flex items-center gap-3 mt-5">
-                    <Image src={user?.profile ||"https://i.postimg.cc/65X8XRRf/Face-Care.png"} alt="User" width={48} height={48} className="w-12 h-12 border border-cyan-400 rounded-full " />
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                    <Link href='/profile'>
+                        <Image src={user?.profile || "https://i.postimg.cc/65X8XRRf/Face-Care.png"} alt="User" width={50} height={50} className="w-9 h-9 md:w-12 md:h-12 border border-cyan-400 rounded-full hover:scale-105 transition-all duration-300" />
+                    </Link>
                     <div className="flex flex-col">
-                        <span className="font-semibold text-lg">Mohammad Abu Naim</span>
-                        <select name="visibility" defaultValue="public" className="select select-sm text-sm w-28 h-4 bg-gray-800/80 border-none outline-none cursor-pointer">
-                            <option value="public">🌍 Public</option>
-                            <option value="friends">👥 Friends</option>
-                            <option value="private">🔒 Only Me</option>
-                        </select>
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-100">{user?.name}</h3>
+                        <p className="text-xs md:text-sm text-gray-500">Share something inspiring ✨</p>
                     </div>
                 </div>
 
-                {/* Textarea */}
-                <div className="relative mt-4">
-                    <textarea value={text}
-                        className="w-full p-4 text-lg bg-gray-900/70 focus:outline-none focus:border-cyan-400 resize-none rounded-2xl border border-gray-700 transition-all duration-200 placeholder-gray-400 shadow-inner" placeholder="Whats on your mind? Mohammad Abu?"
-                        rows={6} onChange={e => setText(e.target.value)}
-                    ></textarea>
-                    <button onClick={() => setShow(!show)} title="Emoji" className="emoji-btn absolute bottom-4 right-2 text-3xl rounded-full transition-transform duration-200 hover:scale-125 hover:rotate-6">
-                        <span className="animate-bounce">🙂</span>
+                {/* Input field */}
+                <label htmlFor="my_modal_6" className="block w-full rounded-2xl bg-gray-800/60 text-gray-300 md:min-h-[90px] px-2 md:px-5 py-2 md:py-4  cursor-pointer hover:bg-gray-700/70 transition-all duration-300 border border-transparent hover:border-cyan-500">
+                    <span className="opacity-70">What do you want to share today?</span>
+                </label>
+
+                {/* Buttons */}
+                <div className="hidden md:flex mt-4 items-center justify-around border-t border-gray-700 pt-4">
+                    <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700 hover:text-cyan-400 transition-all duration-300 group">
+                        <FaVideo className="text-red-500 text-xl group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">Go Live</span>
                     </button>
 
-                    {
-                        show && <div className="emoji-container absolute bottom-16 right-0 z-30 backdrop-blur-xl bg-gray-900/80 rounded-xl border border-cyan-500/30 shadow-lg overflow-hidden">
-                            <EmojiPicker
-                                onEmojiClick={(emojiData) => setText((t) => t + emojiData.emoji)}
-                                theme="dark"
-                                lazyLoadEmojis
-                                searchDisabled
-                                skinTonesDisabled
-                                previewConfig={{ showPreview: false }}
-                                width={320}
-                                height={360}
-                            />
-                        </div>
-                    }
-                </div>
+                    <MediaInput />
 
-                {/* Activities */}
-                <div className="mt-6 border border-gray-700 rounded-2xl p-3 bg-gray-800/40 backdrop-blur-md">
-                    <h2 className="text-lg font-semibold mb-2 text-gray-300">Add to your post</h2>
-                    <div className="flex items-center justify-around">
-                        <InputMedia />
-                        <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-yellow-400 transition-transform hover:scale-110"><BsEmojiSunglasses /></button>
-                        <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-red-500 transition-transform hover:scale-110"><FaVideo /></button>
-                        <button className="text-2xl hover:bg-gray-700 p-2 rounded-lg text-blue-500 transition-transform hover:scale-110"><FaUserTag /></button>
-                    </div>
-                </div>
-
-                {/* Post Button */}
-                <div className="mt-6">
-                    <button className="w-full bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-3 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-[0_0_25px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_40px_-5px_rgba(6,182,212,0.7)]">
-                        Share Post 🚀
+                    <button className="flex items-center gap-2 bg-gray-800/70 px-3 py-2 rounded-xl hover:bg-gray-700 hover:text-cyan-400 transition-all duration-300 group">
+                        <BsEmojiSunglasses className="text-yellow-500 text-xl group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">Feelings</span>
                     </button>
                 </div>
             </div>
-        </div>
+
+            {/* PostInput Modal */}
+            <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+            <PostInput user={user} />
+        </>
     );
 };
 

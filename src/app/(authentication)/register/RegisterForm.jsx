@@ -20,16 +20,16 @@ const RegisterForm = () => {
         const name = `${firstName} ${lastName}`
         const birth = `${day} ${month} ${year}`
 
-        const bio = ''
-        const cover = ''
-        const profile = ''
-        const currentCity = ''
-        const location = ''
-        const school = ''
-        const university = ''
-        const work = ''
+        // const bio = ''
+        // const cover = ''
+        // const profile = ''
+        // const currentCity = ''
+        // const location = ''
+        // const school = ''
+        // const university = ''
+        // const work = ''
 
-        const user = { name, birth, gender, email, password, bio, cover, profile, currentCity, location, school, work, university }
+        const user = { name, birth, gender, email, password,  }
 
         axios.post(`${process.env.NEXT_PUBLIC_API}/users`, user)
             .then(res => {
