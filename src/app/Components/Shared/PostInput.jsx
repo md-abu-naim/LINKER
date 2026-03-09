@@ -117,24 +117,38 @@ const PostInput = ({ user }) => {
                     {/* TEXTAREA */}
                     <div className="relative">
                         <textarea
+                            ref={(el) => {
+                                if (el) {
+                                    el.style.height = "auto"
+                                    el.style.height = el.scrollHeight + "px"
+                                }
+                            }}
                             value={text}
                             name="content"
-                            rows={4}
-                            onChange={(e) => setText(e.target.value)}
+                            onChange={(e) => {
+                                setText(e.target.value)
+                                e.target.style.height = "auto"
+                                e.target.style.height = e.target.scrollHeight + "px"
+                            }}
                             placeholder="What's on your mind?"
-                            className="w-full resize-none rounded-2xl bg-gray-800/60 p-4 text-sm outline-none border border-white/10 focus:border-cyan-400 transition shadow-inner placeholder-gray-400"
+                            className="w-full resize-none bg-transparent text-[15px] leading-relaxed outline-none border-none pr-10 placeholder-gray-400"
+                            rows={1}
                         />
 
+                        {/* underline glow */}
+                        <div className="mt-2 h-px w-full bg-linear-to-r from-transparent via-cyan-500/40 to-transparent"></div>
+
+                        {/* emoji button */}
                         <button
                             type="button"
                             onClick={() => setShow(!show)}
-                            className="absolute bottom-3 right-3 text-2xl hover:scale-110 transition"
+                            className="absolute top-1 right-0 text-xl hover:scale-110 transition"
                         >
                             🙂
                         </button>
 
                         {show && (
-                            <div className="absolute bottom-14 right-0 z-20 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-lg">
+                            <div className="absolute top-10 right-0 z-20 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
                                 <EmojiPicker
                                     onEmojiClick={(emojiData) =>
                                         setText((t) => t + emojiData.emoji)
@@ -146,46 +160,54 @@ const PostInput = ({ user }) => {
                                 />
                             </div>
                         )}
+
                     </div>
 
                     {/* MEDIA PREVIEW */}
                     {previewUrl?.length > 0 && (
-                        <div className="grid grid-cols-2 gap-3 mt-3">
-                            {previewUrl.map((url, index) => {
-                                const file = mediaFiles[index]
-                                const type = file.type.split("/")[0]
+                        <>
+                            {/* <div className="flex justify-end z-10">
+                                <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
+                                    <RxCross1 size={14} />
+                                </div> */}
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                {previewUrl.map((url, index) => {
+                                    const file = mediaFiles[index]
+                                    const type = file.type.split("/")[0]
 
-                                return (
-                                    <div
-                                        key={index}
-                                        className="relative overflow-hidden rounded-xl border border-white/10 group"
-                                    >
-                                        <button
-                                            type="button"
-                                            onClick={() => removeMedia(index)}
-                                            className="absolute top-2 right-2 z-10 rounded-full bg-black/60 p-1 opacity-0 group-hover:opacity-100 transition"
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="relative overflow-hidden rounded-xl border border-white/10 group"
                                         >
-                                            <RxCross1 size={14} />
-                                        </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => removeMedia(index)}
+                                                className="absolute top-2 right-2 z-10 rounded-full bg-black/60 p-1 opacity-0 group-hover:opacity-100 transition"
+                                            >
+                                                <RxCross1 size={14} />
+                                            </button>
 
-                                        {type === "image" && (
-                                            <Image width={600} height={500}
-                                                src={url} alt='Preview Image'
-                                                className="h-44 w-full object-cover rounded-xl"
-                                            />
-                                        )}
+                                            {type === "image" && (
+                                                <Image width={600} height={500}
+                                                    src={url} alt='Preview Image'
+                                                    className="h-44 w-full object-cover rounded-xl"
+                                                />
+                                            )}
 
-                                        {type === "video" && (
-                                            <video
-                                                src={url}
-                                                controls
-                                                className="h-44 w-full object-cover rounded-xl"
-                                            />
-                                        )}
-                                    </div>
-                                )
-                            })}
-                        </div>
+                                            {type === "video" && (
+                                                <video
+                                                    src={url}
+                                                    controls
+                                                    className="h-44 w-full object-cover rounded-xl"
+                                                />
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </>
                     )}
 
                 </div>
