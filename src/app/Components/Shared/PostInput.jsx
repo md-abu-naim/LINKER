@@ -6,10 +6,12 @@ import { FaPhotoVideo, FaUserTag, FaVideo } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
 import axios from 'axios';
 import axiosSecure from '@/lib/AxiosSecure';
+import { uploadMedia } from '@/lib/uploadMedia';
 
 const PostInput = ({ user }) => {
     const [previewUrl, setPreviewUrl] = useState([])
     const [mediaFiles, setMediaFiles] = useState([])
+    const [loading, setLoading] = useState(false)
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
@@ -51,16 +53,15 @@ const PostInput = ({ user }) => {
     }
 
     // upload media to cloudinary
-    const uploadMedia = async (file) => {
-        const formData = new FormData()
+    // const uploadMedia = async (file) => {
+    //     const formData = new FormData()
 
-        formData.append('file', file)
+    //     formData.append('file', file)
 
-        const res = await axiosSecure.post('/media/upload', formData)
-        const data = res.data
-        console.log(data);
-        return data
-    }
+    //     const res = await axiosSecure.post('/media/upload', formData)
+    //     const data = res.data
+    //     return data
+    // }
 
 
     const handlePost = async (e) => {
@@ -75,17 +76,23 @@ const PostInput = ({ user }) => {
             avatar: user.profile
         }
         const media = []
+        setLoading(true)
 
         for (const file of mediaFiles) {
             // const type = file.type.split('/')[0]
+            const uploaded = await uploadMedia(file, (progress) => {
+                console.log("Uploading:", progress + "%")
+            })
 
-            const uploaded = await uploadMedia(file)
+
+            // const uploaded = await uploadMedia(file)
             media.push(uploaded)
+
         }
 
-
         const post = { author, visibility, content, createdAt, media }
-        console.log(media);
+        console.log(post);
+        setLoading(false)
     }
 
     return (
@@ -170,7 +177,7 @@ const PostInput = ({ user }) => {
 
                         {show && (
                             <div className="absolute top-1 right-0 z-50 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
-                                <div onClick={() => setShow(false)} className="absolute top-0 right-0 flex justify-end z-10">
+                                <div onClick={() => setShow(false)} className="absolute top-5 right-1 flex justify-end z-10">
                                     <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
                                         <RxCross1 size={14} />
                                     </div>
@@ -270,7 +277,7 @@ const PostInput = ({ user }) => {
                 {/* POST BUTTON */}
                 <button
                     className="mt-4 w-full rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 py-3 text-sm font-semibold hover:opacity-90 transition shrink-0" >
-                    Share Post 🚀
+                    {loading ? 'loading' : 'Share Post 🚀'}
                 </button>
             </form>
         </div>
