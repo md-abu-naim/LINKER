@@ -5,13 +5,15 @@ import { BsEmojiSunglasses } from 'react-icons/bs';
 import { FaPhotoVideo, FaUserTag, FaVideo } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
 import axios from 'axios';
+import axiosSecure from '@/lib/AxiosSecure';
 
 const PostInput = ({ user }) => {
-    const [previewUrl, setPreviewUrl] = useState()
+    const [previewUrl, setPreviewUrl] = useState([])
     const [mediaFiles, setMediaFiles] = useState([])
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
+    // handle emoji modal
     const handleWrapperClick = (e) => {
         const emojiBtn = e.target.closest('.emoji-btn')
         const emojiContainer = e.target.closest('.emoji-container')
@@ -19,6 +21,7 @@ const PostInput = ({ user }) => {
         if (emojiBtn || emojiContainer) return
     }
 
+    // handle media for show UI
     const handleMedia = async (e) => {
         const files = Array.from(e.target.files)
         if (!files) return
@@ -27,19 +30,38 @@ const PostInput = ({ user }) => {
 
         const previews = files.map(file => URL.createObjectURL(file))
 
-        setPreviewUrl(previews)
-        // if (type === 'image') {
-        //     const formData = new FormData()
-        //     formData.append('image', file)
-        //     const res = await axios.post(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMG_API}`, formData)
-        //     const data = await res.data.data.display_url
-        //     setMedia(data);
-        //     setMediaType(type);
-
-        // } else if (type === 'video') {
-        //     console.log('from video', type, file);
-        // }
+        setPreviewUrl(prev => [...prev, ...previews])
     }
+
+    // Remove media from UI
+    const removeMedia = (index) => {
+        if (index === undefined) {
+            setMediaFiles([])
+            setPreviewUrl([])
+            return
+        }
+
+        const files = [...mediaFiles]
+        const previews = [...previewUrl]
+        files.splice(index, 1)
+        previews.splice(index, 1)
+
+        setMediaFiles(files)
+        setPreviewUrl(previews)
+    }
+
+    // upload media to cloudinary
+    const uploadMedia = async (file) => {
+        const formData = new FormData()
+
+        formData.append('file', file)
+
+        const res = await axiosSecure.post('/media/upload', formData)
+        const data = res.data
+        console.log(data);
+        return data
+    }
+
 
     const handlePost = async (e) => {
         e.preventDefault()
@@ -52,23 +74,25 @@ const PostInput = ({ user }) => {
             email: user.email,
             avatar: user.profile
         }
+        const media = []
 
-        for(const url of previewUrl){
-            console.log(url);
+        for (const file of mediaFiles) {
+            // const type = file.type.split('/')[0]
+
+            const uploaded = await uploadMedia(file)
+            media.push(uploaded)
         }
 
-        const post = { author, visibility, content, createdAt, media: previewUrl, mediaType: 'image' }
-        console.log(post);
+
+        const post = { author, visibility, content, createdAt, media }
+        console.log(media);
     }
 
     return (
-        <div
-            onClick={handleWrapperClick}
-            role="dialog"
+        <div onClick={handleWrapperClick} role="dialog"
             className="modal flex items-center justify-center bg-black/50 backdrop-blur-lg p-4"
         >
-            <form
-                onSubmit={handlePost}
+            <form onSubmit={handlePost}
                 className="relative w-full max-w-xl rounded-3xl border border-white/10 bg-linear-to-b from-gray-900 via-gray-900 to-black text-white shadow-2xl p-6 flex flex-col h-screen overflow-hidden"
             >
 
@@ -78,8 +102,7 @@ const PostInput = ({ user }) => {
                         Create Post
                     </h2>
 
-                    <label
-                        htmlFor="my_modal_6"
+                    <label htmlFor="my_modal_6"
                         className="cursor-pointer rounded-full p-2 hover:bg-white/10 transition"
                     >
                         <RxCross1 size={18} />
@@ -166,7 +189,7 @@ const PostInput = ({ user }) => {
                     {/* MEDIA PREVIEW */}
                     {previewUrl?.length > 0 && (
                         <div className='relative'>
-                            <div className="absolute top-0 right-0 z-10">
+                            <div onClick={() => removeMedia()} className="absolute top-0 right-0 z-10">
                                 <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
                                     <RxCross1 size={14} />
                                 </div>
@@ -177,17 +200,14 @@ const PostInput = ({ user }) => {
                                     const type = file.type.split("/")[0]
 
                                     return (
-                                        <div
-                                            key={index}
+                                        <div key={index}
                                             className="relative overflow-hidden rounded-xl border border-white/10 group"
                                         >
-                                            <button
-                                                type="button"
-                                                onClick={() => removeMedia(index)}
+                                            <span onClick={() => removeMedia(index)}
                                                 className="absolute top-2 left-2 z-10 rounded-full bg-black/60 p-1 opacity-0 group-hover:opacity-100 transition"
                                             >
                                                 <RxCross1 size={14} />
-                                            </button>
+                                            </span>
 
                                             {type === "image" && (
                                                 <Image width={600} height={500}
