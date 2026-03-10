@@ -17,7 +17,6 @@ const PostInput = ({ user }) => {
         const emojiContainer = e.target.closest('.emoji-container')
 
         if (emojiBtn || emojiContainer) return
-        // setShow(false)
     }
 
     const handleMedia = async (e) => {
@@ -48,13 +47,14 @@ const PostInput = ({ user }) => {
         const visibility = form.visibility.value
         const content = form.content.value
         const createdAt = new Date().toDateString()
-        // const visibility = form.visibility.value
-        // const visibility = form.visibility.value 
-
         const author = {
             name: user.name,
             email: user.email,
             avatar: user.profile
+        }
+
+        for(const url of previewUrl){
+            console.log(url);
         }
 
         const post = { author, visibility, content, createdAt, media: previewUrl, mediaType: 'image' }
@@ -96,7 +96,7 @@ const PostInput = ({ user }) => {
                         className="rounded-full border border-cyan-400"
                     />
                     <div className="flex flex-col">
-                        <span className="font-semibold text-sm">{user.name}</span>
+                        <span className="font-semibold text-xl">{user.name}</span>
                         <select
                             name="visibility"
                             defaultValue="public"
@@ -109,7 +109,6 @@ const PostInput = ({ user }) => {
                     </div>
                 </div>
 
-                {/* SCROLLABLE CONTENT */}
                 <div className="flex-1 overflow-y-auto mt-5 space-y-4">
                     {/* TEXTAREA */}
                     <div className="relative">
@@ -128,7 +127,7 @@ const PostInput = ({ user }) => {
                                 e.target.style.height = e.target.scrollHeight + "px"
                             }}
                             placeholder="What's on your mind?"
-                            className="w-full resize-none bg-transparent text-[15px] leading-relaxed outline-none border-none pr-10 placeholder-gray-400"
+                            className="w-full resize-none bg-transparent leading-relaxed outline-none border-none pr-10 placeholder-gray-400"
                             rows={1}
                         />
 
@@ -147,15 +146,17 @@ const PostInput = ({ user }) => {
                         </div>
 
                         {show && (
-                            <div className="absolute -top-9 right-0 z-50 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
+                            <div className="absolute top-1 right-0 z-50 overflow-hidden rounded-xl border border-white/10 bg-gray-900 shadow-xl">
+                                <div onClick={() => setShow(false)} className="absolute top-0 right-0 flex justify-end z-10">
+                                    <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
+                                        <RxCross1 size={14} />
+                                    </div>
+                                </div>
                                 <EmojiPicker
                                     onEmojiClick={(emojiData) =>
                                         setText((t) => t + emojiData.emoji)
                                     }
                                     theme="dark"
-                                    // previewConfig={{ showPreview: false }}
-                                    // width={320}
-                                    // height={360}
                                 />
                             </div>
                         )}
@@ -164,8 +165,8 @@ const PostInput = ({ user }) => {
 
                     {/* MEDIA PREVIEW */}
                     {previewUrl?.length > 0 && (
-                        <>
-                            <div className="flex justify-end z-10">
+                        <div className='relative'>
+                            <div className="absolute top-0 right-0 z-10">
                                 <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-700 backdrop-blur-sm text-white hover:bg-gray-800 transition">
                                     <RxCross1 size={14} />
                                 </div>
@@ -183,7 +184,7 @@ const PostInput = ({ user }) => {
                                             <button
                                                 type="button"
                                                 onClick={() => removeMedia(index)}
-                                                className="absolute top-2 right-2 z-10 rounded-full bg-black/60 p-1 opacity-0 group-hover:opacity-100 transition"
+                                                className="absolute top-2 left-2 z-10 rounded-full bg-black/60 p-1 opacity-0 group-hover:opacity-100 transition"
                                             >
                                                 <RxCross1 size={14} />
                                             </button>
@@ -206,7 +207,7 @@ const PostInput = ({ user }) => {
                                     )
                                 })}
                             </div>
-                        </>
+                        </div>
                     )}
 
                 </div>
