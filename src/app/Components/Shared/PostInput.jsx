@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { BsEmojiSunglasses } from 'react-icons/bs';
 import { FaPhotoVideo, FaUserTag, FaVideo } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
-import axios from 'axios';
 import axiosSecure from '@/lib/AxiosSecure';
 import { uploadMedia } from '@/lib/uploadMedia';
+import toast from 'react-hot-toast';
 
 const PostInput = ({ user }) => {
     const [previewUrl, setPreviewUrl] = useState([])
     const [mediaFiles, setMediaFiles] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState('')
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
 
@@ -52,18 +52,6 @@ const PostInput = ({ user }) => {
         setPreviewUrl(previews)
     }
 
-    // upload media to cloudinary
-    // const uploadMedia = async (file) => {
-    //     const formData = new FormData()
-
-    //     formData.append('file', file)
-
-    //     const res = await axiosSecure.post('/media/upload', formData)
-    //     const data = res.data
-    //     return data
-    // }
-
-
     const handlePost = async (e) => {
         e.preventDefault()
         const form = e.target
@@ -76,23 +64,27 @@ const PostInput = ({ user }) => {
             avatar: user.profile
         }
         const media = []
-        setLoading(true)
 
         for (const file of mediaFiles) {
-            // const type = file.type.split('/')[0]
             const uploaded = await uploadMedia(file, (progress) => {
-                console.log("Uploading:", progress + "%")
+                setLoading(`Uploading: ${progress}%`)
             })
-
-
-            // const uploaded = await uploadMedia(file)
             media.push(uploaded)
-
         }
 
         const post = { author, visibility, content, createdAt, media }
         console.log(post);
-        setLoading(false)
+
+        const res = await axiosSecure.post(`/posts`, post)
+        const data = await res.data.data
+        if(data.insertedId){
+            toast.success('Upoload post successfully')
+            setMediaFiles([])
+            setPreviewUrl([])
+            form.reset()
+            document.getElementById("my_modal_6").checked = false
+        }
+        setLoading('')
     }
 
     return (
@@ -277,7 +269,7 @@ const PostInput = ({ user }) => {
                 {/* POST BUTTON */}
                 <button
                     className="mt-4 w-full rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 py-3 text-sm font-semibold hover:opacity-90 transition shrink-0" >
-                    {loading ? 'loading' : 'Share Post 🚀'}
+                    {loading ? loading : 'Share Post 🚀'}
                 </button>
             </form>
         </div>

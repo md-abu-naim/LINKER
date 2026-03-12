@@ -2,14 +2,12 @@ import Image from "next/image";
 import { FiBookmark, FiEdit2, FiHome, FiLink, FiMapPin, FiUsers, } from "react-icons/fi";
 import Link from "next/link";
 import { FaBriefcase, FaComment, FaGraduationCap, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
-import { BsEmojiSunglasses, BsFillPinAngleFill } from "react-icons/bs";
+import { BsFillPinAngleFill } from "react-icons/bs";
 import ImageLayout from "@/app/Components/Shared/ImageLayout";
 import PostBox from "@/app/Components/Shared/PostBox";
-import { MediaInput } from "@/app/Components/Shared/MediaInput";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { LuShield } from "react-icons/lu";
-
 
 const ProfilePost = async () => {
     const session = await getServerSession(authOptions)
@@ -193,9 +191,6 @@ const ProfilePost = async () => {
                         </button>
                     </div>
                 </div>
-
-                <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-                <PostBox user={user} />
             </div>
         </div>
     );

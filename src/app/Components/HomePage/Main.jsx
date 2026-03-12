@@ -1,16 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import { BsEmojiSunglasses, BsFillPinAngleFill } from "react-icons/bs";
-import { FaComment, FaShare, FaThumbsUp, FaVideo } from "react-icons/fa";
-import { MediaInput } from "../Shared/MediaInput";
+import { FaComment, FaShare, FaThumbsUp, } from "react-icons/fa";
 import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
-import { FiBookmark, FiEdit2, FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
+import { FiBookmark,FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
+import { serverFetch } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
+    const post = serverFetch('/posts')
+    console.log('from main', post);
 
     // const images = [
     //     'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
@@ -27,7 +27,7 @@ const Main = async ({ user }) => {
 
             {/* Post Layout */}
             {
-                posts.map((post, i) => (
+                posts?.map((post, i) => (
                     <div key={i} className="rounded-3xl mt-3 bg-linear-to-br from-gray-900 via-gray-800 to-black shadow-lg border border-gray-800 overflow-hidden transition-all duration-500">
                         {/* Header */}
                         <div className="flex items-center justify-between gap-3 px-4 py-2 border-b border-gray-700">

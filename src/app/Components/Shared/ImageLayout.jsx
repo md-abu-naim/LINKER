@@ -36,7 +36,7 @@ const ImageLayout = ({images, post}) => {
         return (
             <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
                 {
-                    images.slice(0, 4).map((img, index) => (
+                    images?.slice(0, 4).map((img, index) => (
                         <div key={index} className='relative cursor-pointer'>
                             <Image className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt={`Post Image ${index + 1}`} />
                             {
