@@ -4,6 +4,7 @@ import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
 import { FiBookmark,FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
+import { serverAxios } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
