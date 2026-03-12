@@ -4,12 +4,11 @@ import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
 import axios from "axios";
 import { FiBookmark,FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
-import { serverFetch } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
     const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
     const posts = res.data
-    const post = serverFetch('/posts')
+    const post = serverAxios('/posts')
     console.log('from main', post);
 
     // const images = [
