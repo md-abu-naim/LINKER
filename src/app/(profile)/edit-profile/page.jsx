@@ -1,5 +1,6 @@
 'use client'
 import axiosSecure from '@/lib/AxiosSecure';
+import { uploadMedia } from '@/lib/uploadMedia';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
@@ -18,42 +19,36 @@ const EditProfile = () => {
     const [bio, setBio] = useState('')
     const router = useRouter()
 
-    const handleProfilePreview = (e) => {
+    const handleProfilePreview = async (e) => {
+        const file = e.target.files[0]
+
+        if (!file) return null
+        const uploaded = await uploadMedia(file, (progress) => {
+            console.log(`Uploading: ${progress}%`)
+        })
+        setProfile(uploaded.url)
+    }
+
+    const handleCoverPreview = async (e) => {
         const file = e.target.files[0]
 
         if (!file) return null
 
-        const formData = new FormData()
-        formData.append('image', file)
-        axios.post(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMG_API}`, formData)
-            .then(res => {
-                setProfile(res.data.data.display_url)
-            })
+        const uploaded = await uploadMedia(file, (progress) => {
+            console.log(`Uploading: ${progress}%`)
+        })
+        setCover(uploaded.url)
     }
-
-    const handleCoverPreview = (e) => {
-        const file = e.target.files[0]
-        
-        if (!file) return null
-
-        const formData = new FormData()
-        formData.append('image', file)
-        axios.post(`https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMG_API}`, formData)
-            .then(res => {
-                setCover(res.data.data.display_url)
-            })
-    }
-
 
     const handleUser = async () => {
-        const updateData = { bio, cover, profile}
-        
+        const updateData = { bio, cover, profile }
+
         const res = await axiosSecure.put(`/users/update/${session?.user?.id}`, updateData)
         const data = await res.data.data
         if (data.modifiedCount > 0) {
             toast.success('Changes saved successfully.')
             router.push('/')
-        }else{
+        } else {
             toast.error('Something went wrong. Please try again.')
         }
     }

@@ -8,20 +8,12 @@ import PostBox from "@/app/Components/Shared/PostBox";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { LuShield } from "react-icons/lu";
+import { serverAxios } from "@/lib/serverAxios";
 
 const ProfilePost = async () => {
     const session = await getServerSession(authOptions)
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
-        {
-            headers: {
-                Authorization: `Bearer ${session?.accessToken}`
-            },
-        }
-    )
-
-    const data = await res.json()
-    const user = data.data
+    const user = await serverAxios(`/users/${session?.user?.email}`)
 
     const friends = [
         { name: 'Abu Naim', img: 'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp' },

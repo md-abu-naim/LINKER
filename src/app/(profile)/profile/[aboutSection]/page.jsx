@@ -8,6 +8,7 @@ import Educations from "./Work&Education/Educations";
 import { getServerSession } from "next-auth";
 import axios from "axios";
 import NotFound from "@/app/not-found";
+import { serverAxios } from "@/lib/serverAxios";
 
 export const metadata = {
   title: "LINKER | | Abouts",
@@ -18,16 +19,7 @@ export default async function AboutDynamic({ params }) {
   const session = await getServerSession(authOptions)
   const { aboutSection } = await params;
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
-    {
-      headers: {
-        Authorization: `Bearer ${session?.accessToken}`
-      },
-    }
-  )
-
-  const data = await res.json()
-  const user = data.data
+  const user = await serverAxios(`/users/${session?.user?.email}`)
 
   let content;
 

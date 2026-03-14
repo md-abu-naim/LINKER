@@ -6,6 +6,7 @@ import CoverPhoto from "./Components/CoverPhoto";
 import ProfilePicture from "./Components/ProfilePicture";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { serverAxios } from "@/lib/serverAxios";
 
 export const metadata = {
     title: "LINKER | Profile | Post",
@@ -15,16 +16,18 @@ export const metadata = {
 const ProfileLayout = async ({ children }) => {
     const session = await getServerSession(authOptions)
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
-        {
-            headers: {
-                Authorization: `Bearer ${session?.accessToken}`
-            },
-        }
-    )
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users/${session?.user?.email}`,
+    //     {
+    //         headers: {
+    //             Authorization: `Bearer ${session?.accessToken}`
+    //         },
+    //     }
+    // )
 
-    const data = await res.json()
-    const user = data.data
+    // const data = await res.json()
+    // const user = data.data
+
+    const user = await serverAxios(`/users/${session?.user?.email}`)
 
     return (
         <div>
