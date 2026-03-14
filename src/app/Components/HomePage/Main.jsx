@@ -2,23 +2,12 @@ import Image from "next/image";
 import { FaComment, FaShare, FaThumbsUp, } from "react-icons/fa";
 import PostBox from "../Shared/PostBox";
 import ImageLayout from "../Shared/ImageLayout";
-import axios from "axios";
 import { FiBookmark,FiEyeOff, FiLink, FiSlash } from "react-icons/fi";
 import { serverAxios } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
-    const res = await axios(`${process.env.NEXT_PUBLIC_API}/posts`)
-    const posts = res.data
-    const post = serverAxios('/posts')
-    console.log('from main', post);
-
-    // const images = [
-    //     'https://i.postimg.cc/25BPjPQg/Aloe-Neem-Anti-Dandruff-Shampoo.webp',
-    //     'https://i.postimg.cc/h4M3nDFf/Rose-Petal-Hydrating-Face-Mist.jpg',
-    //     'https://i.postimg.cc/0NmB17xs/Herbal-Strengthening-Hair-Oil.webp',
-    //     'https://i.postimg.cc/WbbCqDmG/Cocoa-Butter-Body-Lotion.jpg',
-    //     'https://i.postimg.cc/x1B4Ztw5/Exfoliating-Coffee-Body-Scrub.webp',
-    // ]
+    const posts = await serverAxios('/posts')
+    
     return (
         <div className="mb-24 md:mb-10">
             {/* Post Box */}
