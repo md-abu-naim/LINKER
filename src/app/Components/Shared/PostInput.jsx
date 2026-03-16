@@ -118,7 +118,7 @@ const PostInput = ({ user }) => {
                         className="rounded-full border border-cyan-400"
                     />
                     <div className="flex flex-col">
-                        <span className="font-semibold text-xl">{user.name}</span>
+                        <span className="font-semibold text-xl">{user?.name}</span>
                         <select
                             name="visibility"
                             defaultValue="public"
