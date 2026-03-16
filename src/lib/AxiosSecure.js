@@ -1,5 +1,5 @@
 import axios from "axios"
-import { getSession } from "next-auth/react";
+import { getSession, signOut } from "next-auth/react";
 
 
 const axiosSecure = axios.create({
