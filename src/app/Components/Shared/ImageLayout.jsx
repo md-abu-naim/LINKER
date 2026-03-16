@@ -3,54 +3,69 @@ import Image from 'next/image';
 import PostModal from './PostModal';
 import { useState } from 'react';
 
-const ImageLayout = ({images, post}) => {
+const ImageLayout = ({ media, post }) => {
     const [openModal, setOpenModal] = useState(false)
-    const imageCount = images?.length - 4
+    const imageCount = media?.length - 4
+    console.log(media);
 
 
     // Image Layout
     const Imagelayout = () => {
-        if (images?.length === 1) {
+        if (media?.length === 1) {
             return (
                 <div onClick={() => setOpenModal(true)} className='mt-2'>
-                    <Image className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={images[0]} width={600} height={700} alt='Images' />
+                    {
+                        media[0].type === 'image' ? <Image className='w-full h-auto rounded-xl bg-cover cursor-pointer' src={media[0].url} width={600} height={700} alt='Images' /> :
+                            <video src={media[0].url} controls className='w-full h-auto rounded-xl bg-cover cursor-pointer' />
+                    }
                 </div>
             )
         }
 
-        if (images?.length === 3) {
+        if (media?.length === 3) {
             return (
                 <div onClick={() => setOpenModal(true)} className='w-full mt-2 space-y-1 cursor-pointer'>
-                    <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={images[0]} width={600} height={700} alt='Images' />
+                    {media.type === 'image' ? <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} alt='Images' /> : <video controls className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} />}
                     <div className='grid grid-cols-2 gap-1'>
                         {
-                            images?.slice(1, 3).map(img => (
-                                <Image key={img} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt='Images' />
+                            media?.slice(1, 3).map((item, i) => (
+                                media.type === 'image' ? <Image key={i} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} alt='Images' /> :
+                                <video key={i} controls className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} />
                             ))
                         }
                     </div>
+                    {/* :
+                    <><video controls className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} />
+                        <div className='grid grid-cols-2 gap-1'>
+                            {
+                                media?.slice(1, 3).map(v => (
+                                    <video key={v.url} controls className='h-36 md:h-64 w-full rounded-sm bg-cover' src={v.url} width={600} height={700} />
+                                ))
+                            }
+                        </div>
+                    </> */}
                 </div>
             )
         }
 
-        return (
-            <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
-                {
-                    images?.slice(0, 4).map((img, index) => (
-                        <div key={index} className='relative cursor-pointer'>
-                            <Image className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt={`Post Image ${index + 1}`} />
-                            {
-                                index === 3 && imageCount > 0 && (
-                                    <div className='absolute inset-0 bg-black/60 flex items-center justify-center rounded-sm'>
-                                        <span className='text-white text-2xl font-semibold'>+{imageCount}</span>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    ))
-                }
-            </div>
-        )
+        // return (
+        //     <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
+        //         {
+        //             media?.slice(0, 4).map((img, index) => (
+        //                 <div key={index} className='relative cursor-pointer'>
+        //                     <Image className='h-36 md:h-64 w-full rounded-sm bg-cover' src={img} width={600} height={700} alt={`Post Image ${index + 1}`} />
+        //                     {
+        //                         index === 3 && imageCount > 0 && (
+        //                             <div className='absolute inset-0 bg-black/60 flex items-center justify-center rounded-sm'>
+        //                                 <span className='text-white text-2xl font-semibold'>+{imageCount}</span>
+        //                             </div>
+        //                         )
+        //                     }
+        //                 </div>
+        //             ))
+        //         }
+        //     </div>
+        // )
     }
 
     return (
@@ -58,9 +73,9 @@ const ImageLayout = ({images, post}) => {
             {Imagelayout()}
 
             {/* Post Modal */}
-            {
-                openModal && <PostModal images={images} post={post}  setOpenModal={setOpenModal} />
-            }
+            {/* {
+                openModal && <PostModal media={media} post={post}  setOpenModal={setOpenModal} />
+            } */}
         </div>
     );
 };

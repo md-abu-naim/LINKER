@@ -9,7 +9,6 @@ const Home = async () => {
   const session = await getServerSession(authOptions)
 
   const user = await serverAxios(`/users/${session?.user?.email}`)
-  console.log(user);
 
   return (
     <div className='grid grid-cols-12 gap-6 mt-11 md:p-4 px-2 h-screen overflow-hidden fixed inset-0'>

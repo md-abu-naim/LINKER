@@ -24,7 +24,7 @@ const EditProfile = () => {
 
         if (!file) return null
         const uploaded = await uploadMedia(file, (progress) => {
-            console.log(`Uploading: ${progress}%`)
+            // console.log(`Uploading: ${progress}%`)
         })
         setProfile(uploaded.url)
     }
@@ -35,7 +35,7 @@ const EditProfile = () => {
         if (!file) return null
 
         const uploaded = await uploadMedia(file, (progress) => {
-            console.log(`Uploading: ${progress}%`)
+            // console.log(`Uploading: ${progress}%`)
         })
         setCover(uploaded.url)
     }

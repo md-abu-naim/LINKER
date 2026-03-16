@@ -7,6 +7,7 @@ import { serverAxios } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
     const posts = await serverAxios('/posts')
+    console.log(posts);
     
     return (
         <div className="mb-24 md:mb-10">
@@ -66,7 +67,7 @@ const Main = async ({ user }) => {
                                 {post.content}
                             </p>
 
-                            <ImageLayout post={post} images={post.image} />
+                            <ImageLayout post={post} media={post.media} />
                         </div>
 
                         {/* Engagement Bar */}
