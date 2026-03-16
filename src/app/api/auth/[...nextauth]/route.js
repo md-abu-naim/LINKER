@@ -54,7 +54,7 @@ export const authOptions = {
             if (user) {
                 token.email = user.email
                 token.id = user.id
-                token.accessToken = user.token 
+                token.accessToken = user.accessToken 
             }
             return token
         },

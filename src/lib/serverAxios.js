@@ -5,6 +5,7 @@ import axios from "axios"
 
 export const serverAxios = async(url, options = {}) => {
     const session = await getServerSession(authOptions)
+
     const res = await axios({
         url: `${process.env.NEXT_PUBLIC_API}${url}`,
         method: options.method || 'GET',
