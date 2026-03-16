@@ -22,21 +22,21 @@ const ImageLayout = ({ media, post }) => {
             )
         }
 
-        // if (media?.length === 3) {
-        //     return (
-        //         <div onClick={() => setOpenModal(true)} className='w-full mt-2 space-y-1 cursor-pointer'>
-        //             {media[0].type === 'image' ? <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} alt='Images' /> : <video controls className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} />}
-        //             <div className='grid grid-cols-2 gap-1'>
-        //                 {
-        //                     media?.slice(1, 3).map((item, i) => (
-        //                         item.type === 'image' ? <Image key={i} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} alt='Images' /> :
-        //                         <video key={i} controls className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} />
-        //                     ))
-        //                 }
-        //             </div>
-        //         </div>
-        //     )
-        // }
+        if (media?.length === 3) {
+            return (
+                <div onClick={() => setOpenModal(true)} className='w-full mt-2 space-y-1 cursor-pointer'>
+                    {media[0].type === 'image' ? <Image className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} alt='Images' /> : <video controls className='w-full h-36 md:h-64 rounded-sm bg-cover' src={media[0].url} width={600} height={700} />}
+                    <div className='grid grid-cols-2 gap-1'>
+                        {
+                            media?.slice(1, 3).map((item, i) => (
+                                item.type === 'image' ? <Image key={i} className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} alt='Images' /> :
+                                <video key={i} controls className='h-36 md:h-64 w-full rounded-sm bg-cover' src={item.url} width={600} height={700} />
+                            ))
+                        }
+                    </div>
+                </div>
+            )
+        }
 
         // return (
         //     <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
