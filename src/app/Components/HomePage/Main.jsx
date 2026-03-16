@@ -7,7 +7,6 @@ import { serverAxios } from "@/lib/serverAxios";
 
 const Main = async ({ user }) => {
     const posts = await serverAxios('/posts')
-    console.log(posts);
     
     return (
         <div className="mb-24 md:mb-10">

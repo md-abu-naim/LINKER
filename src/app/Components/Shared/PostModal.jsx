@@ -16,9 +16,9 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import { useState } from 'react';
 
-const PostModal = ({ images, setOpenModal, post }) => {
+const PostModal = ({ media, setOpenModal, post }) => {
     const [open, setOpen] = useState(false);
-    const {author, content, visibility, createdAt, likes, commentsCount, shares, comments} = post || {}
+    const { author, content, visibility, createdAt, likes, commentsCount, shares, comments } = post || {}
 
     return (
         <div className='fixed inset-0 z-50 top-0 lg:left-28 lg:top-4 mb-52'>
@@ -38,9 +38,12 @@ const PostModal = ({ images, setOpenModal, post }) => {
                             className="mySwiper w-full h-[209px] lg:h-full"
                         >
                             {
-                                images.map((img, i) => (
+                                media.map((item, i) => (
                                     <SwiperSlide key={i} className=''>
-                                        <Image onClick={() => setOpen(true)} className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={img} width={800} height={800} alt={`Post Image ${i}`} />
+                                        {
+                                            item.type === 'image' ? <Image onClick={() => setOpen(true)} className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={item.url} width={800} height={800} alt={`Post Image ${i}`} /> :
+                                                <video controls className='w-full h-[209px] lg:h-full cursor-pointer object-contain bg-black' src={item.url} alt={`Post Image ${i}`} />
+                                        }
                                     </SwiperSlide>
                                 ))
                             }
@@ -145,10 +148,23 @@ const PostModal = ({ images, setOpenModal, post }) => {
             </div>
 
 
+            {/* <Lightbox
+                open={open}
+                close={() => setOpen(false)}
+                slides={media.map(item => ({ src: item.url }))}
+                plugins={[Zoom]}
+                zoom={{
+                    maxZoomPixelRatio: 4,
+                    scrollToZoom: true,
+                }}
+            /> */}
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={images.map(img => ({ src: img }))}
+                slides={media
+                    .filter(item => item.type === "image")
+                    .map(item => ({ src: item.url }))
+                }
                 plugins={[Zoom]}
                 zoom={{
                     maxZoomPixelRatio: 4,

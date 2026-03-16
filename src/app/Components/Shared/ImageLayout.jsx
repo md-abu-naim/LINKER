@@ -12,9 +12,9 @@ const ImageLayout = ({ media, post }) => {
     const Imagelayout = () => {
         if (media?.length === 1) {
             return (
-                <div onClick={() => setOpenModal(true)} className='mt-2'>
+                <div className='mt-2'>
                     {
-                        media[0].type === 'image' ? <Image className='w-full h-auto rounded-xl object-cover cursor-pointer' src={media[0].url} width={600} height={700} alt='Images' /> :
+                        media[0].type === 'image' ? <Image onClick={() => setOpenModal(true)} className='w-full h-auto rounded-xl object-cover cursor-pointer' src={media[0].url} width={600} height={700} alt='Images' /> :
                             <video src={media[0].url} controls className='w-full h-auto rounded-xl object-cover cursor-pointer' />
                     }
                 </div>
@@ -23,13 +23,13 @@ const ImageLayout = ({ media, post }) => {
 
         if (media?.length === 3) {
             return (
-                <div onClick={() => setOpenModal(true)} className='w-full mt-2 space-y-1 cursor-pointer'>
-                    {media[0].type === 'image' ? <Image className='w-full h-36 md:h-64 rounded-sm object-cover' src={media[0].url} width={600} height={700} alt='Images' /> :
+                <div className='w-full mt-2 space-y-1 cursor-pointer'>
+                    {media[0].type === 'image' ? <Image onClick={() => setOpenModal(true)} className='w-full h-36 md:h-64 rounded-sm object-cover' src={media[0].url} width={600} height={700} alt='Images' /> :
                         <video controls className='w-full h-36 md:h-64 rounded-sm object-cover' src={media[0].url} width={600} height={700} />}
                     <div className='grid grid-cols-2 gap-1'>
                         {
                             media?.slice(1, 3).map((item, i) => (
-                                item.type === 'image' ? <Image key={i} className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} alt='Images' /> :
+                                item.type === 'image' ? <Image key={i} onClick={() => setOpenModal(true)} className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} alt='Images' /> :
                                     <video key={i} controls className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} />
                             ))
                         }
@@ -39,12 +39,12 @@ const ImageLayout = ({ media, post }) => {
         }
 
         return (
-            <div onClick={() => setOpenModal(true)} className='w-full mt-2 grid grid-cols-2 gap-1'>
+            <div className='w-full mt-2 grid grid-cols-2 gap-1'>
                 {
                     media?.slice(0, 4).map((item, index) => (
                         <div key={index} className='relative cursor-pointer'>
                             {
-                                item.type === 'image' ? <Image className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} alt={`Post Image ${index + 1}`} /> :
+                                item.type === 'image' ? <Image onClick={() => setOpenModal(true)} className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} alt={`Post Image ${index + 1}`} /> :
                                     <video className='h-36 md:h-64 w-full rounded-sm object-cover' src={item.url} width={600} height={700} alt={`Post Image ${index + 1}`} />
                             }
                             {
@@ -66,9 +66,9 @@ const ImageLayout = ({ media, post }) => {
             {Imagelayout()}
 
             {/* Post Modal */}
-            {/* {
-                openModal && <PostModal media={media} post={post}  setOpenModal={setOpenModal} />
-            } */}
+            {
+                openModal && <PostModal media={media} post={post} setOpenModal={setOpenModal} />
+            }
         </div>
     );
 };
